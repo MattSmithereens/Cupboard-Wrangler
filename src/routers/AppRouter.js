@@ -14,7 +14,7 @@ const AppRouter = () => (
       <Switch>
         <Route path='/' component={EntryList} exact={true} />
         <Route path='/Create' component={CreateItem} />
-        <Route path='/Edit' component={EditItem} />
+        <Route path='/Edit/:id' component={EditItem} />
         <Route path='/Help' component={Help} />
         <Route component={Error404} />
       </Switch>

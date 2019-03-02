@@ -1,6 +1,6 @@
-# Pantry App
+# Cupboard Wrangler
 
-I'm still toying with the names: **Pantrify** or **Cupboard Wrangler**.  I guess I'll have to figure this out soon
+An enhanced shopping list app
 
 ## Motivation and User Story
 
