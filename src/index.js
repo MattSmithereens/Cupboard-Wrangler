@@ -24,7 +24,7 @@ const addItem = (
   }
 });
 
-// REMOVE_ITEM
+// REMOVE_ITEM (action generators)
 const removeItem = ({ id } = {}) => ({
   type: 'REMOVE_ITEM',
   id
@@ -35,7 +35,7 @@ const editItem = (id, updates) => ({
   type: 'EDIT_ITEM',
   id,
   updates
-})
+});
 
 // MOVE_TO_PANTRY
 // MOVE_TO_LIST
@@ -44,20 +44,35 @@ const editItem = (id, updates) => ({
 const setTextFilter = (text = '') => ({
   type: 'SET_TEXT_FILTER',
   text
-})
+});
+
 // SORT_BY_DATE
 const sortByDate = (date = '') => ({
   type: 'SORT_BY_DATE',
   date
-})
+});
 
 // SORT_BY_AMOUNT
 const sortByAmount = (amount = '') => ({
   type: 'SORT_BY_AMOUNT',
   amount
-})
+});
 
 // SORT_BY_SHELFLIFE?
+
+
+
+// SET START DATE
+const setStartDate = (startDate) => ({
+  type: 'SET_START_DATE',
+  startDate
+});
+
+// SET END DATE
+const setEndDate = (endDate) => ({
+  type: 'SET_END_DATE',
+  endDate
+})
 
 // expenses reducer
 
@@ -112,6 +127,16 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
         ...state,
         sortBy: 'amount'
       }
+    case 'SET_START_DATE':
+      return {
+        ...state,
+        startDate: action.startDate
+      };
+    case 'SET_END_DATE':
+      return {
+        ...state,
+        endDate: action.endDate
+      };
     default:
       return state;
   }
@@ -131,13 +156,17 @@ const item1 = store.dispatch(addItem({ description: 'frozen peas', amount: 2 }))
 const item2 = store.dispatch(addItem({ description: 'avocado', amount: 2 }));
 const item3 = store.dispatch(addItem({ description: 'ice cream', amount: 2 }));
 
-store.dispatch(removeItem({ id: item1.item.id }));
-store.dispatch(editItem(item2.item.id, { amount: 500 }))
-store.dispatch(editItem(item3.item.id, { inCupboard: true }))
-store.dispatch(setTextFilter('pizza'));
-store.dispatch(setTextFilter());
-store.dispatch(sortByAmount());
-store.dispatch(sortByDate());
+// store.dispatch(removeItem({ id: item1.item.id }));
+// store.dispatch(editItem(item2.item.id, { amount: 500 }))
+// store.dispatch(editItem(item3.item.id, { inCupboard: true }))
+// store.dispatch(setTextFilter('pizza'));
+// store.dispatch(setTextFilter());
+// store.dispatch(sortByAmount());
+// store.dispatch(sortByDate());
+
+store.dispatch(setStartDate(125));
+store.dispatch(setStartDate());
+store.dispatch(setEndDate(1350));
 
 const demoState = {
   items: [{
