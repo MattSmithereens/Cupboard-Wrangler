@@ -12,9 +12,9 @@
 /build
 
 # quarantined/test components
-/playground
-/components/RemoveButton.js
-/components/ItemListItem-withDeleteButton.js
+/src/playground
+/src/components/RemoveButton.js
+/src/components/ItemListItem-withDeleteButton.js
 
 # misc
 .DS_Store
