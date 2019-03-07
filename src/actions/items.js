@@ -1,13 +1,17 @@
 import uuid from 'uuid';
+import moment from 'moment';
+
+const date = moment();
 
 export const addItem = (
   {
     description = '',
     note = '',
-    amount = 0,
+    amount = 1,
     createdAt = 0,
-    shelfLife = 0,
-    inCupboard = false
+    shelfLife = date.add(1, 'day').format('LL'), //adding time cumulatively to subsequent items
+    inCupboard = false,
+    isGrocery = true
   } = {} // sets defaults if no input
 ) => ({
   type: 'ADD_ITEM',
@@ -18,6 +22,7 @@ export const addItem = (
     createdAt,
     shelfLife,
     inCupboard,
+    isGrocery,
     id: uuid()
   }
 });

@@ -2,11 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { removeItem } from '../actions/items'
 
-const ItemListItem = ({ dispatch, id, description, amount, createdAt }) => (
+const ItemListItem = ({ dispatch, id, description, shelfLife, amount, createdAt }) => (
   <li>
-    {description}
-    {amount}
-    {createdAt}
+    {description}&nbsp;
+    {shelfLife}
 
     <button
       // onClick={(e) => {

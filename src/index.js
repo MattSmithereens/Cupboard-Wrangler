@@ -11,10 +11,10 @@ import * as serviceWorker from './serviceWorker';
 
 const store = configureStore();
 
+store.dispatch(addItem({ description: 'avocado', amount: 300, createdAt: -100000, inCupboard: true, shelflife: 0 }));
 store.dispatch(addItem({ description: 'coffee', amount: 400, createdAt: 5000, inCupboard: false }));
 store.dispatch(addItem({ description: 'frozen peas', amount: 200, createdAt: 10000, inCupboard: true }));
-store.dispatch(addItem({ description: 'avocado', amount: 300, createdAt: -100000, inCupboard: true }));
-store.dispatch(setTextFilter('o'));
+//store.dispatch(setTextFilter('o'));
 
 // setTimeout(() => {
 //   store.dispatch(setTextFilter('o'));
