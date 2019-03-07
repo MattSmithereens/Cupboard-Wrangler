@@ -1,8 +1,11 @@
 import React from 'react';
+import ItemList from './ItemList'
+import ItemListFilters from './ItemListFilters';
 
 const EntryList = () => (
   <div>
-    Entry List
+    <ItemListFilters />
+    <ItemList />
   </div>
 );
 
