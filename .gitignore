@@ -11,8 +11,12 @@
 # production
 /build
 
-# misc
+# quarantined/test components
 /playground
+/components/RemoveButton.js
+/components/ItemListItem-withDeleteButton.js
+
+# misc
 .DS_Store
 .env.local
 .env.development.local
