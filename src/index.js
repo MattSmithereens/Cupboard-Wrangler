@@ -11,14 +11,14 @@ import * as serviceWorker from './serviceWorker';
 
 const store = configureStore();
 
-store.dispatch(addItem({ description: 'coffee', amount: 400, createdAt: 5000 }));
-store.dispatch(addItem({ description: 'frozen peas', amount: 200, createdAt: 10000 }));
-store.dispatch(addItem({ description: 'avocado', amount: 400, createdAt: -100000 }));
-store.dispatch(setTextFilter('avo'));
+store.dispatch(addItem({ description: 'coffee', amount: 400, createdAt: 5000, inCupboard: false }));
+store.dispatch(addItem({ description: 'frozen peas', amount: 200, createdAt: 10000, inCupboard: true }));
+store.dispatch(addItem({ description: 'avocado', amount: 300, createdAt: -100000, inCupboard: true }));
+store.dispatch(setTextFilter('o'));
 
-setTimeout(() => {
-  store.dispatch(setTextFilter('o'));
-}, 3000)
+// setTimeout(() => {
+//   store.dispatch(setTextFilter('o'));
+// }, 3000)
 
 const state = store.getState();
 const visibleItems = getVisibleItems(state.items, state.filters);

@@ -12,13 +12,13 @@ export const addItem = (
 ) => ({
   type: 'ADD_ITEM',
   item: {
-    id: uuid(),
     description,
     note,
     amount,
     createdAt,
     shelfLife,
-    inCupboard
+    inCupboard,
+    id: uuid()
   }
 });
 

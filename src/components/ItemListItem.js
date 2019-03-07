@@ -20,6 +20,9 @@ const ItemListItem = ({ dispatch, id, description, amount, createdAt }) => (
       onClick={(e) => {
         dispatch(removeItem({ id }))
       }}
+      // onMouseOver={(e) => {
+      //   console.log('moused over');
+      // }}
 
       className="mdc-button mdc-button mdc-button--dense">
       <span className="mdc-button__label">discard</span>
