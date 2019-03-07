@@ -15,6 +15,16 @@ export const sortByAmount = (amount = '') => ({
   amount
 });
 
+export const sortByLocationPantry = (inCupboard = true) => ({
+  type: 'SORT_BY_LOCATION_PANTRY',
+  inCupboard
+});
+
+export const sortByLocationShoppingList = (inCupboard = false) => ({
+  type: 'SORT_BY_LOCATION_SHOPPING_LIST',
+  inCupboard
+});
+
 // SORT_BY_SHELFLIFE?
 
 

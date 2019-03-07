@@ -1,7 +1,7 @@
 import uuid from 'uuid';
 import moment from 'moment';
 
-const date = moment();
+const now = moment();
 
 export const addItem = (
   {
@@ -9,7 +9,7 @@ export const addItem = (
     note = '',
     amount = 1,
     createdAt = 0,
-    shelfLife = date.add(1, 'day').format('LL'), //adding time cumulatively to subsequent items
+    shelfLife = now.add(1, 'day').format('LL'), //adding time cumulatively to subsequent items
     inCupboard = false,
     isGrocery = true
   } = {} // sets defaults if no input
