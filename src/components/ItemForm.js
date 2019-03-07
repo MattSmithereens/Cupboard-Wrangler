@@ -76,21 +76,22 @@ export default class ItemForm extends React.Component {
             type='number'
             placeholder='Shelf Life; not wired up yet'
           />
-
+          <br />
 
           <textarea 
             placeholder='Item notes (optional)'
             value={this.state.note}
             onChange={this.onNoteChange}
           >
-
           </textarea>
+          <br />
+
           <button
             className="
             mdc-button 
             mdc-button--unelevated 
             mdc-button--dense">
-            <span className="mdc-button__label">add</span>
+            <span className="mdc-button__label">submit</span>
           </button>
         </form>
       </div>
