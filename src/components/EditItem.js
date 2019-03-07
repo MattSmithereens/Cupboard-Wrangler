@@ -1,11 +1,37 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import ItemForm from './ItemForm';
+import { editItem, removeItem } from '../actions/items';
 
 const EditItem = (props) => {
   return (
     <div>
-      Editing item {props.match.params.id}
+      <h1>edit item</h1>
+      <ItemForm
+        item={props.item}
+        onSubmit={(item) => {
+          props.dispatch(editItem(props.item.id, item));
+          props.history.push('/');
+        }}
+      />
+      <button
+        onClick={(e) => {
+          props.dispatch(removeItem({ id: props.item.id }))
+          props.history.push('/');
+        }}
+        className="mdc-button mdc-button mdc-button--dense">
+        <span className="mdc-button__label">discard</span>
+      </button>
     </div>
   );
 };
 
-export default EditItem
+const mapStateToProps = (state, props) => {
+  return {
+    item: state.items.find((item) => {
+      return item.id === props.match.params.id;
+    })
+  }
+};
+
+export default connect(mapStateToProps)(EditItem)

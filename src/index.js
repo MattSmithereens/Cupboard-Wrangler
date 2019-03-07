@@ -16,14 +16,13 @@ store.dispatch(addItem({ description: 'coffee', amount: 400, createdAt: 5000, in
 store.dispatch(addItem({ description: 'frozen peas', amount: 200, createdAt: 10000, inCupboard: true }));
 //store.dispatch(setTextFilter('o'));
 
-// setTimeout(() => {
-//   store.dispatch(setTextFilter('o'));
-// }, 3000)
+setTimeout(() => {
+  console.log(visibleItems);
+}, 3000)
 
 const state = store.getState();
 const visibleItems = getVisibleItems(state.items, state.filters);
 
-console.log(visibleItems);
 
 const jsx = (
   <Provider store={store}>

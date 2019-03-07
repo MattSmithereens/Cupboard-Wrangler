@@ -1,6 +1,6 @@
 const filtersReducerDefaultState = {
   text: '',
-  sortBy: 'date', // this is where to set default sorting...
+  sortBy: 'shelfLife', // this is where to set default sorting...
   startDate: undefined,
   endDate: undefined,
 };

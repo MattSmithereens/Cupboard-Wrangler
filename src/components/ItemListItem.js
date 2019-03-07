@@ -1,32 +1,17 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { removeItem } from '../actions/items'
+import { Link } from 'react-router-dom';
 
 const ItemListItem = ({ dispatch, id, description, shelfLife, amount, createdAt }) => (
   <li>
-    {description}&nbsp;
-    {shelfLife}
+    <Link to={`/edit/${id}`}>{description}</Link>&nbsp;
+    {shelfLife}&nbsp;
+    {amount}
 
     <button
-      // onClick={(e) => {
-      //   props.handleDeleteOption(props.optionText);
-      // }}
-
       className="mdc-button mdc-button--unelevated mdc-button--dense" disabled>
       <span className="mdc-button__label">Add</span>
-    </button>
-    <button
-      onClick={(e) => {
-        dispatch(removeItem({ id }))
-      }}
-      // onMouseOver={(e) => {
-      //   console.log('moused over');
-      // }}
-
-      className="mdc-button mdc-button mdc-button--dense">
-      <span className="mdc-button__label">discard</span>
     </button>
   </li>
 );
 
-export default connect()(ItemListItem);
+export default ItemListItem;

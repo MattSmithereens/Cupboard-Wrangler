@@ -1,15 +1,23 @@
 import React from 'react';
 import moment from 'moment';
+import { removeItem } from '../actions/items'
+
 const now = moment();
 // picker code in ItemFormDates.js
 
 export default class ItemForm extends React.Component {
-  state = {
-    description: '',
-    note: '',
-    amount: '',
-    error: '',
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      description: props.item ? props.item.description : '',
+      note: props.item ? props.item.note : '',
+      amount: props.item ? (props.item.amount).toString() : '',
+      error: '',
+    };
+  }
+  
+
 
   onDescriptionChange = (e) => {
     const description = e.target.value;
