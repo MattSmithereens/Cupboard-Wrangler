@@ -12,7 +12,7 @@
 /build
 
 # quarantined/test components
-/src/playground
+/src/playground/
 /src/components/RemoveButton.js
 /src/components/ItemListItem-withDeleteButton.js
 
