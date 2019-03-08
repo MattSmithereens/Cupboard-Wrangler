@@ -21,19 +21,16 @@ export default (state = itemsReducerDefaultState, action) => {
         };
       });
 
-
     case 'TOGGLE_LIST_ITEM':
-      console.log('clicked toggle');
-    // return state.map((item) => {
-    //   if (item.id === action.id) {
-    //     return {
-    //       ...item,
-    //       ...action.updates
-    //     };
-    //   } else {
-    //     return item;
-    //   };
-    // })
+      console.log('clicked from reducers/items.js');
+
+    // return state.map(item =>
+    //   //console.log(item) returns correct item but breaks everything
+    //   // (item.id === action.id)
+    //   //   ? { inCupboard: !item.inCupboard }
+    //   //   : !item.inCupboard
+    // )
+
 
 
     default:

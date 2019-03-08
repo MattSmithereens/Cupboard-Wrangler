@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
-import { toggleListItem, removeItem } from '../actions/items'; //doesn't work yet
+import { toggleListItem, removeItem } from '../actions/items';
 
 const ItemListItem = ({ 
   dispatch, 
@@ -22,13 +22,12 @@ const ItemListItem = ({
       "
       
       onClick={() => {
-        dispatch(removeItem({ id }));
+        dispatch(toggleListItem({ id })); // removeItem works
       }}
     >
-      <span className="mdc-button__label">Add to {inCupboard ? 'Shopping' : 'Cupboard'}</span>
+      <span className="mdc-button__label">{inCupboard ? 'used' : 'bought'}</span>
     </button>
   </li>
 );
 
 export default connect()(ItemListItem)
-// export default ItemListItem

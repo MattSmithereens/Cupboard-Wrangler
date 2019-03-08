@@ -31,6 +31,7 @@ export default class ItemForm extends React.Component {
     this.setState(() => ({ note }));
   };
 
+  // get rid of once action is working
   onInCupboardChange = (e) => {
     const inCupboard = e.target.value;
     this.setState(() => ({ inCupboard: !inCupboard }));
