@@ -5,10 +5,12 @@ import selectItems from '../selectors/items'
 
 const ItemList = (props) => (
   <div>
-    <p>Items List</p>
+    <p>Cupboard List</p>
     <ul>
       {props.items.map((item) => {
-        return <ItemListItem key={item.id} {...item} />
+        if (item.inCupboard) {
+          return <ItemListItem key={item.id} {...item} />
+        }
       })}
     </ul>
   </div>
