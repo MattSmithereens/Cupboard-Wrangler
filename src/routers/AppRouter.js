@@ -6,7 +6,7 @@ import CreateItem from '../components/CreateItem.js';
 import EditItem from '../components/EditItem.js';
 import Help from '../components/Help.js';
 import Error404 from '../components/Error404.js';
-import ItemList from '../components/ItemList.js';
+import CupboardItemList from '../components/CupboardItemList.js';
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -14,7 +14,7 @@ const AppRouter = () => (
       <Header />
       <Switch>
         <Route path='/' component={EntryList} exact={true} />
-        <Route path='/Cupboard' component={ItemList} />
+        <Route path='/Cupboard' component={CupboardItemList} />
         <Route path='/Create' component={CreateItem} />
         <Route path='/Edit/:id' component={EditItem} />
         <Route path='/Help' component={Help} />

@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { removeItem } from '../actions/items'
+import { setTextFilter, sortByDate, sortByAmount } from '../actions/filters'
 
 const now = moment();
 // picker code in ItemFormDates.js
@@ -32,7 +33,7 @@ export default class ItemForm extends React.Component {
 
   onInCupboardChange = (e) => {
     const inCupboard = e.target.value;
-    this.setState(() => ({ inCupboard }));
+    this.setState(() => ({ inCupboard: !inCupboard }));
   };
 
   onAmountChange = (e) => {
@@ -89,6 +90,14 @@ export default class ItemForm extends React.Component {
           <input
             type='text'
             placeholder='In Cupboard'
+            value={this.state.inCupboard}
+            onChange={this.onInCupboardChange}
+          />
+          <br />
+
+          <input
+            // {this.state.inCupboard ? 'checked' : ''}
+            type='checkbox'
             value={this.state.inCupboard}
             onChange={this.onInCupboardChange}
           />

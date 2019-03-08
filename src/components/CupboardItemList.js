@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ItemListItem from './ItemListItem';
+// import ItemWithButton from './ItemWithButton';
 import selectItems from '../selectors/items'
 
-const ItemList = (props) => (
+const CupboardItemList = (props) => (
   <div>
     <p>Cupboard List</p>
     <ul>
@@ -22,5 +23,5 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps)(ItemList);
+export default connect(mapStateToProps)(CupboardItemList);
 

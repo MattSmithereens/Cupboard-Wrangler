@@ -1,37 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
-import { toggleListItem } from '../actions/items'; //doesn't work yet
+import { toggleListItem, removeItem } from '../actions/items'; //doesn't work yet
 
-const ItemListItem = (props) => (
+const ItemListItem = ({ 
+  dispatch, 
+  id, 
+  description,
+  inCupboard,
+  shelfLife
+}) => (
   <li>
-    <Link to={`/edit/${props.id}`}>{props.description}</Link>&nbsp;
-    {props.shelfLife}&nbsp;
-    {props.inCupboard.toString()}
+    <Link to={`/edit/${id}`}>{description}</Link>&nbsp;
+    {inCupboard ? shelfLife : ''}
+    {inCupboard.toString()}
 
     <button
       className="
         mdc-button 
         mdc-button--dense
       "
-      disabled
-      onSubmit={(item) => {
-        props.dispatch(toggleListItem(props.item.id, item));
+      
+      onClick={() => {
+        dispatch(removeItem({ id }));
       }}
-
     >
-      <span className="mdc-button__label">Add</span>
+      <span className="mdc-button__label">Add to {inCupboard ? 'Shopping' : 'Cupboard'}</span>
     </button>
   </li>
 );
 
-// legit don't know how to code this part
-// const mapStateToProps = (state, props) => {
-//   return {
-//     item: state.items.find((item) => {
-//       return item.id === props.match.params.id;
-//     })
-//   }
-// };
-
 export default connect()(ItemListItem)
+// export default ItemListItem

@@ -10,10 +10,10 @@ import * as serviceWorker from './serviceWorker';
 
 const store = configureStore();
 
-store.dispatch(addItem({ description: 'in shopping list', amount: 3, inCupboard: false, shelflife: 0 }));
-store.dispatch(addItem({ description: 'in shopping list2', amount: 3, inCupboard: false, shelflife: 0 }));
-store.dispatch(addItem({ description: 'in cupboard', amount: 3, inCupboard: true, shelflife: 0 }));
-store.dispatch(addItem({ description: 'in cupboard 2', amount: 3, inCupboard: true, shelflife: 0 }));
+store.dispatch(addItem({ description: 'milk', amount: 3, inCupboard: false, shelflife: 0 }));
+store.dispatch(addItem({ description: 'butter', amount: 3, inCupboard: false, shelflife: 0 }));
+store.dispatch(addItem({ description: 'bread', amount: 3, inCupboard: true, shelflife: 0 }));
+store.dispatch(addItem({ description: 'eggs', amount: 3, inCupboard: true, shelflife: 0 }));
 // store.dispatch(addItem({ description: 'coffee', amount: 4, createdAt: 5000, inCupboard: false }));
 // store.dispatch(addItem({ description: 'frozen peas', amount: 2, createdAt: 10000, inCupboard: true }));
 

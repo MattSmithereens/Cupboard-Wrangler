@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemList from './ItemList'
+import CupboardItemList from './CupboardItemList'
 import ItemListFilters from './ItemListFilters';
 import ShoppingList from './ShoppingList';
 
@@ -8,7 +8,7 @@ const EntryList = () => (
     <ItemListFilters />
     <ShoppingList />
     <hr />
-    <ItemList />
+    <CupboardItemList />
   </div>
 );
 

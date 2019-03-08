@@ -23,7 +23,7 @@ export default (state = itemsReducerDefaultState, action) => {
 
 
     case 'TOGGLE_LIST_ITEM':
-      console.log('clicked');
+      console.log('clicked toggle');
     // return state.map((item) => {
     //   if (item.id === action.id) {
     //     return {
