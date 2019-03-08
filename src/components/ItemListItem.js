@@ -7,11 +7,14 @@ const ItemListItem = (props) => (
   <li>
     <Link to={`/edit/${props.id}`}>{props.description}</Link>&nbsp;
     {props.shelfLife}&nbsp;
-    {props.amount}
-    {props.inCupboard}
+    {props.inCupboard.toString()}
 
     <button
-      className="mdc-button mdc-button--unelevated mdc-button--dense"
+      className="
+        mdc-button 
+        mdc-button--dense
+      "
+      disabled
       onSubmit={(item) => {
         props.dispatch(toggleListItem(props.item.id, item));
       }}
