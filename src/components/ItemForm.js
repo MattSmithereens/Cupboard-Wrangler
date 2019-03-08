@@ -13,7 +13,7 @@ export default class ItemForm extends React.Component {
       description: props.item ? props.item.description : '',
       note: props.item ? props.item.note : '',
       amount: props.item ? (props.item.amount).toString() : '',
-      //inCupboard: props.item.inCupboard,
+      inCupboard: props.item ? props.item.inCupboard : '',
       error: '',
     };
   }
@@ -28,6 +28,11 @@ export default class ItemForm extends React.Component {
   onNoteChange = (e) => {
     const note = e.target.value;
     this.setState(() => ({ note }));
+  };
+
+  onInCupboardChange = (e) => {
+    const inCupboard = e.target.value;
+    this.setState(() => ({ inCupboard }));
   };
 
   onAmountChange = (e) => {
@@ -48,7 +53,7 @@ export default class ItemForm extends React.Component {
         description: this.state.description,
         amount: parseInt(this.state.amount),
         note: this.state.note,
-        //inCupboard: this.state.inCupboard,
+        inCupboard: this.state.inCupboard,
 
       })
     }
@@ -83,9 +88,9 @@ export default class ItemForm extends React.Component {
 
           <input
             type='text'
-            placeholder='Descritption'
-            value={this.state.description}
-            onChange={this.onDescriptionChange}
+            placeholder='In Cupboard'
+            value={this.state.inCupboard}
+            onChange={this.onInCupboardChange}
           />
           <br />
 
