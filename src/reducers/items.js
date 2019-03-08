@@ -8,7 +8,7 @@ export default (state = itemsReducerDefaultState, action) => {
         action.item
       ];
     case 'REMOVE_ITEM':
-      return state.filter(({ id }) => id !== action.id); s// filters out the item with the passed in id.  
+      return state.filter(({ id }) => id !== action.id);  // filters out the item with the passed in id.  
     case 'EDIT_ITEM':                                     // destructures object and parses id attribute
       return state.map((item) => {
         if (item.id === action.id) {
@@ -23,16 +23,17 @@ export default (state = itemsReducerDefaultState, action) => {
 
 
     case 'TOGGLE_LIST_ITEM':
-      return state.map((item) => {
-        if (item.id === action.id) {
-          return {
-            ...item,
-            ...action.updates
-          };
-        } else {
-          return item;
-        };
-      })
+      console.log('clicked');
+    // return state.map((item) => {
+    //   if (item.id === action.id) {
+    //     return {
+    //       ...item,
+    //       ...action.updates
+    //     };
+    //   } else {
+    //     return item;
+    //   };
+    // })
 
 
     default:

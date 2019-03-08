@@ -13,6 +13,7 @@ export default class ItemForm extends React.Component {
       description: props.item ? props.item.description : '',
       note: props.item ? props.item.note : '',
       amount: props.item ? (props.item.amount).toString() : '',
+      //inCupboard: props.item.inCupboard,
       error: '',
     };
   }
@@ -46,7 +47,9 @@ export default class ItemForm extends React.Component {
       this.props.onSubmit({
         description: this.state.description,
         amount: parseInt(this.state.amount),
-        note: this.state.note
+        note: this.state.note,
+        //inCupboard: this.state.inCupboard,
+
       })
     }
   };
@@ -75,6 +78,14 @@ export default class ItemForm extends React.Component {
           <input
             type='number'
             placeholder='Shelf Life; not wired up yet'
+          />
+          <br />
+
+          <input
+            type='text'
+            placeholder='Descritption'
+            value={this.state.description}
+            onChange={this.onDescriptionChange}
           />
           <br />
 
