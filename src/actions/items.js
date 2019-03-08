@@ -8,7 +8,6 @@ export const addItem = (
     description = '',
     note = '',
     amount = 1,
-    createdAt = 0,
     shelfLife = now.add(1, 'day').format('LL'), //adding time cumulatively to subsequent items
     inCupboard = false,
     isGrocery = true
@@ -19,7 +18,6 @@ export const addItem = (
     description,
     note,
     amount,
-    createdAt,
     shelfLife,
     inCupboard,
     isGrocery,
@@ -36,6 +34,12 @@ export const removeItem = ({ id } = {}) => ({
 // EDIT_ITEM
 export const editItem = (id, updates) => ({
   type: 'EDIT_ITEM',
+  id,
+  updates
+});
+
+export const toggleListItem = (id, updates) => ({
+  type: 'TOGGLE_LIST_ITEM',
   id,
   updates
 });

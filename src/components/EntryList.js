@@ -7,7 +7,6 @@ const EntryList = () => (
   <div>
     <ItemListFilters />
     <ShoppingList />
-    <br />
     <hr />
     <ItemList />
   </div>
