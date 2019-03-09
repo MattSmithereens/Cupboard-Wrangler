@@ -3,19 +3,19 @@ import { connect } from 'react-redux';
 import ItemListItem from './ItemListItem';
 import selectItems from '../selectors/items'
 
-const ItemList = (props) => (
+const ShoppingList = (props) => (
 
   // make ternary operator and only render if items exist in list
 
   <div>
     <p>Shopping List</p>
-    <ul>
+    <div>
       {props.items.map((item) => {
         if (!item.inCupboard) {
           return <ItemListItem key={item.id} {...item} />
         }
       })}
-    </ul>
+    </div>
   </div>
 );
 
@@ -25,5 +25,5 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps)(ItemList);
+export default connect(mapStateToProps)(ShoppingList);
 

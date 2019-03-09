@@ -10,24 +10,26 @@ const ItemListItem = ({
   inCupboard,
   shelfLife
 }) => (
-  <li>
-    <Link to={`/edit/${id}`}>{description}</Link>&nbsp;
-    {inCupboard ? shelfLife : ''}
-    {inCupboard.toString()}
-
-    <button
+  <div>
+    <div>
+      <Link to={`/edit/${id}`}>{description}</Link>&nbsp;
+      {inCupboard ? shelfLife : ''}
+    </div>
+    <div>
+      <button
       className="
         mdc-button 
+        mdc-button--outlined
         mdc-button--dense
       "
-      
       onClick={() => {
         dispatch(toggleListItem({ id })); // removeItem works
       }}
     >
       <span className="mdc-button__label">{inCupboard ? 'used' : 'bought'}</span>
     </button>
-  </li>
+    </div>
+  </div>
 );
 
 export default connect()(ItemListItem)

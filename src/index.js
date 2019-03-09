@@ -2,11 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
+import moment from 'moment';
 import { addItem, removeItem, editItem } from './actions/items';
 import getVisibleItems from './selectors/items';
 import './Index.css';
 import AppRouter from './routers/AppRouter.js'
 import * as serviceWorker from './serviceWorker';
+
+// const now = new moment();
+// console.log(now)
+// 1 day is 86400000 ms
+// const later = new moment().add(1, 'days').format('L');
+// console.log(later)
 
 const store = configureStore();
 

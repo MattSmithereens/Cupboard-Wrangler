@@ -1,3 +1,8 @@
+:root {
+  --mdc-theme-primary: #098a25;
+  --mdc-theme-secondary: #666666; /*changes color of radio buttons*/
+}
+
 body {
   margin: 10;
   padding: 10;
@@ -15,4 +20,16 @@ code {
 
 .isActive {
   font-weight: bold;
+}
+
+.itemDiv {
+  width: 400px;
+}
+
+.cupboardItemDiv {
+  background-color: aqua;
+}
+
+.item-button {
+  width: 100px;
 }

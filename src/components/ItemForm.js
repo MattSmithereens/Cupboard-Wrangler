@@ -3,7 +3,7 @@ import moment from 'moment';
 import { removeItem } from '../actions/items'
 import { setTextFilter, sortByDate, sortByAmount } from '../actions/filters'
 
-const now = moment();
+const now = new moment();
 // picker code in ItemFormDates.js
 
 export default class ItemForm extends React.Component {
@@ -39,7 +39,7 @@ export default class ItemForm extends React.Component {
 
   onAmountChange = (e) => {
     const amount = e.target.value;
-    if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {  //expression for currency format  regex101.com to generate
+    if (!amount || amount.match(/^\d{1,}$/)) {  //expression for currency format  regex101.com to generate /^\d{1,}(\.\d{0,2})?$/
       this.setState(() => ({ amount }))
     }
   };
@@ -56,7 +56,6 @@ export default class ItemForm extends React.Component {
         amount: parseInt(this.state.amount),
         note: this.state.note,
         inCupboard: this.state.inCupboard,
-
       })
     }
   };
