@@ -15,6 +15,7 @@
 /src/playground/
 /src/components/RemoveButton.js
 /src/components/ItemListItem-withDeleteButton.js
+index2.css
 
 # misc
 .DS_Store
