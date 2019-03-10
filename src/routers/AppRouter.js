@@ -10,7 +10,7 @@ import CupboardItemList from '../components/CupboardItemList.js';
 
 const AppRouter = () => (
   <BrowserRouter>
-    <div>
+    <div className='container'>
       <Header />
       <Switch>
         <Route path='/' component={EntryList} exact={true} />

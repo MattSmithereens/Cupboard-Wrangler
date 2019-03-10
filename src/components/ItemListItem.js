@@ -10,24 +10,24 @@ const ItemListItem = ({
   inCupboard,
   shelfLife
 }) => (
-  <div>
-    <div>
+  <div className='row'>
+    <div className='col-md-9'>
       <Link to={`/edit/${id}`}>{description}</Link>&nbsp;
       {inCupboard ? shelfLife : ''}
     </div>
-    <div>
+    <div className='col-sm-3'>
       <button
-      className="
-        mdc-button 
-        mdc-button--outlined
-        mdc-button--dense
-      "
-      onClick={() => {
-        dispatch(toggleListItem({ id })); // removeItem works
-      }}
-    >
-      <span className="mdc-button__label">{inCupboard ? 'used' : 'bought'}</span>
-    </button>
+        className="
+          mdc-button 
+          mdc-button--outlined
+          mdc-button--dense
+        "
+        onClick={() => {
+          dispatch(toggleListItem({ id })); // removeItem works
+        }}
+        >
+        <span className="mdc-button__label">{inCupboard ? 'used' : 'bought'}</span>
+      </button>
     </div>
   </div>
 );
