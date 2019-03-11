@@ -4,7 +4,7 @@ export default (state = itemsReducerDefaultState, action) => {
   switch (action.type) {
     case 'ADD_ITEM':
       return [
-        ...state,  // spread operator.  concats action.item to state without changing state
+        ...state,  // spread operator.  concats action.item & returns state without changing initial state
         action.item
       ];
     case 'REMOVE_ITEM':
@@ -23,6 +23,13 @@ export default (state = itemsReducerDefaultState, action) => {
 
     case 'TOGGLE_LIST_ITEM':
       console.log('clicked from reducers/items.js');
+      return state.map(item =>
+        //console.log(item) //returns correct item but breaks everything
+        (item.id === action.id)
+          ? { ...item, inCupboard: !item.inCupboard }
+          : item
+      )
+
 
     // return state.map(item =>
     //   //console.log(item) returns correct item but breaks everything
