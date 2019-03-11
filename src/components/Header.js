@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => (
   <header>
-    <div className='jumbotron'><h1>Cupboard Wrangler!</h1></div>
+    <div className='title'><h3>Cupboard Wrangler!</h3></div>
     <div>
       <p>
         <NavLink to='/Create' activeClassName='isActive'>Add Item</NavLink> |

@@ -21,7 +21,7 @@ const ItemListItem = ({
       <button
         className="
           mdc-button 
-          mdc-button--outlined
+          mdc-button--unelevated
           mdc-button--dense
         "
         onClick={() => {
