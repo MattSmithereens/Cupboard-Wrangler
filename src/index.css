@@ -27,9 +27,32 @@ code {
 }
 
 .cupboardItemDiv {
-  background-color: aqua;
+  /* background-color: aqua; */
+}
+
+.row {
+  padding-left: 20px;
+  padding-bottom: 3px; 
+  display: flex;
+  align-items: center;
 }
 
 .item-button {
   width: 100px;
 }
+
+.item-info-col {
+  width: 200px;
+  font-size: .95em;
+}
+
+.item-date-info {
+  width: 85px;
+  font-size: .8em;
+  color: #666666;
+}
+
+.bought-used-button {
+  width: 75px;
+}
+

@@ -11,11 +11,13 @@ const ItemListItem = ({
   shelfLife
 }) => (
   <div className='row'>
-    <div className='col-md-9'>
+    <div className='item-info-col'>
       <Link to={`/edit/${id}`}>{description}</Link>&nbsp;
+    </div> 
+    <div className='item-date-info'>
       {inCupboard ? shelfLife : ''}
     </div>
-    <div className='col-sm-3'>
+    <div className='item-button-col'>
       <button
         className="
           mdc-button 
@@ -26,7 +28,10 @@ const ItemListItem = ({
           dispatch(toggleListItem({ id })); // removeItem works
         }}
         >
-        <span className="mdc-button__label">{inCupboard ? 'used' : 'bought'}</span>
+        <span className="
+        mdc-button__label
+        bought-used-button
+        ">{inCupboard ? 'used' : 'bought'}</span>
       </button>
     </div>
   </div>
