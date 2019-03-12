@@ -10,11 +10,11 @@ const ItemListItem = ({ dispatch, id, description, shelfLife, amount, createdAt 
     {amount}
 
     <button
-      // onClick={(e) => {
-      //   props.handleDeleteOption(props.optionText);
-      // }}
-
-      className="mdc-button mdc-button--unelevated mdc-button--dense" disabled>
+      className="
+        mdc-button
+        mdc-button--unelevated
+        mdc-button--dense" 
+      disabled>
       <span className="mdc-button__label">Add</span>
     </button>
 
@@ -23,9 +23,6 @@ const ItemListItem = ({ dispatch, id, description, shelfLife, amount, createdAt 
       onClick={(e) => {
         dispatch(removeItem({ id }))
       }}
-      // onMouseOver={(e) => {
-      //   console.log('moused over');
-      // }}
       className="mdc-button mdc-button mdc-button--dense">
       <span className="mdc-button__label">discard</span>
     </button>

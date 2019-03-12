@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
-import { toggleListItem, removeItem } from '../actions/items';
+import { toggleListItem, } from '../actions/items';
 
 const ItemListItem = ({ 
   dispatch, 

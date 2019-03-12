@@ -20,7 +20,6 @@ export default (state = itemsReducerDefaultState, action) => {
           return item;
         };
       });
-
     case 'TOGGLE_LIST_ITEM':
       return state.map(item =>
         (item.id === action.id.id)
