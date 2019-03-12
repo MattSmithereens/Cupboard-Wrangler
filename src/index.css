@@ -31,14 +31,19 @@ code {
   font-weight: bold;
 }
 
-.itemDiv {
-  /* width: 400px; */
-}
+/* .itemDiv {
+  width: 400px;
+} */
 
 /* 
 .cupboardItemDiv {
   background-color: aqua; 
 } */
+
+.mdc-text-field {
+  width: 325px;
+  margin-bottom: 10px;
+}
 
 .row {
   padding-left: 20px;
@@ -48,7 +53,21 @@ code {
 }
 
 .title {
+  display: flex;
   background-color: #ffba5a
+}
+
+h3 {
+  color: #ffffff;
+}
+
+hr {
+  width: 70%;
+  color: #ffba5a
+}
+
+.options {
+  align-content: center;
 }
 
 .item-button {
