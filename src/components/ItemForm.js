@@ -60,62 +60,61 @@ export default class ItemForm extends React.Component {
     }
   };
 
-
   render() {
     return (
       <div>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
 
-          <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+          <div className="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
             <input 
               type="text" 
-              class="mdc-text-field__input" 
+              className="mdc-text-field__input" 
               aria-label="Label" 
               autoFocus
               value={this.state.description}
               onChange={this.onDescriptionChange}
               placeholder='Description'
             />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__trailing"></div>
+            <div className="mdc-notched-outline">
+              <div className="mdc-notched-outline__leading"></div>
+              <div className="mdc-notched-outline__trailing"></div>
             </div>
           </div>
           <br />
         
-          <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+          <div className="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
             <input 
-              class="mdc-text-field__input" 
+              className="mdc-text-field__input" 
               aria-label="Label" 
               type='number'
               placeholder='Quantity'
               value={this.state.amount}
               onChange={this.onAmountChange}
             />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__trailing"></div>
+            <div className="mdc-notched-outline">
+              <div className="mdc-notched-outline__leading"></div>
+              <div className="mdc-notched-outline__trailing"></div>
             </div>
           </div>
           <br />
           
-          <div class="mdc-text-field mdc-text-field--textarea">
+          <div className="mdc-text-field mdc-text-field--textarea">
             <textarea 
               id="textarea" 
-              class="mdc-text-field__input" 
+              className="mdc-text-field__input" 
               placeholder='Item notes (optional)'
               rows="7" 
               cols="36"
               value={this.state.note}
               onChange={this.onNoteChange}>
             </textarea>
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label for="textarea" class="mdc-floating-label"></label>
+            <div className="mdc-notched-outline">
+              <div className="mdc-notched-outline__leading"></div>
+              <div className="mdc-notched-outline__notch">
+                <label for="textarea" className="mdc-floating-label"></label>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
+              <div className="mdc-notched-outline__trailing"></div>
             </div>
           </div>
           <br />
