@@ -4,16 +4,23 @@ import { setTextFilter } from '../actions/filters'
 // import { setTextFilter, sortByDate, sortByAmount } from '../actions/filters'
 
 const ItemListFilters = (props) => (
-  <div>
-    Item Search &nbsp;
-  <input
-      type='text'
+
+  <div className="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+    <input
+      type="text"
+      className="mdc-text-field__input"
+      aria-label="Label"
+      placeholder='Item Search'
       value={props.filters.text}
       onChange={(e) => {
         props.dispatch(setTextFilter(e.target.value))
       }} />
-
+    <div className="mdc-notched-outline">
+      <div className="mdc-notched-outline__leading"></div>
+      <div className="mdc-notched-outline__trailing"></div>
+    </div>
   </div>
+
 );
 
 const MapStateToProps = (state) => {
