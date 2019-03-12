@@ -97,28 +97,7 @@ export default class ItemForm extends React.Component {
               <div class="mdc-notched-outline__trailing"></div>
             </div>
           </div>
-
-          <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
-            <input 
-              class="mdc-text-field__input" 
-              aria-label="Label" 
-              type='text'
-              value={this.state.inCupboard}
-              onChange={this.onInCupboardChange}
-            />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__trailing"></div>
-            </div>
-          </div>
-
-
-
-
           
-
-
-
           <div class="mdc-text-field mdc-text-field--textarea">
             <textarea 
               id="textarea" 
@@ -200,3 +179,17 @@ export default class ItemForm extends React.Component {
 //   onChange={this.onInCupboardChange}
 // />
 // <br />
+
+// <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+// <input 
+//   class="mdc-text-field__input" 
+//   aria-label="Label" 
+//   type='text'
+//   value={this.state.inCupboard}
+//   onChange={this.onInCupboardChange}
+// />
+// <div class="mdc-notched-outline">
+//   <div class="mdc-notched-outline__leading"></div>
+//   <div class="mdc-notched-outline__trailing"></div>
+// </div>
+// </div>
