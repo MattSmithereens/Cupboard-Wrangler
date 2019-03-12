@@ -112,7 +112,7 @@ export default class ItemForm extends React.Component {
             <div className="mdc-notched-outline">
               <div className="mdc-notched-outline__leading"></div>
               <div className="mdc-notched-outline__notch">
-                <label for="textarea" className="mdc-floating-label"></label>
+                <label className="mdc-floating-label"></label>
               </div>
               <div className="mdc-notched-outline__trailing"></div>
             </div>
