@@ -8,6 +8,7 @@ import getVisibleItems from './selectors/items';
 import './index.css';
 import AppRouter from './routers/AppRouter.js'
 import * as serviceWorker from './serviceWorker';
+import './firebase/firebase';
 
 // const now = new moment();
 // console.log(now)
