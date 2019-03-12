@@ -5,7 +5,7 @@ import configureStore from './store/configureStore';
 import moment from 'moment';
 import { addItem, removeItem, editItem } from './actions/items';
 import getVisibleItems from './selectors/items';
-import './Index.css';
+import './index.css';
 import AppRouter from './routers/AppRouter.js'
 import * as serviceWorker from './serviceWorker';
 
