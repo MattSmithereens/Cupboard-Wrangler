@@ -1,9 +1,9 @@
 import React from 'react';
-import moment from 'moment';
+// import moment from 'moment';
 // import { removeItem } from '../actions/items'
 // import { setTextFilter, sortByDate, sortByAmount } from '../actions/filters'
 
-const now = new moment();
+// const now = new moment();
 // picker code in ItemFormDates.js
 
 export default class ItemForm extends React.Component {
@@ -18,8 +18,6 @@ export default class ItemForm extends React.Component {
       error: '',
     };
   }
-  
-
 
   onDescriptionChange = (e) => {
     const description = e.target.value;
@@ -32,10 +30,10 @@ export default class ItemForm extends React.Component {
   };
 
   // get rid of once action is working
-  onInCupboardChange = (e) => {
-    const inCupboard = e.target.value;
-    this.setState(() => ({ inCupboard: !inCupboard }));
-  };
+  // onInCupboardChange = (e) => {
+  //   const inCupboard = e.target.value;
+  //   this.setState(() => ({ inCupboard: !inCupboard }));
+  // };
 
   onAmountChange = (e) => {
     const amount = e.target.value;
