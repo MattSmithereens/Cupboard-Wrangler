@@ -25,12 +25,12 @@ const ItemListItem = ({
           mdc-button--dense
         "
         onClick={() => {
-          dispatch(toggleListItem({ id })); // removeItem works
+          dispatch(toggleListItem({ id }));
         }}
         >
         <span className="
-        mdc-button__label
-        bought-used-button
+          mdc-button__label
+          bought-used-button
         ">{inCupboard ? 'used' : 'bought'}</span>
       </button>
     </div>

@@ -144,7 +144,7 @@ export default class ItemForm extends React.Component {
               <div class="mdc-notched-outline__trailing"></div>
             </div>
           </div>
-
+          <br />
           <button
             className="
             mdc-button 
