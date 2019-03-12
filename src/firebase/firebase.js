@@ -14,19 +14,24 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref().set({
-  name: 'Matt',
-  age: 43,
-  isBro: true,
-  location: {
-    city: 'portland',
-    country: 'USA'
-  },
-  anotherThing: 'yes',
-}).then(() => {
-  console.log('data saved!')
-}).catch((e) => {
-  console.log('this failed', e);
-});
-
-//database.ref().set('this is my data');
+// database.ref().set({                  // set (ie, write) values to DB
+//   name: 'Matt',
+//   age: 44,
+//   isBro: true,
+//   location: {
+//     city: 'portland',
+//     country: 'USA'
+//   },
+//   anotherThing: 'yes',
+// }).then(() => {                         // promise
+//   console.log('data saved!')
+// }).catch((e) => {
+//   console.log('this failed', e);
+// });
+database.ref('anotherThing')
+  .remove()
+  .then(() => {
+    console.log('item deleted!');
+  }).catch((e) => {
+    console.log('nope', e);
+  });
