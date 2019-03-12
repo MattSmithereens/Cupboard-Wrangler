@@ -1,4 +1,4 @@
-import uuid from 'uuid';
+//import uuid from 'uuid';
 import moment from 'moment';
 import database from '../firebase/firebase';
 
