@@ -24,10 +24,6 @@ const store = configureStore();
 // store.dispatch(addItem({ description: 'coffee', amount: 4, createdAt: 5000, inCupboard: false }));
 // store.dispatch(addItem({ description: 'frozen peas', amount: 2, createdAt: 10000, inCupboard: true }));
 
-
-const state = store.getState();
-// const visibleItems = getVisibleItems(state.items, state.filters);
-
 const jsx = (
   <Provider store={store}>
     <AppRouter />

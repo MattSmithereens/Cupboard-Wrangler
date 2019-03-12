@@ -82,6 +82,7 @@ export default class ItemForm extends React.Component {
               <div class="mdc-notched-outline__trailing"></div>
             </div>
           </div>
+          <br />
         
           <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
             <input 
@@ -97,6 +98,7 @@ export default class ItemForm extends React.Component {
               <div class="mdc-notched-outline__trailing"></div>
             </div>
           </div>
+          <br />
           
           <div class="mdc-text-field mdc-text-field--textarea">
             <textarea 
