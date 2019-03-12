@@ -7,8 +7,8 @@ const CupboardItemList = (props) => (
   <div>
     <p>Cupboard List</p>
     <div className='
-    itemDiv
-    cupboardItemDiv
+      itemDiv
+      cupboardItemDiv
     '>
       {props.items.map((item) => {
         if (item.inCupboard) {

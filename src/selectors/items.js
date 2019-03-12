@@ -8,11 +8,13 @@ export default (items, { text, sortBy }) => {
 
     // return startDateMatch && endDateMatch && textMatch;
     return textMatch;
-  }).sort((a, b) => {
-    if (sortBy === 'date') {
-      return a.createdAt < b.createdAt ? 1 : -1;
-    } else if (sortBy === 'amount') {
-      return a.amount < b.amount ? 1 : -1;
-    }
   });
+
+  // }).sort((a, b) => {
+  //   if (sortBy === 'date') {
+  //     return a.createdAt < b.createdAt ? 1 : -1;
+  //   } else if (sortBy === 'amount') {
+  //     return a.amount < b.amount ? 1 : -1;
+  //   }
+  // });
 };

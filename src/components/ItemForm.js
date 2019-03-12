@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
-import { removeItem } from '../actions/items'
-import { setTextFilter, sortByDate, sortByAmount } from '../actions/filters'
+// import { removeItem } from '../actions/items'
+// import { setTextFilter, sortByDate, sortByAmount } from '../actions/filters'
 
 const now = new moment();
 // picker code in ItemFormDates.js
