@@ -1,7 +1,7 @@
 export default (items, { text, sortBy }) => {
   // export default (items, { text, sortBy, startDate, endDate }) => {
   return items.filter((item) => {
-    console.log(item);
+    // console.log(item);
     // const startDateMatch = typeof startDate !== 'number' || item.createdAt >= startDate;
     // const endDateMatch = typeof endDate !== 'number' || item.createdAt <= endDate;
     const textMatch = item.description.toLowerCase().includes(text.toLowerCase());
