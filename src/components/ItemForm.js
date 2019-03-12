@@ -102,7 +102,7 @@ export default class ItemForm extends React.Component {
             <input 
               class="mdc-text-field__input" 
               aria-label="Label" 
-              type='number'
+              type='text'
               value={this.state.inCupboard}
               onChange={this.onInCupboardChange}
             />
@@ -114,14 +114,7 @@ export default class ItemForm extends React.Component {
 
 
 
-          <br />
-          <input
-            // {this.state.inCupboard ? 'checked' : ''}
-            type='checkbox'
-            value={this.state.inCupboard}
-            onChange={this.onInCupboardChange}
-          />
-          <br />
+
           
 
 
@@ -195,4 +188,15 @@ export default class ItemForm extends React.Component {
 // onChange={this.onNoteChange}
 // >
 // </textarea>
+// <br />
+
+
+// janky ass toggle checkbox
+// <br />
+// <input
+//   // {this.state.inCupboard ? 'checked' : ''}
+//   type='checkbox'
+//   value={this.state.inCupboard}
+//   onChange={this.onInCupboardChange}
+// />
 // <br />
