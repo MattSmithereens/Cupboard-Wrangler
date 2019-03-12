@@ -10,16 +10,18 @@ import CupboardItemList from '../components/CupboardItemList.js';
 
 const AppRouter = () => (
   <BrowserRouter>
-    <div className='container'>
+    <div>
       <Header />
-      <Switch>
-        <Route path='/' component={EntryList} exact={true} />
-        <Route path='/Cupboard' component={CupboardItemList} />
-        <Route path='/Create' component={CreateItem} />
-        <Route path='/Edit/:id' component={EditItem} />
-        <Route path='/Help' component={Help} />
-        <Route component={Error404} />
-      </Switch>
+      <div className='container'>
+        <Switch>
+          <Route path='/' component={EntryList} exact={true} />
+          <Route path='/Cupboard' component={CupboardItemList} />
+          <Route path='/Create' component={CreateItem} />
+          <Route path='/Edit/:id' component={EditItem} />
+          <Route path='/Help' component={Help} />
+          <Route component={Error404} />
+        </Switch>
+      </div>
     </div>
   </BrowserRouter>
 );

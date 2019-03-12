@@ -1,9 +1,18 @@
+/* color scheme:
+fbeed7
+fff6e8 - offset color
+ffba5a
+ff7657
+665c84 
+*/
+
 :root {
-  --mdc-theme-primary: #098a25;
-  --mdc-theme-secondary: #666666; /*changes color of radio buttons*/
+  --mdc-theme-primary: #ff7657;
+  --mdc-theme-secondary: #ffba5a; /*changes color of radio buttons*/
 }
 
 body {
+  background-color: #FBEED7;
   margin: 10;
   padding: 10;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -22,14 +31,61 @@ code {
   font-weight: bold;
 }
 
-.itemDiv {
+/* .itemDiv {
   width: 400px;
+} */
+
+/* 
+.cupboardItemDiv {
+  background-color: aqua; 
+} */
+
+.mdc-text-field {
+  width: 325px;
+  margin-bottom: 10px;
 }
 
-.cupboardItemDiv {
-  background-color: aqua;
+.row {
+  padding-left: 20px;
+  padding-bottom: 3px; 
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  background-color: #ffba5a
+}
+
+h3 {
+  color: #ffffff;
+}
+
+hr {
+  width: 70%;
+  color: #ffba5a
+}
+
+.options {
+  align-content: center;
 }
 
 .item-button {
   width: 100px;
 }
+
+.item-info-col {
+  width: 130px;
+  font-size: .95em;
+}
+
+.item-date-info {
+  width: 85px;
+  font-size: .8em;
+  color: #665c84;
+}
+
+.bought-used-button {
+  width: 75px;
+}
+

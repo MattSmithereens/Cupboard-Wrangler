@@ -66,35 +66,55 @@ export default class ItemForm extends React.Component {
       <div>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
-          <input
-            type='text'
-            placeholder='Descritption'
-            autoFocus
-            value={this.state.description}
-            onChange={this.onDescriptionChange}
-          />
-          <br />
-          <input
-            type='number'
-            placeholder='Quantity'
-            value={this.state.amount}
-            onChange={this.onAmountChange}
-          />
-          <br />
-          <input
-            type='number'
-            placeholder='Shelf Life; not wired up yet'
-          />
-          <br />
 
-          <input
-            type='text'
-            placeholder='In Cupboard'
-            value={this.state.inCupboard}
-            onChange={this.onInCupboardChange}
-          />
-          <br />
+          <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+            <input 
+              type="text" 
+              class="mdc-text-field__input" 
+              aria-label="Label" 
+              autoFocus
+              value={this.state.description}
+              onChange={this.onDescriptionChange}
+              placeholder='Description'
+            />
+            <div class="mdc-notched-outline">
+              <div class="mdc-notched-outline__leading"></div>
+              <div class="mdc-notched-outline__trailing"></div>
+            </div>
+          </div>
+        
+          <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+            <input 
+              class="mdc-text-field__input" 
+              aria-label="Label" 
+              type='number'
+              placeholder='Quantity'
+              value={this.state.amount}
+              onChange={this.onAmountChange}
+            />
+            <div class="mdc-notched-outline">
+              <div class="mdc-notched-outline__leading"></div>
+              <div class="mdc-notched-outline__trailing"></div>
+            </div>
+          </div>
 
+          <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+            <input 
+              class="mdc-text-field__input" 
+              aria-label="Label" 
+              type='number'
+              value={this.state.inCupboard}
+              onChange={this.onInCupboardChange}
+            />
+            <div class="mdc-notched-outline">
+              <div class="mdc-notched-outline__leading"></div>
+              <div class="mdc-notched-outline__trailing"></div>
+            </div>
+          </div>
+
+
+
+          <br />
           <input
             // {this.state.inCupboard ? 'checked' : ''}
             type='checkbox'
@@ -102,14 +122,28 @@ export default class ItemForm extends React.Component {
             onChange={this.onInCupboardChange}
           />
           <br />
+          
 
-          <textarea 
-            placeholder='Item notes (optional)'
-            value={this.state.note}
-            onChange={this.onNoteChange}
-          >
-          </textarea>
-          <br />
+
+
+          <div class="mdc-text-field mdc-text-field--textarea">
+            <textarea 
+              id="textarea" 
+              class="mdc-text-field__input" 
+              placeholder='Item notes (optional)'
+              rows="7" 
+              cols="36"
+              value={this.state.note}
+              onChange={this.onNoteChange}>
+            </textarea>
+            <div class="mdc-notched-outline">
+              <div class="mdc-notched-outline__leading"></div>
+              <div class="mdc-notched-outline__notch">
+                <label for="textarea" class="mdc-floating-label"></label>
+              </div>
+              <div class="mdc-notched-outline__trailing"></div>
+            </div>
+          </div>
 
           <button
             className="
@@ -123,3 +157,42 @@ export default class ItemForm extends React.Component {
     )
   }
 }
+
+
+// <input  
+// className="mdc-text-field"
+// type='text'
+// placeholder='Descritption'
+// autoFocus
+// value={this.state.description}
+// onChange={this.onDescriptionChange}
+// />
+// <br />
+// <input
+//   type='number'
+//   placeholder='Quantity'
+//   value={this.state.amount}
+//   onChange={this.onAmountChange}
+// />
+// <br />
+
+// <input
+// type='number'
+// placeholder='Shelf Life; not wired up yet'
+// />
+// <br />
+
+// <input
+// type='text'
+// placeholder='In Cupboard'
+// value={this.state.inCupboard}
+// onChange={this.onInCupboardChange}
+// />
+// <br />
+// <textarea 
+// placeholder='Item notes (optional)'
+// value={this.state.note}
+// onChange={this.onNoteChange}
+// >
+// </textarea>
+// <br />
