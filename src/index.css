@@ -29,6 +29,7 @@ code {
 
 .isActive {
   font-weight: bold;
+  /* background: #ffba5a; */
 }
 
 /* .itemDiv {
@@ -58,6 +59,9 @@ code {
 }
 
 h3 {
+  align-content: center;
+  align-items: center;
+  align-self: center;
   color: #ffffff;
 }
 
