@@ -1,10 +1,13 @@
-export default (items, { text, sortBy, startDate, endDate }) => {
+export default (items, { text, sortBy }) => {
+  // export default (items, { text, sortBy, startDate, endDate }) => {
   return items.filter((item) => {
-    const startDateMatch = typeof startDate !== 'number' || item.createdAt >= startDate;
-    const endDateMatch = typeof endDate !== 'number' || item.createdAt <= endDate;
+    // console.log(item);
+    // const startDateMatch = typeof startDate !== 'number' || item.createdAt >= startDate;
+    // const endDateMatch = typeof endDate !== 'number' || item.createdAt <= endDate;
     const textMatch = item.description.toLowerCase().includes(text.toLowerCase());
 
-    return startDateMatch && endDateMatch && textMatch;
+    // return startDateMatch && endDateMatch && textMatch;
+    return textMatch;
   }).sort((a, b) => {
     if (sortBy === 'date') {
       return a.createdAt < b.createdAt ? 1 : -1;

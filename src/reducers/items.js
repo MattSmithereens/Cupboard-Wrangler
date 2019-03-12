@@ -4,12 +4,12 @@ export default (state = itemsReducerDefaultState, action) => {
   switch (action.type) {
     case 'ADD_ITEM':
       return [
-        ...state,
+        ...state,  // spread operator.  concats action.item & returns state without changing initial state
         action.item
       ];
     case 'REMOVE_ITEM':
-      return state.filter(({ id }) => id !== action.id); // filters out the item with the passed in id
-    case 'EDIT_ITEM':
+      return state.filter(({ id }) => id !== action.id);  // filters out the item with the passed in id.  
+    case 'EDIT_ITEM':                                     // destructures object and parses id attribute
       return state.map((item) => {
         if (item.id === action.id) {
           return {
@@ -20,6 +20,26 @@ export default (state = itemsReducerDefaultState, action) => {
           return item;
         };
       });
+
+    case 'TOGGLE_LIST_ITEM':
+      console.log('clicked from reducers/items.js');
+      return state.map(item =>
+        //console.log(item) //returns correct item but breaks everything
+        (item.id === action.id)
+          ? { ...item, inCupboard: !item.inCupboard }
+          : item
+      )
+
+
+    // return state.map(item =>
+    //   //console.log(item) returns correct item but breaks everything
+    //   // (item.id === action.id)
+    //   //   ? { inCupboard: !item.inCupboard }
+    //   //   : !item.inCupboard
+    // )
+
+
+
     default:
       return state;
   }

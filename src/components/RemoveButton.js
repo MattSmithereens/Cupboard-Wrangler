@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { removeItem } from '../actions/items'
 
-const RemoveButton = (props) => {
+const RemoveButton = ({ dispatch, id, description, shelfLife, amount, createdAt }) => {
   return (
     <div>
       <button
@@ -10,7 +10,7 @@ const RemoveButton = (props) => {
           console.log(props);
           // not referencing props correctly
 
-          // props.dispatch(removeItem({ id: props.item.id }))
+          dispatch(removeItem({ id: props.item.id }))
           // props.history.push('/');
         }}
         className="mdc-button mdc-button mdc-button--dense">

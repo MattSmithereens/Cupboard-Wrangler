@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Error404 = () => (
   <div>
-    404 - <Link to='/'>go home</Link>
+    <p>This page doesn't appear to exist</p>
+    <p><Link to='/'>go home</Link></p>
   </div>
 );
 

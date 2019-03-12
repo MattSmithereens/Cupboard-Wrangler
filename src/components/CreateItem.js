@@ -8,7 +8,6 @@ const CreateItem = (props) => (
     <h1>add item</h1>
     <ItemForm
       onSubmit={(item) => {
-        console.log(item);
         props.dispatch(addItem(item));
         props.history.push('/');
       }}

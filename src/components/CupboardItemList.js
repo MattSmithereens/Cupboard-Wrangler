@@ -3,14 +3,19 @@ import { connect } from 'react-redux';
 import ItemListItem from './ItemListItem';
 import selectItems from '../selectors/items'
 
-const ItemList = (props) => (
+const CupboardItemList = (props) => (
   <div>
-    <p>Items List</p>
-    <ul>
+    <p>Cupboard List</p>
+    <div className='
+    itemDiv
+    cupboardItemDiv
+    '>
       {props.items.map((item) => {
-        return <ItemListItem key={item.id} {...item} />
+        if (item.inCupboard) {
+          return <ItemListItem key={item.id} {...item} />
+        }
       })}
-    </ul>
+    </div>
   </div>
 );
 
@@ -20,5 +25,5 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps)(ItemList);
+export default connect(mapStateToProps)(CupboardItemList);
 
