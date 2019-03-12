@@ -22,24 +22,11 @@ export default (state = itemsReducerDefaultState, action) => {
       });
 
     case 'TOGGLE_LIST_ITEM':
-      console.log('clicked from reducers/items.js');
       return state.map(item =>
-        //console.log(item) //returns correct item but breaks everything
-        (item.id === action.id)
+        (item.id === action.id.id)
           ? { ...item, inCupboard: !item.inCupboard }
           : item
       )
-
-
-    // return state.map(item =>
-    //   //console.log(item) returns correct item but breaks everything
-    //   // (item.id === action.id)
-    //   //   ? { inCupboard: !item.inCupboard }
-    //   //   : !item.inCupboard
-    // )
-
-
-
     default:
       return state;
   }
