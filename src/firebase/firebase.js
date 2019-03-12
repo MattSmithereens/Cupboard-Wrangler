@@ -14,6 +14,19 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+export { firebase, database as default };
+
+
+// database.ref()
+//   .once('value')    // use .on() to subscribe
+//   .then((snapshot) => {
+//     const val = snapshot.val();
+//     console.log(val);
+//   })
+//   .catch((e) => {
+//     console.log('error', e);
+//   });
+
 // database.ref().set({                  // set (ie, write) values to DB
 //   name: 'Matt',
 //   age: 44,
@@ -28,10 +41,11 @@ const database = firebase.database();
 // }).catch((e) => {
 //   console.log('this failed', e);
 // });
-database.ref('anotherThing')
-  .remove()
-  .then(() => {
-    console.log('item deleted!');
-  }).catch((e) => {
-    console.log('nope', e);
-  });
+
+// database.ref('anotherThing')
+//   .remove()
+//   .then(() => {
+//     console.log('item deleted!');
+//   }).catch((e) => {
+//     console.log('nope', e);
+//   });
