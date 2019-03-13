@@ -6,7 +6,40 @@ An enhanced shopping list app
 
 My wife and I are on entirely different schedules.  Oftentimes chores are done by one while the other is either at work or sleeping.  This creates problems when it comes to groceries and our cupboard.  Miscommunications will occur regarding food shopping where one of us will not buy something that the other needs, or we'll both buy it because or a communication breakdown.  Another compounding factor is that if one of us buys something that the other is unaware of, often times it will languish in the pantry or refridgerator and go bad before it gets eaten.  No other pantry/grocery list app that I've found takes "best by" dates into account or toggles grocery items between a grocery list and a pantry inventory list that lets you know what's going bad and when (thus alerting the user when it should be eaten), so it seemed a no brainer to build a grocery app that takes this into account.
 
-https://cupboard-wrangler.herokuapp.com/
+### Current Features
+
+* Items placed on the shopping list can be toggled into pantry inventory when purchased and back onto the shopping list when they need replacing
+* Items in pantry inventory are sorted by date with older items rendering higher in the list
+* The search field highlights items in either the pantry or shopping list and quickly lets a user know its status
+* The list is hosted on firebase, so data can be persisted between devices
+
+### Planned Features
+
+* User authentication
+* Enhanced shelf life attribute that allows a user to enter an item's shelf life in days to indicate when an item is expected to expire as opposed to simply indicating the day it was purchased
+* Make design responsive (it's presently hardcoded for mobile)
+* Additional item attributes, such as whether an item is grocery or a household item with a seperate list that displays different attributes (ie, laundry detergent doesn't need a shelf life)
+* Integration of a coupon API to highlight items in the shopping list that are on sale
+* Add a 'preferred vendor' attribute to items in the grocery list if a user buys different items from different vendors.  ie, if you buy specialty items from New Seasons, standard groceries from Winco and household items from Target only items associated with the corresponding vendor will render in that particular shopping list of the chosen store
+* Integration with a recipie API to allow a user to add missing ingredients of selected dishes to the shopping list
+
+## Technologies Used
+
+* HTML5/CSS3
+* Javascript / ES6 / ES7
+* JSX
+* Node.js
+* React v16 / ReactDOM v16
+* React Router
+* Redux
+* Jest
+* React-Redux
+* Express
+
+## 
+
+[Github Repository](https://github.com/MattSmithereens/Cupboard-Wrangler)
+[Hosted site](https://cupboard-wrangler.herokuapp.com/)
 
 ________________
 
