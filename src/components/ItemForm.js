@@ -13,7 +13,7 @@ export default class ItemForm extends React.Component {
     this.state = {
       description: props.item ? props.item.description : '',
       note: props.item ? props.item.note : '',
-      amount: props.item ? (props.item.amount).toString() : 1,
+      amount: props.item ? (props.item.amount).toString() : 1, // defaulting to 1, but renders 1 in create page
       inCupboard: props.item ? props.item.inCupboard : '',
       error: '',
     };
