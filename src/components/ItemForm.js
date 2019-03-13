@@ -13,7 +13,7 @@ export default class ItemForm extends React.Component {
     this.state = {
       description: props.item ? props.item.description : '',
       note: props.item ? props.item.note : '',
-      amount: props.item ? (props.item.amount).toString() : '',
+      amount: props.item ? (props.item.amount).toString() : 1,
       inCupboard: props.item ? props.item.inCupboard : '',
       error: '',
     };
@@ -130,7 +130,11 @@ export default class ItemForm extends React.Component {
 }
 
 
-// <input  
+
+
+
+// <input          
+
 // className="mdc-text-field"
 // type='text'
 // placeholder='Descritption'

@@ -2,8 +2,8 @@
 import moment from 'moment';
 import database from '../firebase/firebase';
 
-// let amount = 0 //need to import value during item creation and change description to reflect
-// let now = new moment().add(amount, 'day').format('L');
+//let amount = 0 //need to import value during item creation and change description to reflect
+//let now = new moment().add(amount, 'day').format('L');
 
 export const addItem = (item) => ({
   type: 'ADD_ITEM',
@@ -16,7 +16,7 @@ export const startAddItem = (itemData = {}) => {
       description = '',
       note = '',
       amount = 1, // value of zero throws NaN error
-      shelfLife = new moment().add(amount, 'day').format('L'),  //now.add(1, 'day').format('l'), //adding time cumulatively to subsequent items
+      shelfLife = new moment().add(0, 'day').format('L'),  //now.add(1, 'day').format('l'), //adding time cumulatively to subsequent items
       inCupboard = false,
       isGrocery = true
     } = itemData;
