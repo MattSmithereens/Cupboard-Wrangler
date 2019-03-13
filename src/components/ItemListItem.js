@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
-import { startToggleListItem, } from '../actions/items';
+import { toggleListItem, startToggleListItem } from '../actions/items';
 
 const ItemListItem = ({ 
   dispatch, 
@@ -25,7 +25,8 @@ const ItemListItem = ({
           mdc-button--dense
         "
         onClick={() => {
-          dispatch(startToggleListItem({ id }));
+          dispatch(toggleListItem({ id }));  // works, but doesn't update DB
+          // ispatch(startToggleListItem({ id }));
         }}
         >
         <span className="

@@ -64,6 +64,7 @@ export const editItem = (id, updates) => ({
 export const startEditItem = (id, updates) => {
   return (dispatch) => {
     return database.ref(`items/${id}`).update(updates).then(() => {
+      console.log(updates);
       dispatch(editItem(id, updates));
     });
   };
