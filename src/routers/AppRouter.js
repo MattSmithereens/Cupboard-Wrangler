@@ -15,8 +15,7 @@ const AppRouter = () => (
       <Header />
       <div className='container'>
         <Switch>
-          <Route path='/' component={LoginPage} exact={true} />
-          <Route path='/Dashboard' component={EntryList} />
+          <Route path='/' component={EntryList} exact={true} />
           <Route path='/Cupboard' component={CupboardItemList} />
           <Route path='/Create' component={CreateItem} />
           <Route path='/Edit/:id' component={EditItem} />
@@ -27,5 +26,26 @@ const AppRouter = () => (
     </div>
   </BrowserRouter>
 );
+
+// auth router: presently nonfunctional
+// auth throwing error regarding current domain not being OAuth in firebase
+// const AppRouter = () => (
+//   <BrowserRouter>
+//     <div>
+//       <Header />
+//       <div className='container'>
+//         <Switch>
+//           <Route path='/' component={LoginPage} exact={true} />
+//           <Route path='/Dashboard' component={EntryList} />
+//           <Route path='/Cupboard' component={CupboardItemList} />
+//           <Route path='/Create' component={CreateItem} />
+//           <Route path='/Edit/:id' component={EditItem} />
+//           <Route path='/Help' component={Help} />
+//           <Route component={Error404} />
+//         </Switch>
+//       </div>
+//     </div>
+//   </BrowserRouter>
+// );
 
 export default AppRouter;
