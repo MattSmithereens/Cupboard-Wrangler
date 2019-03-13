@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
-import { toggleListItem, } from '../actions/items';
+import { startToggleListItem, } from '../actions/items';
 
 const ItemListItem = ({ 
   dispatch, 
@@ -25,7 +25,7 @@ const ItemListItem = ({
           mdc-button--dense
         "
         onClick={() => {
-          dispatch(toggleListItem({ id }));
+          dispatch(startToggleListItem({ id }));
         }}
         >
         <span className="

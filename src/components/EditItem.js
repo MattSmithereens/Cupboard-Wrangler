@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ItemForm from './ItemForm';
-import { editItem, startRemoveItem } from '../actions/items';
+import { startEditItem, startRemoveItem } from '../actions/items';
 
 const EditItem = (props) => {
   return (
@@ -10,7 +10,7 @@ const EditItem = (props) => {
       <ItemForm
         item={props.item}
         onSubmit={(item) => {
-          props.dispatch(editItem(props.item.id, item));
+          props.dispatch(startEditItem(props.item.id, item));
           props.history.push('/');
         }}
       />
