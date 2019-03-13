@@ -17,6 +17,11 @@ import { firebase } from './firebase/firebase';
 
 const store = configureStore();
 
+// $(() => {
+//   window.mdc = mdc;
+//   window.mdc.autoInit();
+// });
+
 const jsx = (
   <Provider store={store}>
     <AppRouter />
@@ -35,7 +40,7 @@ firebase.auth().onAuthStateChanged((user) => {
   } else {
     console.log('logged out');
   }
-});
+}).catch();
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

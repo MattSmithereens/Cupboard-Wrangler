@@ -86,7 +86,7 @@ export default class ItemForm extends React.Component {
               className="mdc-text-field__input" 
               aria-label="Label" 
               type='number'
-              placeholder='Quantity'
+              placeholder='Quantity (cannot be left blank)'
               value={this.state.amount}
               onChange={this.onAmountChange}
             />

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Help = () => (
-  <div>
+  <div className='top-buffer'>
     <p>Thanks for checking out out my app!</p>
     <p>To start, begin adding items.  They'll appear in your shopping list.  From there you can toggle them to your pantry list when you purchase them and toggle them back to your shopping list when you no longer have that item in your pantry.  Items are rendered in order of date with older items appearing higher in the list</p>
     <p>This app is still in beta, but fixes, new features and a new layout (yikes) are happening.</p>

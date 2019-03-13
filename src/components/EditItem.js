@@ -5,7 +5,7 @@ import { startEditItem, startRemoveItem } from '../actions/items';
 
 const EditItem = (props) => {
   return (
-    <div>
+    <div className='top-buffer'>
       <h1>edit item</h1>
       <ItemForm
         item={props.item}

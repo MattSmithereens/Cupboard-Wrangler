@@ -15,7 +15,7 @@ export const startAddItem = (itemData = {}) => {
     const {
       description = '',
       note = '',
-      amount = 1, // value of zero throws NaN error
+      amount = 1, // quick fix; left blank throws NaN error
       shelfLife = new moment().add(0, 'day').format('L'),  //now.add(1, 'day').format('l'), //adding time cumulatively to subsequent items
       inCupboard = false,
       isGrocery = true
@@ -78,8 +78,6 @@ export const toggleListItem = (id, updates) => ({
 
 export const startToggleListItem = (id, updates) => {
   return (dispatch) => {
-    // const dbRef = database.ref(`item/${id}/inCupboard`);
-    // console.log(dbRef);
     return database.ref(`items/${id}/inCupboard`).set(updates).then(() => {
       dispatch(toggleListItem(id, updates));
     }).catch((e) => {
@@ -88,6 +86,19 @@ export const startToggleListItem = (id, updates) => {
     });
   };
 }
+
+// export const startToggleListItem = (id, updates) => {
+//   return async (dispatch) => {
+//     try {
+//       await database.ref(`items/${id}/inCupboard`).set(updates);
+//       dispatch(toggleListItem(id, updates));
+//     }
+//     catch (e) {
+//       console.log('error' + e);
+//       dispatch(toggleListItem(id, updates));
+//     }
+//   };
+// }
 
 // SET_ITEMS
 export const setItems = (items) => ({
