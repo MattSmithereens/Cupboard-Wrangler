@@ -9,7 +9,7 @@ const Header = () => (
         <p>
           <NavLink to='/Create' activeClassName='isActive'>Add Item</NavLink> |
         <NavLink to='/' activeClassName='isActive' exact={true}>Shopping List</NavLink> |
-        <NavLink to='/Help' activeClassName='isActive'>Help</NavLink>
+        <NavLink to='/About' activeClassName='isActive'>About</NavLink>
         </p>
       </div>
     </div>
@@ -19,3 +19,4 @@ const Header = () => (
 export default Header;
 
 // <NavLink to='/Cupboard' activeClassName='isActive' exact={true}>Cupboard Inventory</NavLink> |
+// <NavLink to='/Help' activeClassName='isActive'>Help</NavLink>

@@ -20,6 +20,8 @@ const AppRouter = () => (
           <Route path='/Create' component={CreateItem} />
           <Route path='/Edit/:id' component={EditItem} />
           <Route path='/Help' component={Help} />
+          <Route path='/About' component={Help} />
+          <Route path='/Login' component={LoginPage} />
           <Route component={Error404} />
         </Switch>
       </div>
