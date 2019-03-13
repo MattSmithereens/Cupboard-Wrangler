@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ItemForm from './ItemForm';
-import { editItem, removeItem } from '../actions/items';
+import { startEditItem, startRemoveItem } from '../actions/items';
 
 const EditItem = (props) => {
   return (
@@ -10,13 +10,13 @@ const EditItem = (props) => {
       <ItemForm
         item={props.item}
         onSubmit={(item) => {
-          props.dispatch(editItem(props.item.id, item));
+          props.dispatch(startEditItem(props.item.id, item));
           props.history.push('/');
         }}
       />
       <button
         onClick={(e) => {
-          props.dispatch(removeItem({ id: props.item.id }))
+          props.dispatch(startRemoveItem({ id: props.item.id }))
           props.history.push('/');
         }}
         className="mdc-button mdc-button mdc-button--dense">

@@ -44,6 +44,15 @@ export const removeItem = ({ id } = {}) => ({
   id
 });
 
+// START_REMOVE_ITEM
+export const startRemoveItem = ({ id } = {}) => {
+  return (dispatch) => {
+    return database.ref(`items/${id}`).remove().then(() => {
+      dispatch(removeItem({ id }));
+    });
+  };
+};
+
 // EDIT_ITEM
 export const editItem = (id, updates) => ({
   type: 'EDIT_ITEM',
@@ -51,11 +60,34 @@ export const editItem = (id, updates) => ({
   updates
 });
 
+// START_EDIT_ITEM
+export const startEditItem = (id, updates) => {
+  return (dispatch) => {
+    return database.ref(`items/${id}`).update(updates).then(() => {
+      console.log(updates);
+      dispatch(editItem(id, updates));
+    });
+  };
+}
+
 export const toggleListItem = (id, updates) => ({
   type: 'TOGGLE_LIST_ITEM',
   id,
   updates
 });
+
+export const startToggleListItem = (id, updates) => {
+  return (dispatch) => {
+    // const dbRef = database.ref(`item/${id}/inCupboard`);
+    // console.log(dbRef);
+    return database.ref(`items/${id}/inCupboard`).set(updates).then(() => {
+      dispatch(toggleListItem(id, updates));
+    }).catch((e) => {
+      console.log('error' + e);
+      dispatch(toggleListItem(id, updates));
+    });
+  };
+}
 
 // SET_ITEMS
 export const setItems = (items) => ({
