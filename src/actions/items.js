@@ -44,6 +44,15 @@ export const removeItem = ({ id } = {}) => ({
   id
 });
 
+// START_REMOVE_ITEM
+export const startRemoveItem = ({ id } = {}) => {
+  return (dispatch) => {
+    return database.ref(`items/${id}`).remove().then(() => {
+      dispatch(removeItem({ id }));
+    });
+  };
+};
+
 // EDIT_ITEM
 export const editItem = (id, updates) => ({
   type: 'EDIT_ITEM',
