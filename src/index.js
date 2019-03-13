@@ -8,7 +8,7 @@ import { startSetItems } from './actions/items';
 import './index.css';
 import AppRouter from './routers/AppRouter.js'
 import * as serviceWorker from './serviceWorker';
-import './firebase/firebase';
+import { firebase } from './firebase/firebase';
 
 // const now = new moment();
 // console.log(now)
@@ -29,7 +29,13 @@ store.dispatch(startSetItems()).then(() => {
   ReactDOM.render(jsx, document.getElementById('root'));
 });
 
-
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log('logged in');
+  } else {
+    console.log('logged out');
+  }
+});
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
