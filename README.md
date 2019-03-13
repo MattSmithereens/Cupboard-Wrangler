@@ -38,8 +38,9 @@ My wife and I are on entirely different schedules.  Oftentimes chores are done b
 
 ## 
 
-[Github Repository](https://github.com/MattSmithereens/Cupboard-Wrangler)
-[Hosted site](https://cupboard-wrangler.herokuapp.com/)
+**[Github Repository](https://github.com/MattSmithereens/Cupboard-Wrangler)**
+
+**[Heroku site](https://cupboard-wrangler.herokuapp.com/)**
 
 ________________
 
