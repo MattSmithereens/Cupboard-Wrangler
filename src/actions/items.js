@@ -56,3 +56,27 @@ export const toggleListItem = (id, updates) => ({
   id,
   updates
 });
+
+// SET_ITEMS
+export const setItems = (items) => ({
+  type: 'SET_ITEMS',
+  items
+});
+
+// START_SET_ITEMS
+export const startSetItems = () => {
+  return (dispatch) => {
+    return database.ref('items').once('value').then((snapshot) => {
+      const items = [];
+
+      snapshot.forEach((childSnapshot) => {
+        items.push({
+          id: childSnapshot.key,
+          ...childSnapshot.val()
+        })
+      });
+
+      dispatch(setItems(items));
+    });
+  };
+};
