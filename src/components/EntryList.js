@@ -4,7 +4,7 @@ import ItemListFilters from './ItemListFilters';
 import ShoppingList from './ShoppingList';
 
 const EntryList = () => (
-  <div>
+  <div className='top-buffer'>
     <ItemListFilters />
     <ShoppingList />
     <hr />
