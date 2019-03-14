@@ -19,7 +19,7 @@ const Header = () => (
     <div class="mdc-top-app-bar__row">
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
         <NavLink to='/Create' className="material-icons mdc-top-app-bar__navigation-icon"><i class="fas fa-plus"></i></NavLink>
-        <span class="mdc-top-app-bar__title">Cupboard Wrangler</span>
+        <NavLink to='/' exact={true}><span class="mdc-top-app-bar__title white-text">Cupboard Wrangler</span></NavLink>
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
         <NavLink to='/' className="material-icons mdc-top-app-bar__navigation-icon"><i class="fas fa-clipboard-list"></i></NavLink>

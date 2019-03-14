@@ -12,7 +12,7 @@ const ItemListItem = ({
 }) => (
   <div className='row'>
     <div className='item-info-col'>
-      <Link to={`/edit/${id}`}>{description}</Link>&nbsp;
+      <Link className='item-list-link' to={`/edit/${id}`}>{description}</Link>&nbsp;
     </div> 
     <div className='item-date-info'>
       {inCupboard ? shelfLife : ''}

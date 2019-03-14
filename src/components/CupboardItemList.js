@@ -5,7 +5,7 @@ import selectItems from '../selectors/items'
 
 const CupboardItemList = (props) => (
   <div>
-    <p>Cupboard List</p>
+    <h4>Cupboard List</h4>
     <div className='
       itemDiv
       cupboardItemDiv

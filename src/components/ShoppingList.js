@@ -8,7 +8,7 @@ const ShoppingList = (props) => (
   // make ternary operator and only render if items exist in list
 
   <div>
-    <p>Shopping List</p>
+    <h4>Shopping List</h4>
     <div>
       {props.items.map((item) => {
         if (!item.inCupboard) {

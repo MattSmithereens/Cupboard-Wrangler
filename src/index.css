@@ -27,10 +27,10 @@ code {
     monospace;
 }
 
-.isActive {
+/* .isActive {
   font-weight: bold;
-  /* background: #ffba5a; */
-}
+  background: #ffba5a;
+} */
 
 /* .itemDiv {
   width: 400px;
@@ -81,12 +81,18 @@ hr {
 .item-info-col {
   width: 130px;
   font-size: .95em;
+  color: #665c84;
+}
+
+.item-list-link {
+  color: #665c84;
+  
 }
 
 .item-date-info {
   width: 85px;
-  font-size: .8em;
-  color: #665c84;
+  font-size: .75em;
+  color:  #ff7657;
 }
 
 .bought-used-button {
@@ -95,4 +101,11 @@ hr {
 
 .top-buffer {
   margin-top: 65px;
+  display: flexbox;
+}
+
+.white-text {
+  color: #ffffff;
+  text-decoration: #ffffff, none;
+  font-weight: bold;
 }
