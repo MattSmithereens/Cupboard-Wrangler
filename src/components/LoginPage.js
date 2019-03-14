@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import { startLogin } from '../actions/auth'
 
 export const LoginPage = ({ startLogin }) => (
-  <div>
+  <div className='top-buffer'>
     <button
       onClick={startLogin}
       className="
+        top-buffer
         mdc-button
         mdc-button--unelevated
       ">
