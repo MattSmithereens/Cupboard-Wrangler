@@ -12,7 +12,7 @@ export class CreateItem extends React.Component {
   render() {
     return (
       <div className='top-buffer'>
-        <h1>add item</h1>
+        <h1>Add Item</h1>
         <ItemForm
           onSubmit={this.onSubmit}
         />

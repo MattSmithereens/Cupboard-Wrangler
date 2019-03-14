@@ -6,7 +6,7 @@ import { startEditItem, startRemoveItem } from '../actions/items';
 const EditItem = (props) => {
   return (
     <div className='top-buffer'>
-      <h1>edit item</h1>
+      <h1>Edit Item</h1>
       <ItemForm
         item={props.item}
         onSubmit={(item) => {
