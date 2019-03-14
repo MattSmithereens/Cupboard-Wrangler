@@ -12,7 +12,7 @@ const Help = () => (
       <li>User authentication</li>
       <li>Enhanced shelf life attribute that allows a user to enter an item's shelf life in days to indicate when an item is expected to expire as opposed to simply indicating the day it was purchased</li>
       <li>Make design responsive (it's presently hardcoded for mobile)</li>
-      <li>Additional item attributes, such as whether an item is grocery or a household item with a seperate list that displays different attributes (ie, laundry detergent doesn't need a shelf life)</li>
+      <li>Additional item attributes, such as whether an item is grocery or a household item with a seperate list that displays different attributes (ie, laundry detergent is something that will likely end up on a list doesn't need a shelf life)</li>
       <li>Integration of a coupon API to highlight items in the shopping list that are on sale</li>
       <li>Add a 'preferred vendor' attribute to items in the grocery list if a user buys different items from different vendors. ie, if you buy specialty items from New Seasons, standard groceries from Winco and household items from Target only items associated with the corresponding vendor will render in that particular shopping list of the chosen store</li>
       <li>Integration with a recipie API to allow a user to add missing ingredients of selected dishes to the shopping list</li>
