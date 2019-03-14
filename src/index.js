@@ -9,6 +9,7 @@ import './index.css';
 import AppRouter from './routers/AppRouter.js'
 import * as serviceWorker from './serviceWorker';
 import { firebase } from './firebase/firebase';
+// import loading from './img/loading.jpg';
 
 // const now = new moment();
 // console.log(now)
@@ -28,7 +29,16 @@ const jsx = (
   </Provider>
 );
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
+// const loadingPage = (
+//   <div className='
+//     top-buffer
+//     loading-img
+//   '>
+//     <img src={loading}></img>
+//   </div>
+// )
+
+ReactDOM.render(<p className='top-buffer container'>Loading...</p>, document.getElementById('root'));
 
 store.dispatch(startSetItems()).then(() => {
   ReactDOM.render(jsx, document.getElementById('root'));
