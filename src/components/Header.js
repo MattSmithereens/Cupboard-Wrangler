@@ -2,19 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => (
-  // <header>
-  //   <div className='flex-box-container'>
-  //     <div className='title container'><h3>Cupboard Wrangler!</h3></div>
-  //     <div className='options container'>
-  //       <p>
-  //         <NavLink to='/Create' activeClassName='isActive'>Add Item</NavLink> |
-  //       <NavLink to='/' activeClassName='isActive' exact={true}>Shopping List</NavLink> |
-  //       <NavLink to='/About' activeClassName='isActive'>About</NavLink>
-  //       </p>
-  //     </div>
-  //   </div>
-  // </header>
-
   <header className="mdc-top-app-bar mdc-top-app-bar--short">
     <div className="mdc-top-app-bar__row">
       <section className="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
@@ -27,8 +14,6 @@ const Header = () => (
       </section>
     </div>
   </header>
-
-
 )
 
 export default Header;

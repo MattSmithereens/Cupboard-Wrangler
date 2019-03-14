@@ -69,37 +69,24 @@ export const startEditItem = (id, updates) => {
   };
 }
 
+// TOGGLE_LIST_ITEM
 export const toggleListItem = (id, updates) => ({
   type: 'TOGGLE_LIST_ITEM',
   id,
   updates
 });
 
+// START_TOGGLE_LIST_ITEM
 export const startToggleListItem = (id, updates) => {
   return (dispatch) => {
-    console.log(`Id in action: ${id}`);
     return database.ref(`items/${id}/inCupboard`).set(updates = !updates).then(() => {
       dispatch(toggleListItem(id, updates));
-      console.log('updates (inCupboard) value = ' + updates);
     }).catch((e) => {
       console.log('error' + e);
       dispatch(toggleListItem(id, updates));
     });
   };
 }
-
-// export const startToggleListItem = (id, updates) => {
-//   return async (dispatch) => {
-//     try {
-//       await database.ref(`items/${id}/inCupboard`).set(updates);
-//       dispatch(toggleListItem(id, updates));
-//     }
-//     catch (e) {
-//       console.log('error' + e);
-//       dispatch(toggleListItem(id, updates));
-//     }
-//   };
-// }
 
 // SET_ITEMS
 export const setItems = (items) => ({
