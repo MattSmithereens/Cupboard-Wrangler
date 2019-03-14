@@ -22,7 +22,7 @@ export default (state = itemsReducerDefaultState, action) => {
       });
     case 'TOGGLE_LIST_ITEM':
       return state.map(item =>
-        (item.id === action.id.id)
+        (item.id === action.id)
           ? { ...item, inCupboard: !item.inCupboard }
           : item
       )

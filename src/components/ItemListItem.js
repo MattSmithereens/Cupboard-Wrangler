@@ -25,8 +25,9 @@ const ItemListItem = ({
           mdc-button--dense
         "
         onClick={() => {
-          dispatch(toggleListItem({ id }));  // works, but doesn't update DB
-          // ispatch(startToggleListItem({ id }));
+          // dispatch(toggleListItem(id));  // works, but doesn't update DB
+          console.log(`Id in onClick: ${id}`);
+          dispatch(startToggleListItem(id, inCupboard));
         }}
         >
         <span className="

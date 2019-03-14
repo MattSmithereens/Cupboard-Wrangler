@@ -64,7 +64,6 @@ export const editItem = (id, updates) => ({
 export const startEditItem = (id, updates) => {
   return (dispatch) => {
     return database.ref(`items/${id}`).update(updates).then(() => {
-      console.log(updates);
       dispatch(editItem(id, updates));
     });
   };
@@ -78,8 +77,10 @@ export const toggleListItem = (id, updates) => ({
 
 export const startToggleListItem = (id, updates) => {
   return (dispatch) => {
-    return database.ref(`items/${id}/inCupboard`).set(updates).then(() => {
+    console.log(`Id in action: ${id}`);
+    return database.ref(`items/${id}/inCupboard`).set(updates = !updates).then(() => {
       dispatch(toggleListItem(id, updates));
+      console.log('updates (inCupboard) value = ' + updates);
     }).catch((e) => {
       console.log('error' + e);
       dispatch(toggleListItem(id, updates));
