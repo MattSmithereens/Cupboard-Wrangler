@@ -15,8 +15,8 @@ export const startAddItem = (itemData = {}) => {
     const {
       description = '',
       note = '',
-      amount = 1, // quick fix; left blank throws NaN error
-      shelfLife = new moment().add(0, 'day').format('L'),  //now.add(1, 'day').format('l'), //adding time cumulatively to subsequent items
+      amount = '', // quick fix; left blank throws NaN error
+      shelfLife = new moment().add(amount, 'day').format('L'),  //now.add(1, 'day').format('l'), //adding time cumulatively to subsequent items
       inCupboard = false,
       isGrocery = true
     } = itemData;

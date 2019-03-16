@@ -13,7 +13,7 @@ export default class ItemForm extends React.Component {
     this.state = {
       description: props.item ? props.item.description : '',
       note: props.item ? props.item.note : '',
-      amount: props.item ? (props.item.amount).toString() : 1, // defaulting to 1, but renders 1 in create page
+      amount: props.item ? (props.item.amount).toString() : '', // defaulting to 1, but renders 1 in create page
       //inCupboard: props.item ? props.item.inCupboard : '',
       error: '',
     };
@@ -47,6 +47,8 @@ export default class ItemForm extends React.Component {
 
     if (!this.state.description) {
       this.setState(() => ({ error: 'Please provide an item name' }));
+    } else if (!this.state.amount) {
+      this.setState(() => ({ error: 'Please provide a shelf life duration'}))
     } else {
       this.setState(() => ({ error: '' }));
       this.props.onSubmit({
@@ -86,7 +88,7 @@ export default class ItemForm extends React.Component {
               className="mdc-text-field__input" 
               aria-label="Label" 
               type='number'
-              placeholder='Quantity (cannot be left blank)'
+              placeholder='Shelf life duration (in days)'
               value={this.state.amount}
               onChange={this.onAmountChange}
             />

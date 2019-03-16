@@ -13,6 +13,7 @@ export default (state = filtersReducerDefaultState, action) => {
         text: action.text
       };
     case 'SORT_BY_DATE':
+      console.log('sort by date fired');
       return {
         ...state,
         sortBy: 'date'
