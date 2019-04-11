@@ -9,7 +9,7 @@ import './index.css';
 import AppRouter from './routers/AppRouter.js'
 import * as serviceWorker from './serviceWorker';
 import { firebase } from './firebase/firebase';
-// import loading from './img/loading.jpg';
+// import Loading from './img/';
 
 // const now = new moment();
 // console.log(now)
@@ -34,7 +34,7 @@ const jsx = (
 //     top-buffer
 //     loading-img
 //   '>
-//     <img src={loading}></img>
+//     <img src={Loading}></img>
 //   </div>
 // )
 
