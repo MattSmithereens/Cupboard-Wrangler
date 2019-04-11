@@ -25,7 +25,6 @@ const ItemListItem = ({
           mdc-button--dense
         "
         onClick={() => {
-          console.log(`Id in onClick: ${id}`);
           dispatch(startToggleListItem(id, inCupboard));
         }}
         >
