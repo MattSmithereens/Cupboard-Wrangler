@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const itemsReducerDefaultState = [];
 
 export default (state = itemsReducerDefaultState, action) => {
@@ -23,7 +25,7 @@ export default (state = itemsReducerDefaultState, action) => {
     case 'TOGGLE_LIST_ITEM':
       return state.map(item =>
         (item.id === action.id)
-          ? { ...item, inCupboard: !item.inCupboard }
+          ? { ...item, inCupboard: !item.inCupboard, shelfLife: new moment().add(item.amount, 'day').format('L') }
           : item
       )
     case 'SET_ITEMS':

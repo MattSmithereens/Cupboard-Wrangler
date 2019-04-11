@@ -80,6 +80,7 @@ export const toggleListItem = (id, updates) => ({
 export const startToggleListItem = (id, updates) => {
   return (dispatch) => {
     return database.ref(`items/${id}/inCupboard`).set(updates = !updates).then(() => {
+      console.log(updates);
       dispatch(toggleListItem(id, updates));
     }).catch((e) => {
       console.log('error' + e);
