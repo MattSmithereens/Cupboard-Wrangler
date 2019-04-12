@@ -112,7 +112,7 @@ export default class ItemForm extends React.Component {
             </div>
           </div>
           <br />
-          <p className='small-text'>items with notes are rendered with a <span className='red'>*</span> in the list</p>
+          <p className='small-text'>Annoted items are indicated with: <span className='red'>*</span></p>
           <br />
           <button
             className="
