@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
-// import moment from 'moment';
 import { startSetItems } from './actions/items';
 // import getVisibleItems from './selectors/items';
 import './index.css';
@@ -10,11 +9,6 @@ import AppRouter from './routers/AppRouter.js'
 import * as serviceWorker from './serviceWorker';
 import { firebase } from './firebase/firebase';
 // import loading from './img/loading.jpg';
-
-// const now = new moment();
-// console.log(now)
-// 1 day is 86400000 ms
-// const later = new moment().add(1, 'days').format('L');
 
 const store = configureStore();
 

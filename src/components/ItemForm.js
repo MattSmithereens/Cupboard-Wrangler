@@ -13,8 +13,7 @@ export default class ItemForm extends React.Component {
     this.state = {
       description: props.item ? props.item.description : '',
       note: props.item ? props.item.note : '',
-      amount: props.item ? (props.item.amount).toString() : 1, // defaulting to 1, but renders 1 in create page
-      //inCupboard: props.item ? props.item.inCupboard : '',
+      amount: props.item ? (props.item.amount).toString() : '',
       error: '',
     };
   }
@@ -28,12 +27,6 @@ export default class ItemForm extends React.Component {
     const note = e.target.value;
     this.setState(() => ({ note }));
   };
-
-  // get rid of once action is working
-  // onInCupboardChange = (e) => {
-  //   const inCupboard = e.target.value;
-  //   this.setState(() => ({ inCupboard: !inCupboard }));
-  // };
 
   onAmountChange = (e) => {
     const amount = e.target.value;
@@ -88,7 +81,8 @@ export default class ItemForm extends React.Component {
               className="mdc-text-field__input" 
               aria-label="Label" 
               type='number'
-              placeholder='Quantity (cannot be left blank)'
+              max='365'
+              placeholder='Shelf Life (in days)'
               value={this.state.amount}
               onChange={this.onAmountChange}
             />
@@ -104,7 +98,7 @@ export default class ItemForm extends React.Component {
               id="textarea" 
               className="mdc-text-field__input" 
               placeholder='Item notes (optional)'
-              rows="7" 
+              rows="4" 
               cols="36"
               value={this.state.note}
               onChange={this.onNoteChange}>
@@ -130,71 +124,3 @@ export default class ItemForm extends React.Component {
     )
   }
 }
-
-
-
-
-
-// <input          
-
-// className="mdc-text-field"
-// type='text'
-// placeholder='Descritption'
-// autoFocus
-// value={this.state.description}
-// onChange={this.onDescriptionChange}
-// />
-// <br />
-// <input
-//   type='number'
-//   placeholder='Quantity'
-//   value={this.state.amount}
-//   onChange={this.onAmountChange}
-// />
-// <br />
-
-// <input
-// type='number'
-// placeholder='Shelf Life; not wired up yet'
-// />
-// <br />
-
-// <input
-// type='text'
-// placeholder='In Cupboard'
-// value={this.state.inCupboard}
-// onChange={this.onInCupboardChange}
-// />
-// <br />
-// <textarea 
-// placeholder='Item notes (optional)'
-// value={this.state.note}
-// onChange={this.onNoteChange}
-// >
-// </textarea>
-// <br />
-
-
-// janky ass toggle checkbox
-// <br />
-// <input
-//   // {this.state.inCupboard ? 'checked' : ''}
-//   type='checkbox'
-//   value={this.state.inCupboard}
-//   onChange={this.onInCupboardChange}
-// />
-// <br />
-
-// <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
-// <input 
-//   class="mdc-text-field__input" 
-//   aria-label="Label" 
-//   type='text'
-//   value={this.state.inCupboard}
-//   onChange={this.onInCupboardChange}
-// />
-// <div class="mdc-notched-outline">
-//   <div class="mdc-notched-outline__leading"></div>
-//   <div class="mdc-notched-outline__trailing"></div>
-// </div>
-// </div>
