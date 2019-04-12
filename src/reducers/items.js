@@ -28,7 +28,6 @@ export default (state = itemsReducerDefaultState, action) => {
           ? {
             ...item,
             inCupboard: !item.inCupboard,
-            // reset shelfLife when item is toggled
             shelfLife: new moment().add(item.amount, 'day').format('L')
           }
           : item

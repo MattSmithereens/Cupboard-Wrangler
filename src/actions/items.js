@@ -1,9 +1,5 @@
-//import uuid from 'uuid';
 import moment from 'moment';
 import database from '../firebase/firebase';
-
-//let amount = 0 //need to import value during item creation and change description to reflect
-//let now = new moment().add(amount, 'day').format('L');
 
 export const addItem = (item) => ({
   type: 'ADD_ITEM',
@@ -77,14 +73,16 @@ export const toggleListItem = (id, updates) => ({
 });
 
 // START_TOGGLE_LIST_ITEM
-export const startToggleListItem = (id, updates) => {
+export const startToggleListItem = (id, inCupboard, amount, shelfLife) => {
   return (dispatch) => {
-    return database.ref(`items/${id}/inCupboard`).set(updates = !updates).then(() => {
-      console.log(updates);
-      dispatch(toggleListItem(id, updates));
+    return database.ref(`items/${id}`).update({
+      inCupboard: !inCupboard,
+      shelfLife: new moment().add(amount, 'day').format('L'),
+    }).then(() => {
+      dispatch(toggleListItem(id, inCupboard));
     }).catch((e) => {
       console.log('error' + e);
-      dispatch(toggleListItem(id, updates));
+      dispatch(toggleListItem(id, inCupboard));
     });
   };
 }
