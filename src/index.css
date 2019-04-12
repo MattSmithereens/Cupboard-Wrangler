@@ -119,3 +119,9 @@ hr {
 .red {
   color: #ff7657;
 }
+
+/* not wokring yet 
+.row.nth-child(even) {
+  background: #CCC
+}
+*/

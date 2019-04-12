@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { removeItem } from '../actions/items'
 
 const ItemListItem = ({ dispatch, id, description, shelfLife, amount, createdAt }) => (
-  <li>
+  <li className='item-li'>
     <Link to={`/edit/${id}`}>{description}</Link>&nbsp;
     {shelfLife}&nbsp;
     {amount}
