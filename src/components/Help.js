@@ -10,7 +10,7 @@ const Help = () => (
     <p>Planned features include:</p>
     <ul>
       <li>User authentication</li>
-      <li>Enhanced shelf life attribute that allows a user to enter an item's shelf life in days to indicate when an item is expected to expire as opposed to simply indicating the day it was purchased</li>
+      <li><strike>Enhanced shelf life attribute that allows a user to enter an item's shelf life in days to indicate when an item is expected to expire as opposed to simply indicating the day it was purchased</strike> <span class='red'>Added 4/11/19</span></li>
       <li>Make design responsive (it's presently hardcoded for mobile)</li>
       <li>Additional item attributes, such as whether an item is grocery or a household item with a seperate list that displays different attributes (ie, laundry detergent is something that will likely end up on a list but it doesn't need a best by date notification)</li>
       <li>Integration of a coupon API to highlight items in the shopping list that are on sale</li>
