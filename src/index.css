@@ -120,6 +120,10 @@ hr {
   color: #ff7657;
 }
 
+.small-text {
+  font-size: .85em;
+}
+
 /* not wokring yet 
 .row.nth-child(even) {
   background: #CCC
