@@ -26,7 +26,6 @@ const ItemListItem = ({
           mdc-button--dense
         "
         onClick={() => {
-          //dispatch(startToggleListItem(id, inCupboard));
           dispatch(startToggleListItem(id, inCupboard, amount));
         }}
         >
