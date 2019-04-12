@@ -27,7 +27,7 @@ const ItemListItem = ({
         "
         onClick={() => {
           //dispatch(startToggleListItem(id, inCupboard));
-          dispatch(startToggleListItem(id, inCupboard, amount, shelfLife));
+          dispatch(startToggleListItem(id, inCupboard, amount));
         }}
         >
         <span className="

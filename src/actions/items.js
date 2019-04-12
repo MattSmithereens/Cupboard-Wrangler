@@ -73,7 +73,7 @@ export const toggleListItem = (id, updates) => ({
 });
 
 // START_TOGGLE_LIST_ITEM
-export const startToggleListItem = (id, inCupboard, amount, shelfLife) => {
+export const startToggleListItem = (id, inCupboard, amount) => {
   return (dispatch) => {
     return database.ref(`items/${id}`).update({
       inCupboard: !inCupboard,
