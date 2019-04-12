@@ -79,7 +79,10 @@ export const toggleListItem = (id, updates) => ({
 // START_TOGGLE_LIST_ITEM
 export const startToggleListItem = (id, inCupboard, amount, shelfLife) => {
   return (dispatch) => {
-    return database.ref(`items/${id}/inCupboard`).set(inCupboard = !inCupboard).then(() => {
+    return database.ref(`items/${id}`).update({
+      inCupboard: !inCupboard,
+      shelfLife: new moment().add(amount, 'day').format('L'),
+    }).then(() => {
       dispatch(toggleListItem(id, inCupboard));
     }).catch((e) => {
       console.log('error' + e);
@@ -87,18 +90,6 @@ export const startToggleListItem = (id, inCupboard, amount, shelfLife) => {
     });
   };
 }
-
-// DOESN'T UPDATE SHELFLIFE; JUST TOGGLES LIST
-// export const startToggleListItem = (id, inCupboard, amount, shelfLife) => {
-//   return (dispatch) => {
-//     return database.ref(`items/${id}/inCupboard`).set(inCupboard = !inCupboard).then(() => {
-//       dispatch(toggleListItem(id, inCupboard));
-//     }).catch((e) => {
-//       console.log('error' + e);
-//       dispatch(toggleListItem(id, inCupboard));
-//     });
-//   };
-// }
 
 // SET_ITEMS
 export const setItems = (items) => ({
