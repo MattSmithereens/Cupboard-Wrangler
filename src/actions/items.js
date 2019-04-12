@@ -15,8 +15,8 @@ export const startAddItem = (itemData = {}) => {
     const {
       description = '',
       note = '',
-      amount = 1, // quick fix; left blank throws NaN error
-      shelfLife = new moment().add(0, 'day').format('L'),  //now.add(1, 'day').format('l'), //adding time cumulatively to subsequent items
+      amount = '',
+      shelfLife = new moment().add(0, 'day').format('L'),
       inCupboard = false,
       isGrocery = true
     } = itemData;
@@ -77,16 +77,28 @@ export const toggleListItem = (id, updates) => ({
 });
 
 // START_TOGGLE_LIST_ITEM
-export const startToggleListItem = (id, updates) => {
+export const startToggleListItem = (id, inCupboard, amount, shelfLife) => {
   return (dispatch) => {
-    return database.ref(`items/${id}/inCupboard`).set(updates = !updates).then(() => {
-      dispatch(toggleListItem(id, updates));
+    return database.ref(`items/${id}/inCupboard`).set(inCupboard = !inCupboard).then(() => {
+      dispatch(toggleListItem(id, inCupboard));
     }).catch((e) => {
       console.log('error' + e);
-      dispatch(toggleListItem(id, updates));
+      dispatch(toggleListItem(id, inCupboard));
     });
   };
 }
+
+// DOESN'T UPDATE SHELFLIFE; JUST TOGGLES LIST
+// export const startToggleListItem = (id, inCupboard, amount, shelfLife) => {
+//   return (dispatch) => {
+//     return database.ref(`items/${id}/inCupboard`).set(inCupboard = !inCupboard).then(() => {
+//       dispatch(toggleListItem(id, inCupboard));
+//     }).catch((e) => {
+//       console.log('error' + e);
+//       dispatch(toggleListItem(id, inCupboard));
+//     });
+//   };
+// }
 
 // SET_ITEMS
 export const setItems = (items) => ({

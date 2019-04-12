@@ -28,7 +28,7 @@ export default (state = itemsReducerDefaultState, action) => {
           ? {
             ...item,
             inCupboard: !item.inCupboard,
-            // reset shelfLife when item is toggled
+            // reset shelfLife when item is toggled, not updating database yet
             shelfLife: new moment().add(item.amount, 'day').format('L')
           }
           : item

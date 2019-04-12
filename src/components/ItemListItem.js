@@ -6,6 +6,7 @@ import { startToggleListItem } from '../actions/items';
 const ItemListItem = ({ 
   dispatch, 
   id, 
+  amount,
   description,
   inCupboard,
   shelfLife
@@ -25,8 +26,8 @@ const ItemListItem = ({
           mdc-button--dense
         "
         onClick={() => {
-          console.log(`Id in onClick: ${id}`);
-          dispatch(startToggleListItem(id, inCupboard));
+          //dispatch(startToggleListItem(id, inCupboard));
+          dispatch(startToggleListItem(id, inCupboard, amount, shelfLife));
         }}
         >
         <span className="
