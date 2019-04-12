@@ -1,9 +1,5 @@
-//import uuid from 'uuid';
 import moment from 'moment';
 import database from '../firebase/firebase';
-
-//let amount = 0 //need to import value during item creation and change description to reflect
-//let now = new moment().add(amount, 'day').format('L');
 
 export const addItem = (item) => ({
   type: 'ADD_ITEM',
