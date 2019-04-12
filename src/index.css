@@ -115,3 +115,9 @@ hr {
   height: 200px;
   margin: auto;  
 }
+
+/* not wokring yet 
+.row.nth-child(even) {
+  background: #CCC
+}
+*/

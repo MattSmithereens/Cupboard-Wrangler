@@ -2,11 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ItemListItem from './ItemListItem';
 import selectItems from '../selectors/items'
+// import { sortByDate } from '../actions/filters'
 
 const CupboardItemList = (props) => (
   <div>
     <h4>Cupboard List</h4>
-    <div className='
+    <div
+    className='
       itemDiv
       cupboardItemDiv
     '>
