@@ -9,6 +9,7 @@ const EntryList = () => (
     <ShoppingList />
     <hr />
     <CupboardItemList />
+    <br />
   </div>
 );
 

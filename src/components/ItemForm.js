@@ -112,6 +112,8 @@ export default class ItemForm extends React.Component {
             </div>
           </div>
           <br />
+          <p className='small-text'>items with notes are rendered with a <span className='red'>*</span> in the list</p>
+          <br />
           <button
             className="
             mdc-button 

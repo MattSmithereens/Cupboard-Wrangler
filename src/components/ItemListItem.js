@@ -5,7 +5,8 @@ import { startToggleListItem } from '../actions/items';
 
 const ItemListItem = ({ 
   dispatch, 
-  id, 
+  id,
+  note, 
   amount,
   description,
   inCupboard,
@@ -13,7 +14,11 @@ const ItemListItem = ({
 }) => (
   <div className='row'>
     <div className='item-info-col'>
-      <Link className='item-list-link' to={`/edit/${id}`}>{description}</Link>&nbsp;
+      <Link 
+        className='item-list-link' 
+        // render red asterisk if item has notes
+        to={`/edit/${id}`}>{description}<span className='red'>{note ? '*' : ''}</span>
+      </Link>&nbsp;
     </div> 
     <div className='item-date-info'>
       {inCupboard ? shelfLife : ''}
