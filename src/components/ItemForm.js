@@ -40,6 +40,10 @@ export default class ItemForm extends React.Component {
 
     if (!this.state.description) {
       this.setState(() => ({ error: 'Please provide an item name' }));
+    } else if ((this.state.description).includes('mustache')) {
+      this.setState(() => ({ error: 'No mustaches, please' })) 
+    } else if ((this.state.description).includes('dildo')) {
+      this.setState(() => ({ error: 'Stop being a jackass' }))   
     } else if (!this.state.amount) {
       this.setState(() => ({ error: 'Please provide a shelf life duration'}))
     } else {
