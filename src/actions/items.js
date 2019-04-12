@@ -11,8 +11,8 @@ export const startAddItem = (itemData = {}) => {
     const {
       description = '',
       note = '',
-      amount = '', // quick fix; left blank throws NaN error
-      shelfLife = new moment().add(amount, 'day').format('L'),  //now.add(1, 'day').format('l'), //adding time cumulatively to subsequent items
+      amount = '',
+      shelfLife = new moment().add(amount, 'day').format('L'),
       inCupboard = false,
       isGrocery = true
     } = itemData;
@@ -40,7 +40,7 @@ export const removeItem = ({ id } = {}) => ({
   id
 });
 
-// START_REMOVE_ITEM
+// START_REMOVE_ITEM (update DB)
 export const startRemoveItem = ({ id } = {}) => {
   return (dispatch) => {
     return database.ref(`items/${id}`).remove().then(() => {
@@ -81,7 +81,7 @@ export const startToggleListItem = (id, inCupboard, amount) => {
     }).then(() => {
       dispatch(toggleListItem(id, inCupboard));
     }).catch((e) => {
-      console.log('error' + e);
+      console.log('error = ' + e);
       dispatch(toggleListItem(id, inCupboard));
     });
   };
