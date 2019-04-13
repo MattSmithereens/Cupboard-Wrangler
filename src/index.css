@@ -53,6 +53,16 @@ code {
   align-items: center;
 }
 
+.bad-now {
+  margin-right: 3px;
+  color: red;
+}
+
+.bad-soon {
+  margin-right: 3px;
+  color: rgb(255, 208, 0);
+}
+
 .title {
   display: flex;
   background-color: #ffba5a
