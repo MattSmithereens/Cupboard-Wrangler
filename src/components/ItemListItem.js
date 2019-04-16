@@ -6,9 +6,6 @@ import moment from 'moment';
 
 const now = new moment().format('L');
 const soon = new moment().add(2, 'day').format('L');
-console.log(soon);
-
-
 const ItemListItem = ({ 
   dispatch, 
   id,

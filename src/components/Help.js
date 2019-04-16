@@ -11,6 +11,8 @@ const Help = () => (
     <ul>
       <li>User authentication</li>
       <li><strike>Enhanced shelf life attribute that allows a user to enter an item's shelf life in days to indicate when an item is expected to expire as opposed to simply indicating the day it was purchased</strike> <span className='red'>Added 4/11/19</span></li>
+      <li><strike>Indicate that an item with notes renders with a red asterisk</strike> <span className='red'>Added 4/11/19</span></li>
+      <li><strike>Sort the cupboard items by ascending shelf life.  Any items past their due date render with a <i className="fas fa-exclamation-triangle bad-now"></i> next to them while items approaching their due date are indicated with a <i className="fas fa-exclamation-triangle bad-soon"></i></strike> <span className='red'>Added 4/13/19</span></li>
       <li>Make design responsive (it's presently hardcoded for mobile)</li>
       <li>Additional item attributes, such as whether an item is grocery or a household item with a seperate list that displays different attributes (ie, laundry detergent is something that will likely end up on a list but it doesn't need a best by date notification)</li>
       <li>Integration of a coupon API to highlight items in the shopping list that are on sale</li>
