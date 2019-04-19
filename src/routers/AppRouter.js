@@ -7,7 +7,7 @@ import EditItem from '../components/EditItem.js';
 import Help from '../components/Help.js';
 import Error404 from '../components/Error404.js';
 import CupboardItemList from '../components/CupboardItemList.js';
-import LoginPage from '../components/LoginPage'
+import LoginPage from '../components/LoginPage.js'
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -15,7 +15,8 @@ const AppRouter = () => (
       <Header />
       <div className='container'>
         <Switch>
-          <Route path='/' component={EntryList} exact={true} />
+          <Route path='/' component={LoginPage} exact={true} />
+          <Route path='/Dashboard' component={EntryList} />
           <Route path='/Cupboard' component={CupboardItemList} />
           <Route path='/Create' component={CreateItem} />
           <Route path='/Edit/:id' component={EditItem} />
