@@ -8,7 +8,7 @@ export const Header = ({ startLogout }) => (
     <div className="mdc-top-app-bar__row">
       <section className="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
         <NavLink to='/Create' className="material-icons mdc-top-app-bar__navigation-icon"><i className="fas fa-plus"></i></NavLink>
-        <NavLink to='/Dashboard' exact={true}><span className="mdc-top-app-bar__title white-text">Cupboard Wrangler</span></NavLink>
+        <NavLink to='/Dashboard'><span className="mdc-top-app-bar__title white-text">Cupboard Wrangler</span></NavLink>
       </section>
       <section className="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
         <NavLink to='/Dashboard' className="material-icons mdc-top-app-bar__navigation-icon"><i className="fas fa-clipboard-list"></i></NavLink>

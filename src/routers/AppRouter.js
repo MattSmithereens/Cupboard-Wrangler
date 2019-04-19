@@ -9,6 +9,7 @@ import Error404 from '../components/Error404.js';
 import CupboardItemList from '../components/CupboardItemList.js';
 import LoginPage from '../components/LoginPage.js';
 import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 export const history = createHistory();
 
@@ -16,14 +17,13 @@ const AppRouter = () => (
   <Router history={history}>
     <div className='container'>
       <Switch>
-        <Route path='/' component={LoginPage} exact={true} />
+        <PublicRoute path='/' component={LoginPage} exact={true} />
         <PrivateRoute path='/Dashboard' component={EntryList} />
         <PrivateRoute path='/Cupboard' component={CupboardItemList} />
         <PrivateRoute path='/Create' component={CreateItem} />
         <PrivateRoute path='/Edit/:id' component={EditItem} />
         <PrivateRoute path='/Help' component={Help} />
         <Route path='/About' component={Help} />
-        <Route path='/Login' component={LoginPage} />
         <Route component={Error404} />
       </Switch>
     </div>
