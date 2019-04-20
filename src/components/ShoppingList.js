@@ -11,7 +11,7 @@ const ShoppingList = (props) => (
   <div>
     <h4>Shopping List</h4>
     <div>
-      <NavLink to='/Create'>{props.items.length === 0 ? 'Let\'s start adding items to your list!' : ''}</NavLink>
+      <NavLink to='/Create' className='red'>{props.items.length === 0 ? 'Let\'s start adding items to your list!' : ''}</NavLink>
       {props.items.map((item) => {
         if (!item.inCupboard) {
           return <ItemListItem key={item.id} {...item} />
