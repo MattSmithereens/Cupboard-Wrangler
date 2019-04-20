@@ -7,7 +7,8 @@ export const addItem = (item) => ({
 });
 
 export const startAddItem = (itemData = {}) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     const {
       description = '',
       note = '',
@@ -25,7 +26,7 @@ export const startAddItem = (itemData = {}) => {
       isGrocery
     };
 
-    database.ref('items').push(item).then((ref) => {
+    database.ref(`users/${uid}/items`).push(item).then((ref) => {
       dispatch(addItem({
         id: ref.key,
         ...item
@@ -42,8 +43,9 @@ export const removeItem = ({ id } = {}) => ({
 
 // START_REMOVE_ITEM (update DB)
 export const startRemoveItem = ({ id } = {}) => {
-  return (dispatch) => {
-    return database.ref(`items/${id}`).remove().then(() => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database.ref(`users/${uid}/items/${id}`).remove().then(() => {
       dispatch(removeItem({ id }));
     });
   };
@@ -58,8 +60,9 @@ export const editItem = (id, updates) => ({
 
 // START_EDIT_ITEM
 export const startEditItem = (id, updates) => {
-  return (dispatch) => {
-    return database.ref(`items/${id}`).update(updates).then(() => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database.ref(`users/${uid}/items/${id}`).update(updates).then(() => {
       dispatch(editItem(id, updates));
     });
   };
@@ -74,8 +77,9 @@ export const toggleListItem = (id, updates) => ({
 
 // START_TOGGLE_LIST_ITEM
 export const startToggleListItem = (id, inCupboard, amount) => {
-  return (dispatch) => {
-    return database.ref(`items/${id}`).update({
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database.ref(`users/${uid}/items/${id}`).update({
       inCupboard: !inCupboard,
       shelfLife: new moment().add(amount, 'day').format('L')
     }).then(() => {
@@ -95,8 +99,9 @@ export const setItems = (items) => ({
 
 // START_SET_ITEMS
 export const startSetItems = () => {
-  return (dispatch) => {
-    return database.ref('items').once('value').then((snapshot) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database.ref(`users/${uid}/items`).once('value').then((snapshot) => {
       const items = [];
 
       snapshot.forEach((childSnapshot) => {

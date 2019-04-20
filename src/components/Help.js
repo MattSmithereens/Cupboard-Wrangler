@@ -9,7 +9,7 @@ const Help = () => (
     <p>This app is still in beta, but fixes, new features and a new layout (yikes) are in the works.</p>
     <p>Planned features include:</p>
     <ul>
-      <li>User authentication</li>
+      <li><strike>User authentication</strike> <span className='red'>Added 4/19/19</span></li>
       <li><strike>Enhanced shelf life attribute that allows a user to enter an item's shelf life in days to indicate when an item is expected to expire as opposed to simply indicating the day it was purchased</strike> <span className='red'>Added 4/11/19</span></li>
       <li><strike>Indicate that an item with notes renders with a red asterisk</strike> <span className='red'>Added 4/11/19</span></li>
       <li><strike>Sort the cupboard items by ascending shelf life.  Any items past their due date render with a <i className="fas fa-exclamation-triangle bad-now"></i> next to them while items approaching their due date are indicated with a <i className="fas fa-exclamation-triangle bad-soon"></i></strike> <span className='red'>Added 4/13/19</span></li>

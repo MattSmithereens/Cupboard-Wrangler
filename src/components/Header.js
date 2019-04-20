@@ -11,9 +11,8 @@ export const Header = ({ startLogout }) => (
         <NavLink to='/Dashboard'><span className="mdc-top-app-bar__title white-text">Cupboard Wrangler</span></NavLink>
       </section>
       <section className="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <NavLink to='/Dashboard' className="material-icons mdc-top-app-bar__navigation-icon"><i className="fas fa-clipboard-list"></i></NavLink>
         <NavLink to='/About' className="material-icons mdc-top-app-bar__navigation-icon" alt="About"><i className="fas fa-question"></i></NavLink>
-        <button onClick={startLogout}>Logout</button>
+        <NavLink to='/' onClick={startLogout} className="material-icons mdc-top-app-bar__navigation-icon"><i className="fas fa-sign-out-alt"></i></NavLink>
       </section>
     </div>
   </header>
