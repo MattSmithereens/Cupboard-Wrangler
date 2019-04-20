@@ -11,8 +11,11 @@
 # production
 /build
 
-# quarantined/test components
+# hide API key
 /src/config.js
+/src/firebase/firebase.js
+
+# quarantined/test components
 /src/playground/
 /src/components/RemoveButton.js
 /src/components/ItemListItem-withDeleteButton.js
@@ -28,3 +31,4 @@ index2.css
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+src/firebase/firebase.js

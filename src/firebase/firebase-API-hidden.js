@@ -1,7 +1,8 @@
 import * as firebase from 'firebase';
+import API_KEY from '../config';
 
 const config = {
-  apiKey: 'AIzaSyBKKGzEcY_ZiVih6SjySzw0zSOBUKcHdAw',
+  apiKey: API_KEY,
   authDomain: "cupboard-wrangler.firebaseapp.com",
   databaseURL: "https://cupboard-wrangler.firebaseio.com",
   projectId: "cupboard-wrangler",
@@ -12,7 +13,7 @@ const config = {
 firebase.initializeApp(config);
 
 const database = firebase.database();
-const googleAuthProvider = new firebase.auth.GoogleAuthProvider(); // useless unless Google is checked off in firebase/auth dashboard
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 export { firebase, googleAuthProvider, database as default };
 
