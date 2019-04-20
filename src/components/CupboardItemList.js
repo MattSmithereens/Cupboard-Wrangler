@@ -6,7 +6,7 @@ import selectItems from '../selectors/items'
 
 const CupboardItemList = (props) => (
   <div>
-    <h4>Cupboard List</h4>
+    <h4>{props.items.length === 0 ? '' : 'Cupboard List'}</h4>
     <div
     className='
       itemDiv
