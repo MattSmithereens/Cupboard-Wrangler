@@ -5,9 +5,6 @@ import ItemListItem from './ItemListItem';
 import selectItems from '../selectors/items'
 
 const ShoppingList = (props) => (
-
-  // make ternary operator and only render if items exist in list
-
   <div>
     <h4>Shopping List</h4>
     <div>

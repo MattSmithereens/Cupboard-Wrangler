@@ -44,6 +44,7 @@ export default class ItemForm extends React.Component {
       this.setState(() => ({ error: 'No mustaches, please' })) 
     } else if (
       (this.state.description).includes('fuck') ||
+      (this.state.description).includes('butt ') ||
       (this.state.description).includes('shit') ||
       (this.state.description).includes('piss') ||
       (this.state.description).includes('cunt') ||
@@ -90,6 +91,7 @@ export default class ItemForm extends React.Component {
               className="mdc-text-field__input" 
               aria-label="Label" 
               type='number'
+              min='0'
               max='365'
               placeholder='Shelf Life (in days)'
               value={this.state.amount}

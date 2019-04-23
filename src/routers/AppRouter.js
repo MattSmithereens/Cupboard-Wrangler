@@ -23,7 +23,7 @@ const AppRouter = () => (
         <PrivateRoute path='/Create' component={CreateItem} />
         <PrivateRoute path='/Edit/:id' component={EditItem} />
         <PrivateRoute path='/Help' component={Help} />
-        <Route path='/About' component={Help} />
+        <PrivateRoute path='/About' component={Help} />
         <Route component={Error404} />
       </Switch>
     </div>

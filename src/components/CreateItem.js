@@ -26,20 +26,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(undefined, mapDispatchToProps)(CreateItem);
-
-
-// old code TOTALLY FUNCTIONAL
-
-// const CreateItem = (props) => (
-//   <div>
-//     <h1>add item</h1>
-//     <ItemForm
-//       onSubmit={(item) => {
-//         props.dispatch(addItem(item));
-//         props.history.push('/');
-//       }}
-//     />
-//   </div>
-// );
-
-// export default connect()(CreateItem)
