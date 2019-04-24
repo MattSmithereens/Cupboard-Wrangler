@@ -4,20 +4,18 @@ An enhanced shopping list app
 
 ## Motivation and User Story
 
-My wife and I are on entirely different schedules.  Oftentimes chores are done by one while the other is either at work or sleeping.  This creates problems when it comes to groceries and our cupboard.  Miscommunications will occur regarding food shopping where one of us will not buy something that the other needs, or we'll both buy it because or a communication breakdown.  Another compounding factor is that if one of us buys something that the other is unaware of, often times it will languish in the pantry or refridgerator and go bad before it gets eaten.  No other pantry/grocery list app that I've found takes "best by" dates into account or toggles grocery items between a grocery list and a pantry inventory list that lets you know what's going bad and when (thus alerting the user when it should be eaten), so it seemed a no brainer to build a grocery app that takes this into account.
+My wife and I are on entirely different schedules.  Oftentimes chores are done by one while the other is either at work or sleeping.  This creates problems when it comes to groceries and our cupboard.  Miscommunications will occur regarding food shopping where one of us will not buy something that the other needs, or we'll both buy it because or a communication breakdown.  Another compounding factor is that if one of us buys something that the other is unaware of, often times it will languish in the pantry or refridgerator and go bad before it gets eaten.  No other pantry/grocery list app that I've found takes "best by" dates into account or toggles grocery items between a grocery list and a pantry inventory list that lets you know what's going bad and when (thus alerting the user when it should be eaten), so I set out to build my own.
 
 ### Current Features
 
 * Items placed on the shopping list can be toggled into pantry inventory when purchased and back onto the shopping list when they need replacing
+* Shelf life attribute that allows a user to enter an item's shelf life in days to indicate when an item is expected to expire.  If an object is toggled between the pantry and cupboard list, the shelf life is reset relative to the current day
 * Items in pantry inventory are sorted by date with older items rendering higher in the list
 * The search field highlights items in either the pantry or shopping list and quickly lets a user know its status
-* The list is hosted on firebase, so data can be persisted between devices
+* The list is hosted on firebase and authenticated via a user's Google account so data can be persisted between devices
 
 ### Planned Features
 
-* User authentication
-* Enhanced shelf life attribute that allows a user to enter an item's shelf life in days to indicate when an item is expected to expire as opposed to simply indicating the day it was purchased
-* Make design responsive (it's presently hardcoded for mobile)
 * Additional item attributes, such as whether an item is grocery or a household item with a seperate list that displays different attributes (ie, laundry detergent doesn't need a shelf life)
 * Integration of a coupon API to highlight items in the shopping list that are on sale
 * Add a 'preferred vendor' attribute to items in the grocery list if a user buys different items from different vendors.  ie, if you buy specialty items from New Seasons, standard groceries from Winco and household items from Target only items associated with the corresponding vendor will render in that particular shopping list of the chosen store
@@ -35,6 +33,11 @@ My wife and I are on entirely different schedules.  Oftentimes chores are done b
 * Jest
 * React-Redux
 * Express
+
+## Known Bugs
+
+* Date object needs refactoring.  Items' best by dates don't take year into account, so an object with an expration of 1/2/20 will render higher on the list than an item with an expiration of 1/3/19
+* Responsive layout is presently less than ideal on mobile devices in portrait mode
 
 ## 
 
