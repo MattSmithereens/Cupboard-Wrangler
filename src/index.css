@@ -46,11 +46,10 @@ code {
   margin-bottom: 10px;
 }
 
-.row {
+.item-row {
   padding-left: 20px;
   padding-bottom: 3px; 
   display: flex;
-  align-items: center;
 }
 
 .bad-now {
