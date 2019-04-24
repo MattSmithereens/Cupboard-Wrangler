@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Router, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import EntryList from '../components/EntryList.js';
 import CreateItem from '../components/CreateItem.js';
@@ -23,32 +23,11 @@ const AppRouter = () => (
         <PrivateRoute path='/Create' component={CreateItem} />
         <PrivateRoute path='/Edit/:id' component={EditItem} />
         <PrivateRoute path='/Help' component={Help} />
-        <Route path='/About' component={Help} />
-        <Route component={Error404} />
+        <PrivateRoute path='/About' component={Help} />
+        <PrivateRoute component={Error404} />
       </Switch>
     </div>
   </Router>
 );
-
-// auth router: presently nonfunctional
-// auth throwing error regarding current domain not being OAuth in firebase
-// const AppRouter = () => (
-//   <BrowserRouter>
-//     <div>
-//       <Header />
-//       <div className='container'>
-//         <Switch>
-//           <Route path='/' component={LoginPage} exact={true} />
-//           <Route path='/Dashboard' component={EntryList} />
-//           <Route path='/Cupboard' component={CupboardItemList} />
-//           <Route path='/Create' component={CreateItem} />
-//           <Route path='/Edit/:id' component={EditItem} />
-//           <Route path='/Help' component={Help} />
-//           <Route component={Error404} />
-//         </Switch>
-//       </div>
-//     </div>
-//   </BrowserRouter>
-// );
 
 export default AppRouter;

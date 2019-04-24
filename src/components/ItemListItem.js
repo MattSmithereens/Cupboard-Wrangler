@@ -14,7 +14,7 @@ const ItemListItem = ({
   inCupboard,
   shelfLife
 }) => (
-  <div className='row'>
+  <div className='item-row'>
     <div className='item-info-col'>
       <Link 
         className='item-list-link' 
