@@ -55,11 +55,13 @@ code {
 .bad-now {
   margin-right: 3px;
   color: red;
+  --mdc-theme-primary: red;
 }
 
 .bad-soon {
   margin-right: 3px;
   color: rgb(255, 208, 0);
+  --mdc-theme-primary: rgb(255, 208, 0);
 }
 
 .title {
@@ -133,6 +135,13 @@ hr {
   font-size: .85em;
 }
 
+.test1 {
+  color: aqua;
+}
+
+.test2 {
+  color: chartreuse;
+}
 /* not wokring yet 
 .row.nth-child(even) {
   background: #CCC

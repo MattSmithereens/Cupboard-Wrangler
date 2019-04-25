@@ -2,9 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { startToggleListItem } from '../actions/items';
-import moment from 'moment';const now = new moment().format('L');
+import moment from 'moment';
 
+const now = new moment().format('L');
 const soon = new moment().add(2, 'day').format('L');
+
+// const 
+
 const ItemListItem = ({ 
   dispatch, 
   id,
@@ -20,8 +24,6 @@ const ItemListItem = ({
         className='item-list-link' 
         // render red asterisk if item has notes
         to={`/edit/${id}`}>
-          {inCupboard && (shelfLife < now) ? <i className="fas fa-exclamation-triangle bad-now"></i> : ''}
-          {inCupboard && (shelfLife <= soon && shelfLife >= now) ? <i className="fas fa-exclamation-triangle bad-soon"></i> : ''}
           {description}
         <span className='red'>{note ? '*' : ''}</span>
       </Link>&nbsp;
@@ -35,6 +37,8 @@ const ItemListItem = ({
           mdc-button 
           mdc-button--unelevated
           mdc-button--dense
+          {inCupboard && (shelfLife < now) ? 'test1' : ''}
+          {inCupboard && (shelfLife <= soon && shelfLife >= now) ? 'bad-soon' : ''}
         "
         onClick={() => {
           dispatch(startToggleListItem(id, inCupboard, amount));
@@ -43,7 +47,11 @@ const ItemListItem = ({
         <span className="
           mdc-button__label
           bought-used-button
-        ">{inCupboard ? 'used' : 'bought'}</span>
+        ">
+          {inCupboard && (shelfLife < now) ? <i className="fas fa-exclamation-triangle bad-now"></i> : ''}
+          {inCupboard && (shelfLife <= soon && shelfLife >= now) ? <i className="fas fa-exclamation-triangle bad-soon"></i> : ''}
+          {inCupboard ? 'used' : 'bought'}
+        </span>
       </button>
     </div>
   </div>

@@ -10,7 +10,7 @@
           "$item_id": {
             ".validate": "newData.hasChildren(['amount', 'description', 'note', 'isGrocery', 'inCupboard', 'shelfLife'])",
             "amount": {
-              ".validate": "newData.isNumber() && newData.val().length > 0"
+              ".validate": "newData.isNumber() && newData.val() >= 0"
             }, 
             "description": {
               ".validate": "newData.isString() && newData.val().length > 0"
@@ -75,10 +75,7 @@ works:
           }, 
           "description": {
             ".validate": "newData.isString() && newData.val().length > 0"
-          }, 
-        },
-        "$other": {
-          ".validate": false
+          }
         }
       }
     }

@@ -18,11 +18,16 @@ export default (state = filtersReducerDefaultState, action) => {
         ...state,
         sortBy: 'date'
       };
-    case 'SORT_BY_AMOUNT':
+    case 'SORT_BY_TYPE':
       return {
         ...state,
-        sortBy: 'amount'
+        sortBy: 'isGrocery'
       }
+    // case 'SORT_BY_AMOUNT':
+    //   return {
+    //     ...state,
+    //     sortBy: 'amount'
+    //   }
     case 'SET_START_DATE':
       return {
         ...state,

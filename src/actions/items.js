@@ -6,6 +6,8 @@ export const addItem = (item) => ({
   item
 });
 
+// const now = new moment();
+
 export const startAddItem = (itemData = {}) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
@@ -81,6 +83,7 @@ export const startToggleListItem = (id, inCupboard, amount) => {
     const uid = getState().auth.uid;
     return database.ref(`users/${uid}/items/${id}`).update({
       inCupboard: !inCupboard,
+      // shelfLife: parseInt(new moment().add(amount, 'day'))
       shelfLife: new moment().add(amount, 'day').format('L')
     }).then(() => {
       dispatch(toggleListItem(id, inCupboard));
