@@ -127,6 +127,11 @@ hr {
   margin: auto;  
 }
 
+.login-centered {
+  display: flex;
+  justify-content: center;
+}
+
 .red {
   color: #ff7657;
 }

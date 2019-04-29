@@ -4,6 +4,7 @@ import { startLogin } from '../actions/auth';
 
 export const LoginPage = ({ startLogin }) => (
   <div className='top-buffer'>
+    <div className='login-centered'>
     <button
       onClick={startLogin}
       className="
@@ -13,6 +14,7 @@ export const LoginPage = ({ startLogin }) => (
       ">
       <span className="mdc-button__label">Login</span>
     </button>
+    </div>
   </div>
 );
 
