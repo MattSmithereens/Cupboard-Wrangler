@@ -15,6 +15,9 @@ export const LoginPage = ({ startLogin }) => (
       <span className="mdc-button__label">Login</span>
     </button>
     </div>
+    <div className='login-centered login-text'>
+      <p>Login using your Google account</p>
+    </div>
   </div>
 );
 

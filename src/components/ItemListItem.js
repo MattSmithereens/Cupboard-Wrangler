@@ -22,11 +22,10 @@ const ItemListItem = ({
     <div className='item-info-col'>
       <Link 
         className='item-list-link' 
-        // render red asterisk if item has notes
         to={`/edit/${id}`}>
           {description}
-        <span className='red'>{note ? '*' : ''}</span>
-      </Link>&nbsp;
+        <span className='red'>{note ? '* ' : ' '}</span>
+      </Link>
     </div> 
     <div className='item-date-info'>
       {inCupboard ? shelfLife : ''}
@@ -37,8 +36,6 @@ const ItemListItem = ({
           mdc-button 
           mdc-button--unelevated
           mdc-button--dense
-          {inCupboard && (shelfLife < now) ? 'test1' : ''}
-          {inCupboard && (shelfLife <= soon && shelfLife >= now) ? 'bad-soon' : ''}
         "
         onClick={() => {
           dispatch(startToggleListItem(id, inCupboard, amount));
