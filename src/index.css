@@ -42,7 +42,7 @@ code {
 } */
 
 .mdc-text-field {
-  width: 325px;
+  width: 100%;
   margin-bottom: 10px;
 }
 
@@ -81,6 +81,7 @@ hr {
 }
 
 .options {
+  display: flex;
   align-content: center;
 }
 
@@ -89,20 +90,20 @@ hr {
 }
 
 .item-info-col {
-  width: 130px;
+  width: 150px;
   font-size: .95em;
   color: #665c84;
 }
 
 .item-list-link {
   color: #665c84;
-  
 }
 
 .item-date-info {
-  width: 85px;
+  width: 70px;
   font-size: .75em;
   color:  #ff7657;
+  margin-right: 2px;
 }
 
 .bought-used-button {

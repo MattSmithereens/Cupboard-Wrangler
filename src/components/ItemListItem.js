@@ -33,9 +33,10 @@ const ItemListItem = ({
     <div className='item-button-col'>
       <button
         className="
-          mdc-button 
+          mdc-button
           mdc-button--unelevated
           mdc-button--dense
+          item-button
         "
         onClick={() => {
           dispatch(startToggleListItem(id, inCupboard, amount));
