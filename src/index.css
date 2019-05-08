@@ -47,6 +47,7 @@ code {
 }
 
 .item-row {
+  width: 100%;
   padding-bottom: 3px; 
   display: flex;
 }
@@ -97,6 +98,7 @@ hr {
 
 .item-list-link {
   color: #665c84;
+  overflow: auto;
 }
 
 .item-date-info {
