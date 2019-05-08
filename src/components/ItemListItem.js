@@ -28,7 +28,7 @@ const ItemListItem = ({
       </Link>
     </div> 
     <div className='item-date-info'>
-      {inCupboard ? shelfLife : ''}
+      {inCupboard ? ' ' + shelfLife + ' ' : ''}
     </div>
     <div className='item-button-col'>
       <button

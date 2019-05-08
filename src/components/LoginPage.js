@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { startLogin } from '../actions/auth';
+// import { MDCRipple } from '@material/ripple';
+
+// const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 
 export const LoginPage = ({ startLogin }) => (
   <div className='top-buffer'>
