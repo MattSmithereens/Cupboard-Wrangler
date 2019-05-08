@@ -3,8 +3,6 @@
   "homepage" : "https://github.com/MattSmithereens/Cupboard-Wrangler",
   "version": "0.9.5",
   "private": true,
-  "display": "standalone",
-  "orientation": "portrait",
   "engines": {
     "node": "11.10.0",
     "npm": "6.7.0",
