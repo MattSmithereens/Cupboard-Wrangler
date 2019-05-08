@@ -119,6 +119,7 @@ hr {
   color: #ffffff;
   text-decoration: #ffffff, none;
   font-weight: bold;
+  overflow: auto;
 }
 
 .loading-img {
