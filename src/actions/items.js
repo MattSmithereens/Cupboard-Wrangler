@@ -16,7 +16,7 @@ export const startAddItem = (itemData = {}) => {
       note = '',
       amount = '',
       shelfLife = new moment().add(amount, 'day').format('l'),
-      parseDate = new moment().add(amount, 'day').format(),
+      parseDate = new moment().add(amount, 'day').format(), // had to add this attribute b/c sorting by formatted moment object didn't take year into account (ie, 01/01/2020 rendered above 01/02/2019)
       inCupboard = false,
       isGrocery = true
     } = itemData;
