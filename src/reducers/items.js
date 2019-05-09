@@ -28,7 +28,8 @@ export default (state = itemsReducerDefaultState, action) => {
           ? {
             ...item,
             inCupboard: !item.inCupboard,
-            shelfLife: new moment().add(item.amount, 'day').format('L')
+            shelfLife: new moment().add(item.amount, 'day').format('l'),
+            parseDate: new moment().add(item.amount, 'day').format()
           }
           : item
       )
