@@ -27,6 +27,18 @@ code {
     monospace;
 }
 
+h3 {
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  color: #ffffff;
+}
+
+hr {
+  width: 70%;
+  color: #ffba5a
+}
+
 /* .isActive {
   font-weight: bold;
   background: #ffba5a;
@@ -46,12 +58,6 @@ code {
   margin-bottom: 10px;
 }
 
-.item-row {
-  width: 100%;
-  padding-bottom: 3px; 
-  display: flex;
-}
-
 .bad-now {
   margin-right: 3px;
   color: red;
@@ -69,21 +75,15 @@ code {
   background-color: #ffba5a
 }
 
-h3 {
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  color: #ffffff;
-}
-
-hr {
-  width: 70%;
-  color: #ffba5a
-}
-
 .options {
   display: flex;
   align-content: center;
+}
+
+.item-row {
+  width: 100%;
+  padding-bottom: 3px; 
+  display: flex;
 }
 
 .item-button {
@@ -97,15 +97,21 @@ hr {
 }
 
 .item-list-link {
+  display: flex;
+  align-items: center;
   color: #665c84;
   overflow: auto;
 }
 
 .item-date-info {
-  width: 70px;
+  display: flex;
+  align-items: center;
+  width: 68px;
   font-size: .75em;
   color:  #ff7657;
   margin-right: 2px;
+  margin-left: 2px;
+  
 }
 
 .bought-used-button {
