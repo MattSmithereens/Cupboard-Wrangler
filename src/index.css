@@ -91,14 +91,14 @@ hr {
 }
 
 .item-info-col {
+  display: flex;
+  align-items: center;
   width: 150px;
   font-size: .95em;
   color: #665c84;
 }
 
 .item-list-link {
-  display: flex;
-  align-items: center;
   color: #665c84;
   overflow: auto;
 }
