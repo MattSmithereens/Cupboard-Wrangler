@@ -36,7 +36,7 @@ My wife and I are on entirely different schedules.  Oftentimes chores are done b
 
 ## Known Bugs
 
-* Date object needs refactoring.  Items' best by dates don't take year into account, so an object with an expration of 1/2/20 will render higher on the list than an item with an expiration of 1/3/19
+* ~Date object needs refactoring.  Items' best by dates don't take year into account, so an object with an expration of 1/2/20 will render higher on the list than an item with an expiration of 1/3/19~ _fixed: 5/8/19_
 * Responsive layout is presently less than ideal on mobile devices in portrait mode
 
 ## 

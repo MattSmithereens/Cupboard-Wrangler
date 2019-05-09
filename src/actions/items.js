@@ -16,6 +16,7 @@ export const startAddItem = (itemData = {}) => {
       note = '',
       amount = '',
       shelfLife = new moment().add(amount, 'day').format('L'),
+      parseDate = new moment().add(amount, 'day').format(),
       inCupboard = false,
       isGrocery = true
     } = itemData;
@@ -24,6 +25,7 @@ export const startAddItem = (itemData = {}) => {
       note,
       amount,
       shelfLife,
+      parseDate,
       inCupboard,
       isGrocery
     };
@@ -83,8 +85,8 @@ export const startToggleListItem = (id, inCupboard, amount) => {
     const uid = getState().auth.uid;
     return database.ref(`users/${uid}/items/${id}`).update({
       inCupboard: !inCupboard,
-      // shelfLife: parseInt(new moment().add(amount, 'day'))
-      shelfLife: new moment().add(amount, 'day').format('L')
+      shelfLife: new moment().add(amount, 'day').format('L'),
+      parseDate: new moment().add(amount, 'day').format()
     }).then(() => {
       dispatch(toggleListItem(id, inCupboard));
     }).catch((e) => {

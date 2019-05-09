@@ -9,7 +9,7 @@ export default (items, { text }) => {
     return textMatch;
 
   }).sort((a, b) => {
-    return a.shelfLife > b.shelfLife ? 1 : -1;
+    return a.parseDate > b.parseDate ? 1 : -1;
 
     // if (sortBy === 'date') {
     //   return a.createdAt < b.createdAt ? 1 : -1;

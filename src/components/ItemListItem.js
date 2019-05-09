@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import { startToggleListItem } from '../actions/items';
 import moment from 'moment';
 
-const now = new moment().format('L');
-const soon = new moment().add(2, 'day').format('L');
+const now = new moment().format();
+const soon = new moment().add(2, 'day').format();
 
 // const 
 
@@ -16,7 +16,8 @@ const ItemListItem = ({
   amount,
   description,
   inCupboard,
-  shelfLife
+  shelfLife,
+  parseDate
 }) => (
   <div className='item-row'>
     <div className='item-info-col'>
@@ -33,10 +34,9 @@ const ItemListItem = ({
     <div className='item-button-col'>
       <button
         className="
-          mdc-button
+          mdc-button 
           mdc-button--unelevated
           mdc-button--dense
-          item-button
         "
         onClick={() => {
           dispatch(startToggleListItem(id, inCupboard, amount));
@@ -46,8 +46,8 @@ const ItemListItem = ({
           mdc-button__label
           bought-used-button
         ">
-          {inCupboard && (shelfLife < now) ? <i className="fas fa-exclamation-triangle bad-now"></i> : ''}
-          {inCupboard && (shelfLife <= soon && shelfLife >= now) ? <i className="fas fa-exclamation-triangle bad-soon"></i> : ''}
+          {inCupboard && (parseDate < now) ? <i className="fas fa-exclamation-triangle bad-now"></i> : ''}
+          {inCupboard && (parseDate <= soon && parseDate >= now) ? <i className="fas fa-exclamation-triangle bad-soon"></i> : ''}
           {inCupboard ? 'used' : 'bought'}
         </span>
       </button>
