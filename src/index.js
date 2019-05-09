@@ -42,7 +42,7 @@ const renderApp = () => {
 //   </div>
 // )
 
-ReactDOM.render(<p className='top-buffer container'>Loading...</p>, document.getElementById('root'));
+ReactDOM.render(<p className='login-centered'>Loading...</p>, document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
