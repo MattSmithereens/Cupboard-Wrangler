@@ -11,6 +11,9 @@ import LoginPage from '../components/LoginPage.js';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
+// delete later
+// import Test from '../playground/Test.js'
+
 export const history = createHistory();
 
 const AppRouter = () => (
