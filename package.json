@@ -1,6 +1,6 @@
 {
   "name": "cupboard-wrangler",
-  "homepage" : "https://github.com/MattSmithereens/Cupboard-Wrangler",
+  "homepage": "https://github.com/MattSmithereens/Cupboard-Wrangler",
   "version": "0.9.5",
   "private": true,
   "engines": {
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@material/auto-init": "^1.0.0",
+    "@material/button": "^2.0.0",
     "express": "^4.16.4",
     "firebase": "^5.8.6",
     "history": "^4.9.0",
@@ -20,6 +21,8 @@
     "react": "^16.8.3",
     "react-addons-shallow-compare": "^15.6.2",
     "react-dates": "^20.0.0",
+    "react-dnd": "^7.4.5",
+    "react-dnd-html5-backend": "^7.4.4",
     "react-dom": "^16.8.3",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
