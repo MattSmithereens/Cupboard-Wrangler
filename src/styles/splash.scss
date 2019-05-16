@@ -1,0 +1,23 @@
+.box-layout {
+  align-items: center;
+  background: url('../img/grocery-bg.jpg');
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.box {
+  background: white;
+  border-radius: 5px;
+  line-height: 1;
+  text-align: center;
+  padding: 10px;
+  width: 20rem;
+}
+
+.splash-text {
+  font-size: .9em;
+}
+

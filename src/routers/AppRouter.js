@@ -11,11 +11,14 @@ import LoginPage from '../components/LoginPage.js';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
+// delete later
+import Test from '../playground/Test.js'
+
 export const history = createHistory();
 
 const AppRouter = () => (
   <Router history={history}>
-    <div className='main-margins'>
+    <div>
       <Switch>
         <PublicRoute path='/' component={LoginPage} exact={true} />
         <PrivateRoute path='/Dashboard' component={EntryList} />
@@ -24,6 +27,7 @@ const AppRouter = () => (
         <PrivateRoute path='/Edit/:id' component={EditItem} />
         <PrivateRoute path='/Help' component={Help} />
         <PrivateRoute path='/About' component={Help} />
+        <PrivateRoute path='/Test' component={Test} />
         <PrivateRoute component={Error404} />
       </Switch>
     </div>

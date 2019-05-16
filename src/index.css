@@ -6,6 +6,8 @@ ff7657
 665c84 
 */
 
+@import './styles/splash.scss';
+
 :root {
   --mdc-theme-primary: #ff7657;
   --mdc-theme-secondary: #ffba5a; /*changes color of radio buttons*/
@@ -25,6 +27,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h2 {
+  color: #665c84;
+  font-size: 1.65em;
+  font-weight: bold;
 }
 
 h3 {
@@ -141,15 +149,14 @@ h3 {
   margin: auto;  
 }
 
-.login-centered {
+/* .login-centered {
   display: flex;
   align-items: center;
-  /* flex-direction: column; */
   width: 99%;
   height: 99%;
   align-self: center;
   justify-content: center;
-}
+} */
 
 .login-text {
   margin-top: 10px;
