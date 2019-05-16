@@ -1,6 +1,5 @@
 .box-layout {
   align-items: center;
-  background: #ff7657;
   background-size: cover;
   display: flex;
   height: 100vh;
@@ -11,6 +10,9 @@
 .box {
   background: white;
   border-radius: 5px;
+  border-color: #665c84;
+  border-width: medium;
+  border-style: solid;
   line-height: 1;
   text-align: center;
   padding: 10px;
