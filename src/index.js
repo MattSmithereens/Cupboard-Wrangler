@@ -9,6 +9,7 @@ import { login, logout } from './actions/auth';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { firebase } from './firebase/firebase';
+import Typography from '@material-ui/core/Typography';
 // import Loading from './img/';
 
 const store = configureStore();
@@ -20,7 +21,9 @@ const store = configureStore();
 
 const jsx = (
   <Provider store={store}>
-    <AppRouter />
+    <Typography>
+      <AppRouter />
+    </Typography>
   </Provider>
 );
 
@@ -42,7 +45,7 @@ const renderApp = () => {
 //   </div>
 // )
 
-ReactDOM.render(<p className='login-centered'>Loading...</p>, document.getElementById('root'));
+ReactDOM.render(<h2 className='box-layout'>Loading...</h2>, document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
