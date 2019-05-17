@@ -87,6 +87,10 @@ h3 {
   margin: 10px;
 }
 
+.mdc-text-field--outlined {
+  max-width: 968px;
+}
+
 .shopping-list-buffer {
   margin-bottom: 25px;
 }
