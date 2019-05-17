@@ -17,6 +17,7 @@
 
 # quarantined/test components
 /src/playground/
+/src/components/Header-MDC.js
 /src/components/RemoveButton.js
 /src/components/ItemListItem-withDeleteButton.js
 index2.css
