@@ -87,6 +87,14 @@ h3 {
   margin: 10px;
 }
 
+.shopping-list-buffer {
+  margin-bottom: 25px;
+}
+
+.col-sm-6 {
+  max-width: 500px;
+}
+
 .item-row {
   width: 99%;
   padding-bottom: 3px; 
@@ -99,7 +107,7 @@ h3 {
 
 .item-button-col {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 .item-info-col {
@@ -129,6 +137,7 @@ h3 {
 
 .bought-used-button {
   width: 75px;
+  line-height: 1em;
 }
 
 .top-buffer {

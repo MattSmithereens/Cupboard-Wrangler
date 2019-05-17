@@ -21,9 +21,7 @@ const store = configureStore();
 
 const jsx = (
   <Provider store={store}>
-    <Typography>
-      <AppRouter />
-    </Typography>
+    <AppRouter />
   </Provider>
 );
 

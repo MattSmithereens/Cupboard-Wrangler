@@ -7,8 +7,8 @@ import selectItems from '../selectors/items'
 const ShoppingList = (props) => (
   <div>
     <h4>Shopping List</h4>
-    <div>
-      <NavLink to='/Create' className='red'>{props.items.length === 0 ? 'Let\'s start adding items to your list!' : ''}</NavLink>
+    <div className='shopping-list-buffer'>
+      <NavLink to='/Create' className='red'>{props.items.length === 0 ? 'There\'s nothing here.  Add an item?' : ''}</NavLink>
       {props.items.map((item) => {
         if (!item.inCupboard) {
           return <ItemListItem key={item.id} {...item} />

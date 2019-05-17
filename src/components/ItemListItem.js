@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { startToggleListItem } from '../actions/items';
+import Button from '@material-ui/core/Button';
 import moment from 'moment';
 
 const now = new moment().format();
@@ -32,27 +33,47 @@ const ItemListItem = ({
       {inCupboard ? ' ' + shelfLife + ' ' : ''}
     </div>
     <div className='item-button-col'>
-      <button
+      <Button        
         className="
-          mdc-button 
-          mdc-button--unelevated
-          mdc-button--dense
-        "
-        onClick={() => {
-          dispatch(startToggleListItem(id, inCupboard, amount));
-        }}
-        >
-        <span className="
-          mdc-button__label
-          bought-used-button
-        ">
-          {inCupboard && (parseDate < now) ? <i className="fas fa-exclamation-triangle bad-now"></i> : ''}
-          {inCupboard && (parseDate <= soon && parseDate >= now) ? <i className="fas fa-exclamation-triangle bad-soon"></i> : ''}
-          {inCupboard ? 'used' : 'bought'}
-        </span>
-      </button>
+        mdc-button 
+        mdc-button--unelevated
+        mdc-button--dense
+      "
+      onClick={() => {
+        dispatch(startToggleListItem(id, inCupboard, amount));
+      }}
+      >
+      <span className="
+        mdc-button__label
+        bought-used-button
+      ">
+        {inCupboard && (parseDate < now) ? <i className="fas fa-exclamation-triangle bad-now"></i> : ''}
+        {inCupboard && (parseDate <= soon && parseDate >= now) ? <i className="fas fa-exclamation-triangle bad-soon"></i> : ''}
+        {inCupboard ? 'used' : 'bought'}
+      </span>
+      </Button>
     </div>
   </div>
 );
 
 export default connect()(ItemListItem)
+
+// <button
+// className="
+//   mdc-button 
+//   mdc-button--unelevated
+//   mdc-button--dense
+// "
+// onClick={() => {
+//   dispatch(startToggleListItem(id, inCupboard, amount));
+// }}
+// >
+// <span className="
+//   mdc-button__label
+//   bought-used-button
+// ">
+//   {inCupboard && (parseDate < now) ? <i className="fas fa-exclamation-triangle bad-now"></i> : ''}
+//   {inCupboard && (parseDate <= soon && parseDate >= now) ? <i className="fas fa-exclamation-triangle bad-soon"></i> : ''}
+//   {inCupboard ? 'used' : 'bought'}
+// </span>
+// </button>
