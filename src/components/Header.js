@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
-import Typography from '@material-ui/core/Typography';
 // import HeaderMDC from './Header-MDC'; hamburger menu
 
 export const Header = ({ startLogout }) => (

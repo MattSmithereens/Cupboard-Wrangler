@@ -17,14 +17,14 @@ const EditItem = (props) => {
       />
       <div className='center-element'>
         <Button
-          variant='outlined'
+          // variant='outlined'
           color='secondary'
           onClick={(e) => {
             props.dispatch(startRemoveItem({ id: props.item.id }))
             props.history.push('/');
           }}
           className='
-            mdc-button 
+            mdc-button
             button-120
             discard-button
           '>

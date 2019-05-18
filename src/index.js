@@ -9,7 +9,6 @@ import { login, logout } from './actions/auth';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { firebase } from './firebase/firebase';
-import Typography from '@material-ui/core/Typography';
 // import Loading from './img/';
 
 const store = configureStore();
