@@ -9,11 +9,11 @@ import { setTextFilter } from '../actions/filters'
 class ItemListFilters extends React.Component {
 
   handleClickClearField = () => {
-    alert(this.props.filters.text);
-    this.setState(state => ({ text: "" }));
-  };
+    console.log(this.props.filters.text, this);
+    this.setState(state => ({ text: null }));
+  }
 
-  render(props) {
+  render() {
     return (
       <div className="bottom-buffer">
         <TextField
@@ -38,11 +38,9 @@ class ItemListFilters extends React.Component {
             ),
           }}
         />
-
       </div>
     )
-  }
-
+  };
 }
 
 const MapStateToProps = (state) => {

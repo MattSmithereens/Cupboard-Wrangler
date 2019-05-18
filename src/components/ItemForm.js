@@ -137,6 +137,7 @@ export default class ItemForm extends React.Component {
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
           <TextField
+            autofocus
             id="outlined-textarea"
             label="Description"
             placeholder="Required"
@@ -145,6 +146,7 @@ export default class ItemForm extends React.Component {
             className='text-field'
             value={this.state.description}
             onChange={this.onDescriptionChange}
+            autoComplete='off'
           />
           <TextField
             id="outlined-textarea"
@@ -158,6 +160,7 @@ export default class ItemForm extends React.Component {
             className='text-field'
             value={this.state.amount}
             onChange={this.onAmountChange}
+            autoComplete='off'
           />
           <TextField
             id="outlined-textarea"
@@ -171,6 +174,7 @@ export default class ItemForm extends React.Component {
             helperText='Annoted items are indicated with an asterisk'
             value={this.state.note}
             onChange={this.onNoteChange}
+            autoComplete='off'
           />
           <div className='center-element'>
             <Button
