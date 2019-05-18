@@ -6,44 +6,44 @@ import { connect } from 'react-redux';
 import { setTextFilter } from '../actions/filters'
 // import { setTextFilter, sortByDate, sortByAmount } from '../actions/filters'
 
+class ItemListFilters extends React.Component {
 
+  handleClickClearField = () => {
+    alert(this.props.filters.text);
+    this.setState(state => ({ text: "" }));
+  };
 
+  render(props) {
+    return (
+      <div className="bottom-buffer">
+        <TextField
+          label="Item Search"
+          placeholder="Start typing to filter items"
+          className='text-field'
+          variant="outlined"
+          value={this.props.filters.text}
+          onChange={(e) => {
+            this.props.dispatch(setTextFilter(e.target.value))
+          }}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="Clear search field"
+                  onClick={this.handleClickClearField}
+                >
+                  <i className="fas fa-backspace"></i>
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
 
+      </div>
+    )
+  }
 
-const handleClickClearField = (value) => {
-  console.log(value.state)
-  // this.setState(state => ({ value: null }));
-};
-
-const ItemListFilters = (props) => (
-
-  <div className="bottom-buffer">
-    <TextField
-      label="Item Search"
-      placeholder="Start typing to filter items"
-      className='text-field'
-      variant="outlined"
-      value={props.filters.text}
-      onChange={(e) => {
-        props.dispatch(setTextFilter(e.target.value))
-      }}
-      InputProps={{
-        endAdornment: (
-          <InputAdornment position="end">
-            <IconButton
-              aria-label="Clear search field"
-              onClick={handleClickClearField}
-            >
-              <i className="fas fa-backspace"></i>
-            </IconButton>
-          </InputAdornment>
-        ),
-      }}
-    />
-
-  </div>
-
-);
+}
 
 const MapStateToProps = (state) => {
   return {
