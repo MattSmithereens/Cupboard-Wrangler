@@ -1,11 +1,79 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import classNames from 'classnames';
+import { withStyles } from '@material-ui/core/styles';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+import { deepOrange } from '@material-ui/core/colors';
 // import moment from 'moment';
 // import { removeItem } from '../actions/items'
 // import { setTextFilter, sortByDate, sortByAmount } from '../actions/filters'
 
 // const now = new moment();
 // picker code in ItemFormDates.js
+
+const styles = theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  margin: {
+    margin: theme.spacing.unit,
+  },
+  cssLabel: {
+    '&$cssFocused': {
+      color: deepOrange[400],
+    },
+  },
+  cssFocused: {},
+  cssUnderline: {
+    '&:after': {
+      borderBottomColor: deepOrange[400],
+    },
+  },
+  cssOutlinedInput: {
+    '&$cssFocused $notchedOutline': {
+      borderColor: deepOrange[400],
+    },
+  },
+  notchedOutline: {},
+  bootstrapRoot: {
+    'label + &': {
+      marginTop: theme.spacing.unit * 3,
+    },
+  },
+  bootstrapInput: {
+    borderRadius: 4,
+    position: 'relative',
+    backgroundColor: theme.palette.common.white,
+    border: '1px solid #ced4da',
+    fontSize: 16,
+    width: 'auto',
+    padding: '10px 12px',
+    transition: theme.transitions.create(['border-color', 'box-shadow']),
+    // Use the system font instead of the default Roboto font.
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    '&:focus': {
+      borderRadius: 4,
+      borderColor: '#80bdff',
+      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
+    },
+  },
+  bootstrapFormLabel: {
+    fontSize: 18,
+  },
+});
 
 export default class ItemForm extends React.Component {
   constructor(props) {
@@ -68,66 +136,49 @@ export default class ItemForm extends React.Component {
       <div>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
-
-          <div className="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
-            <input 
-              type="text" 
-              className="mdc-text-field__input" 
-              aria-label="Label" 
-              autoFocus
-              value={this.state.description}
-              onChange={this.onDescriptionChange}
-              placeholder='Description'
-            />
-            <div className="mdc-notched-outline">
-              <div className="mdc-notched-outline__leading"></div>
-              <div className="mdc-notched-outline__trailing"></div>
-            </div>
-          </div>
-          <br />
-        
-          <div className="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
-            <input 
-              className="mdc-text-field__input" 
-              aria-label="Label" 
-              type='number'
-              placeholder='Shelf Life (in days)'
-              value={this.state.amount}
-              onChange={this.onAmountChange}
-            />
-            <div className="mdc-notched-outline">
-              <div className="mdc-notched-outline__leading"></div>
-              <div className="mdc-notched-outline__trailing"></div>
-            </div>
-          </div>
-          <br />
-          
-          <div className="mdc-text-field mdc-text-field--textarea">
-            <textarea 
-              id="textarea" 
-              className="mdc-text-field__input" 
-              placeholder='Item notes (optional)'
-              rows="4" 
-              cols="36"
-              value={this.state.note}
-              onChange={this.onNoteChange}>
-            </textarea>
-            <div className="mdc-notched-outline">
-              <div className="mdc-notched-outline__leading"></div>
-              <div className="mdc-notched-outline__notch">
-                <label className="mdc-floating-label"></label>
-              </div>
-              <div className="mdc-notched-outline__trailing"></div>
-            </div>
-          </div>
-          <br />
-          <p className='small-text'>Annoted items are indicated with: <span className='red'>*</span></p>
+          <TextField
+            id="outlined-textarea"
+            label="Description"
+            placeholder="Required"
+            margin="normal"
+            variant="outlined"
+            className='text-field'
+            value={this.state.description}
+            onChange={this.onDescriptionChange}
+          />
+          <TextField
+            id="outlined-textarea"
+            label="Shelf Life (in days)"
+            placeholder="Required"
+            type="number" 
+            min="0" 
+            max="3650"
+            margin="normal"
+            variant="outlined"
+            className='text-field'
+            value={this.state.amount}
+            onChange={this.onAmountChange}
+          />
+          <TextField
+            id="outlined-textarea"
+            label="Notes"
+            placeholder="Optional"
+            margin="normal"
+            variant="outlined"
+            className='text-field'
+            multiline
+            rowsMax="4"
+            helperText='Annoted items are indicated with an asterisk'
+            value={this.state.note}
+            onChange={this.onNoteChange}
+          />
           <div className='center-element'>
             <Button
               className="
               mdc-button 
               mdc-button--unelevated 
-              button-90">
+              button-120"
+              onClick={this.onSubmit}>
               <span className="mdc-button__label">submit</span>
             </Button>
           </div>

@@ -1,24 +1,46 @@
 import React from 'react';
+import TextField from '@material-ui/core/TextField';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import IconButton from '@material-ui/core/IconButton';
 import { connect } from 'react-redux';
 import { setTextFilter } from '../actions/filters'
 // import { setTextFilter, sortByDate, sortByAmount } from '../actions/filters'
 
+
+
+
+
+const handleClickClearField = (value) => {
+  console.log(value.state)
+  // this.setState(state => ({ value: null }));
+};
+
 const ItemListFilters = (props) => (
 
-  <div className="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
-    <input
-      type="text"
-      className="mdc-text-field__input"
-      aria-label="Label"
-      placeholder='Item Search'
+  <div className="bottom-buffer">
+    <TextField
+      label="Item Search"
+      placeholder="Start typing to filter items"
+      className='text-field'
+      variant="outlined"
       value={props.filters.text}
       onChange={(e) => {
         props.dispatch(setTextFilter(e.target.value))
-      }} />
-    <div className="mdc-notched-outline">
-      <div className="mdc-notched-outline__leading"></div>
-      <div className="mdc-notched-outline__trailing"></div>
-    </div>
+      }}
+      InputProps={{
+        endAdornment: (
+          <InputAdornment position="end">
+            <IconButton
+              aria-label="Clear search field"
+              onClick={handleClickClearField}
+            >
+              <i className="fas fa-backspace"></i>
+            </IconButton>
+          </InputAdornment>
+        ),
+      }}
+    />
+
   </div>
 
 );
@@ -72,3 +94,21 @@ export default connect(MapStateToProps)(ItemListFilters);
     //     </div>
     //   </div>
     // </p>
+
+
+
+
+    // old textfield that works
+  //   <TextField
+  //   id="outlined-textarea"
+  //   label="Item Search"
+  //   placeholder="Start typing to filter items"
+  //   margin="normal"
+  //   variant="outlined"
+  //   className='text-field'
+  //   value={props.filters.text}
+  //   onChange={(e) => {
+  //     props.dispatch(setTextFilter(e.target.value))
+  //   }}
+  // />
+  // <br />

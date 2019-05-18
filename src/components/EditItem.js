@@ -25,7 +25,7 @@ const EditItem = (props) => {
           }}
           className='
             mdc-button 
-            button-90
+            button-120
             discard-button
           '>
           <span className="mdc-button__label">discard</span>

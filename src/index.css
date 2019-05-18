@@ -1,20 +1,25 @@
-/* color scheme:
+/* old color scheme:
 fbeed7
 fff6e8 - offset color
 ffba5a
 ff7657
 665c84 
+
+deep orange: #ff7043
+deepOrange 400
+
+
 */
 
 @import './styles/splash.scss';
 
 :root {
-  --mdc-theme-primary: #ff7657;
+  --mdc-theme-primary: #0277bd;
   --mdc-theme-secondary: #ffba5a; /*changes color of radio buttons*/
 }
 
 body {
-  background-color: #FBEED7;
+  background-color: #e1f5fe;
   margin: unset;
   width: 99%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -42,6 +47,16 @@ h3 {
   color: #ffffff;
 }
 
+.MuiInputBase-root-207 {
+  color: pink;
+}
+
+/* button {
+  display: flex;
+  align-content: center;
+  align-items: center;
+} */
+
 /* .isActive {
   font-weight: bold;
   background: #ffba5a;
@@ -57,6 +72,11 @@ h3 {
 } */
 
 .mdc-text-field {
+  width: 99%;
+  margin-bottom: 10px;
+}
+
+.text-field {
   width: 99%;
   margin-bottom: 10px;
 }
@@ -93,6 +113,10 @@ h3 {
 
 .shopping-list-buffer {
   margin-bottom: 25px;
+}
+
+.bottom-buffer {
+  margin-bottom: 10px;
 }
 
 .col-sm-6 {
@@ -152,8 +176,8 @@ h3 {
   width: 75px;
 }
 
-.button-90 {
-  width: 90px;
+.button-120 {
+  width: 120px;
 }
 
 .top-buffer {
