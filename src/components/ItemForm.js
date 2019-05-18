@@ -90,7 +90,6 @@ export default class ItemForm extends React.Component {
               className="mdc-text-field__input" 
               aria-label="Label" 
               type='number'
-              max='365'
               placeholder='Shelf Life (in days)'
               value={this.state.amount}
               onChange={this.onAmountChange}
