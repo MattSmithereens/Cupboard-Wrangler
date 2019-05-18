@@ -1,4 +1,5 @@
 import React from 'react';
+import { history } from '../routers/AppRouter';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import IconButton from '@material-ui/core/IconButton';
@@ -9,8 +10,9 @@ import { setTextFilter } from '../actions/filters'
 class ItemListFilters extends React.Component {
 
   handleClickClearField = () => {
-    console.log(this.props.filters.text, this);
-    this.setState(state => ({ text: null }));
+    this.setState(state => ({ text: null }));   // clear state
+    this.props.filters.text = '';               // clear textfield
+    history.push('/');                          // refresh lists
   }
 
   render() {
@@ -32,7 +34,7 @@ class ItemListFilters extends React.Component {
                   aria-label="Clear search field"
                   onClick={this.handleClickClearField}
                 >
-                  <i className="fas fa-backspace"></i>
+                  <i className="fas fa-backspace red"></i>
                 </IconButton>
               </InputAdornment>
             ),

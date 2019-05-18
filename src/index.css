@@ -157,7 +157,7 @@ h3 {
   justify-content: flex-end;
   width: 65px;
   font-size: .75em;
-  color:  #ff7657;
+  color:  #f06292;
   margin-right: 2px;
   margin-left: 2px;
   
@@ -213,7 +213,8 @@ h3 {
 }
 
 .red {
-  color: #ff7657;
+  /* color: #ff7657; */
+  color: #f06292;
 }
 
 .small-text {
