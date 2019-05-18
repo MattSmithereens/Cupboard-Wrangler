@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ItemForm from './ItemForm';
 import { startEditItem, startRemoveItem } from '../actions/items';
+import Button from '@material-ui/core/Button';
 
 const EditItem = (props) => {
   return (
@@ -14,14 +15,22 @@ const EditItem = (props) => {
           props.history.push('/');
         }}
       />
-      <button
-        onClick={(e) => {
-          props.dispatch(startRemoveItem({ id: props.item.id }))
-          props.history.push('/');
-        }}
-        className="mdc-button mdc-button mdc-button--dense">
-        <span className="mdc-button__label">discard</span>
-      </button>
+      <div className='center-element'>
+        <Button
+          variant='outlined'
+          color='secondary'
+          onClick={(e) => {
+            props.dispatch(startRemoveItem({ id: props.item.id }))
+            props.history.push('/');
+          }}
+          className='
+            mdc-button 
+            button-90
+            discard-button
+          '>
+          <span className="mdc-button__label">discard</span>
+        </Button>
+      </div>
     </div>
   );
 };

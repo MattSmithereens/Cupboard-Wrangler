@@ -139,14 +139,27 @@ h3 {
   
 }
 
+/* not working */
+.center-element {
+  display: flex;
+  align-content: center;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
 .bought-used-button {
-  width: 75px;
   line-height: 1em;
+  width: 75px;
+}
+
+.button-90 {
+  width: 90px;
 }
 
 .top-buffer {
   margin-top: 65px;
   display: flexbox;
+  max-width: 968px;
 }
 
 .white-text {

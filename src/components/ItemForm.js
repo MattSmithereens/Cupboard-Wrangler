@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 // import moment from 'moment';
 // import { removeItem } from '../actions/items'
 // import { setTextFilter, sortByDate, sortByAmount } from '../actions/filters'
@@ -121,14 +122,15 @@ export default class ItemForm extends React.Component {
           </div>
           <br />
           <p className='small-text'>Annoted items are indicated with: <span className='red'>*</span></p>
-          <br />
-          <button
-            className="
-            mdc-button 
-            mdc-button--unelevated 
-            mdc-button--dense">
-            <span className="mdc-button__label">submit</span>
-          </button>
+          <div className='center-element'>
+            <Button
+              className="
+              mdc-button 
+              mdc-button--unelevated 
+              button-90">
+              <span className="mdc-button__label">submit</span>
+            </Button>
+          </div>
         </form>
       </div>
     )
