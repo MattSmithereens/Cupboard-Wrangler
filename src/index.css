@@ -47,6 +47,22 @@ h3 {
   color: #ffffff;
 }
 
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
 /* .MuiInputBase-root-207 {
   color: pink;
 } */
@@ -60,15 +76,6 @@ h3 {
 /* .isActive {
   font-weight: bold;
   background: #ffba5a;
-} */
-
-/* .itemDiv {
-  width: 400px;
-} */
-
-/* 
-.cupboardItemDiv {
-  background-color: aqua; 
 } */
 
 .mdc-text-field {
@@ -124,14 +131,14 @@ h3 {
 }
 
 .item-row {
-  width: 99%;
+  width: 100%;
   padding-bottom: 3px; 
   display: flex;
 }
 
-/* .item-button {
-  width: 100px;
-} */
+.item-span {
+  width: 100%;
+}
 
 .item-button-col {
   display: flex;
@@ -161,6 +168,10 @@ h3 {
   margin-right: 2px;
   margin-left: 2px;
   
+}
+
+.item-span {
+  width: 100%
 }
 
 /* not working */

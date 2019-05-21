@@ -4,11 +4,10 @@ import { connect } from 'react-redux'
 import { startToggleListItem } from '../actions/items';
 import Button from '@material-ui/core/Button';
 import moment from 'moment';
+// import { sortByDate } from '../actions/filters'
 
 const now = new moment().format();
 const soon = new moment().add(2, 'day').format();
-
-// const 
 
 const ItemListItem = ({ 
   dispatch, 
@@ -58,22 +57,3 @@ const ItemListItem = ({
 
 export default connect()(ItemListItem)
 
-// <button
-// className="
-//   mdc-button 
-//   mdc-button--unelevated
-//   mdc-button--dense
-// "
-// onClick={() => {
-//   dispatch(startToggleListItem(id, inCupboard, amount));
-// }}
-// >
-// <span className="
-//   mdc-button__label
-//   bought-used-button
-// ">
-//   {inCupboard && (parseDate < now) ? <i className="fas fa-exclamation-triangle bad-now"></i> : ''}
-//   {inCupboard && (parseDate <= soon && parseDate >= now) ? <i className="fas fa-exclamation-triangle bad-soon"></i> : ''}
-//   {inCupboard ? 'used' : 'bought'}
-// </span>
-// </button>

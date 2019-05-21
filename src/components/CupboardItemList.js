@@ -9,8 +9,7 @@ const CupboardItemList = (props) => (
     <h4>{props.items.length === 0 ? '' : 'Cupboard List'}</h4>
     <div
     className='
-      itemDiv
-      cupboardItemDiv
+      item-span
     '>
       {props.items.map((item) => {
         if (item.inCupboard) {
