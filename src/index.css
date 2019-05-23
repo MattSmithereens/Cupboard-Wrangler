@@ -19,6 +19,12 @@ deepOrange 400
   --mdc-theme-secondary: #f06292; /*changes color of radio buttons*/
 }
 
+.mdc-top-app-bar {
+  background-color: #0277bd;
+}
+
+
+
 body {
   background-color: #e1f5fe;
   margin: unset;
@@ -78,6 +84,10 @@ a:active {
   font-weight: bold;
   background: #ffba5a;
 } */
+
+.about-text {
+  max-width: 500px;
+}
 
 .mdc-text-field {
   width: 99%;
@@ -225,29 +235,13 @@ a:active {
 }
 
 .red {
-  /* color: #ff7657; */
+  /* color: #ff7657;  not really red anymore, eh? */
   color: #f06292;
 }
 
 .small-text {
   font-size: .85em;
 }
-
-.test1 {
-  color: aqua;
-}
-
-.test2 {
-  color: chartreuse;
-}
-/* not wokring yet 
-.row.nth-child(even) {
-  background: #CCC
-}
-*/
-
-
-
 
 .list-item {
   width: 100%;

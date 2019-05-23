@@ -7,7 +7,7 @@ import moment from 'moment';
 // import { sortByDate } from '../actions/filters'
 
 const now = new moment().format();
-const soon = new moment().add(2, 'day').format();
+const soon = new moment().add(3, 'day').format();
 
 const ItemListItem = ({ 
   dispatch, 
