@@ -12,6 +12,7 @@ deepOrange 400
 */
 
 @import './styles/splash.scss';
+@import './styles/header.scss'
 
 :root {
   --mdc-theme-primary: #0277bd;
@@ -142,7 +143,7 @@ a:active {
 
 .item-button-col {
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .item-info-col {
@@ -244,3 +245,10 @@ a:active {
   background: #CCC
 }
 */
+
+
+
+
+.list-item {
+  width: 100%;
+}

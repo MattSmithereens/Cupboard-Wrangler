@@ -33,14 +33,7 @@ const ItemListItem = ({
 }) => (
   <div className='item-row'>
     <div className='item-info-col'>
-    <List component="nav">
-      <ListItem button>
-        <ListItemText primary="Trash" />
-      </ListItem>
-      <ListItemLink href={`/edit/${id}`}>
-        <ListItemText primary="Spam" />
-      </ListItemLink>
-    </List>
+    <List>
       <ListItem className='list-item' button to={`/edit/${id}`}>
         <ListItemText inset primary={description} />
         <span className='red'>{note ? '* ' : ' '}</span>
@@ -69,6 +62,7 @@ const ItemListItem = ({
         </Button>
       </div>
       </ListItem>
+      </List>
   </div></div>
 );
 
