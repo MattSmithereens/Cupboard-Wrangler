@@ -17,8 +17,8 @@ const EditItem = (props) => {
       />
       <div className='center-element'>
         <Button
-          // variant='outlined'
-          color='secondary'
+          variant='outlined'
+          color='primary'
           onClick={(e) => {
             props.dispatch(startRemoveItem({ id: props.item.id }))
             props.history.push('/');

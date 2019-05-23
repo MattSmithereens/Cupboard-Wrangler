@@ -32,11 +32,14 @@ const ItemListItem = ({
       {inCupboard ? ' ' + shelfLife + ' ' : ''}
     </div>
     <div className='item-button-col'>
-      <Button        
+      <Button  
+        variant='unelevated'
+        color='#0277bd'      
         className="
         mdc-button 
         mdc-button--unelevated
         mdc-button--dense
+        button-90
       "
       onClick={() => {
         dispatch(startToggleListItem(id, inCupboard, amount));
