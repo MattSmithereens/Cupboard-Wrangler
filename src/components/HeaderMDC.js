@@ -28,13 +28,13 @@ const styles = theme => ({
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.80),
+    backgroundColor: fade(theme.palette.common.white, 0.5),
     '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 1),
+      backgroundColor: fade(theme.palette.common.white, 0.8),
     },
     marginRight: theme.spacing.unit * 2,
     marginLeft: 0,
-    width: '100%',
+    width: 'auto',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing.unit * 3,
       width: 'auto',

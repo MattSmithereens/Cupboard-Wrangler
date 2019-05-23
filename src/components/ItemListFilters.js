@@ -17,11 +17,11 @@ class ItemListFilters extends React.Component {
 
   render() {
     return (
-      <div className="bottom-buffer">
+      <div>
         <TextField
-          label="Item Search"
-          placeholder="Start typing to filter items"
-          className='text-field'
+
+          placeholder="Search items"
+          className='text-field-filter'
           variant="outlined"
           value={this.props.filters.text}
           onChange={(e) => {

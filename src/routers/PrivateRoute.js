@@ -12,7 +12,6 @@ export const PrivateRoute = ({
   return <Route {...rest} component={(props) => (
     isAuthenticated ? (
       <div className='main-margins'>
-
         <HeaderMDC />
         <Component {...props} />
       </div>
