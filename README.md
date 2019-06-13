@@ -14,7 +14,7 @@ My wife and I are on entirely different schedules.  Oftentimes chores are done b
 * The search field highlights items in either the pantry or shopping list and quickly lets a user know its status
 * The list is hosted on firebase and authenticated via a user's Google account so data can be persisted between devices
 
-### Planned Features
+### Potential(?) Features
 
 * Additional item attributes, such as whether an item is grocery or a household item with a seperate list that displays different attributes (ie, laundry detergent doesn't need a shelf life)
 * Integration of a coupon API to highlight items in the shopping list that are on sale
@@ -37,7 +37,7 @@ My wife and I are on entirely different schedules.  Oftentimes chores are done b
 ## Known Bugs
 
 * ~Date object needs refactoring.  Items' best by dates don't take year into account, so an object with an expration of 1/2/20 will render higher on the list than an item with an expiration of 1/3/19~ _fixed: 5/8/19_
-* Responsive layout is presently less than ideal on mobile devices in portrait mode
+* ~Responsive layout is presently less than ideal on mobile devices in portrait mode~ _fixed: 5/20/19_
 
 ## 
 
