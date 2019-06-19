@@ -6,6 +6,8 @@ An enhanced shopping list app
 
 My wife and I are on entirely different schedules.  Oftentimes chores are done by one while the other is either at work or sleeping.  This creates problems when it comes to groceries and our cupboard.  Miscommunications will occur regarding food shopping where one of us will not buy something that the other needs, or we'll both buy it because or a communication breakdown.  Another compounding factor is that if one of us buys something that the other is unaware of, often times it will languish in the pantry or refridgerator and go bad before it gets eaten.  No other pantry/grocery list app that I've found takes "best by" dates into account or toggles grocery items between a grocery list and a pantry inventory list that lets you know what's going bad and when (thus alerting the user when it should be eaten), so I set out to build my own.
 
+![screen shot view](cupboard-wrangler-screenshot.png)
+
 ### Current Features
 
 * Items placed on the shopping list can be toggled into pantry inventory when purchased and back onto the shopping list when they need replacing
