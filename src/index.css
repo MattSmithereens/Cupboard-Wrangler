@@ -11,23 +11,10 @@ deepOrange 400
 
 */
 
-@import './styles/splash.scss';
-@import './styles/header.scss'
-
 :root {
-  --mdc-theme-primary: #0277bd;
+  --mdc-theme-primary: #0277bd; /* has to be on top otherwise default colors override */
   --mdc-theme-secondary: #f06292; /*changes color of radio buttons*/
 }
-
-.mdc-top-app-bar {
-  background-color: #0277bd;
-}
-
-.mdc-button {
-  background-color: #0277bd;  
-}
-
-
 
 body {
   background-color: #e1f5fe;
@@ -206,6 +193,10 @@ a:active {
   width: 120px;
 }
 
+.button-90 {
+  background-color: #0277bd;
+}
+
 .top-buffer {
   margin-top: 65px;
   display: flexbox;
@@ -238,10 +229,7 @@ a:active {
   margin-top: 10px;
 }
 
-.red {
-  /* color: #ff7657;  not really red anymore, eh? */
-  color: #f06292;
-}
+
 
 .small-text {
   font-size: .85em;
@@ -250,3 +238,7 @@ a:active {
 .list-item {
   width: 100%;
 }
+
+@import './styles/splash.scss';
+@import './styles/header.scss';
+@import './styles/buttons.scss';
