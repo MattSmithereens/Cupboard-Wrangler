@@ -24,11 +24,11 @@ const Help = () => (
       verge of not being fresh anymore.
     </p>
     <p className="about-text">
-      To start, begin adding items. They'll appear in your shopping list. From
-      there you can toggle them to your pantry list when you purchase them and
-      toggle them back to your shopping list when you no longer have that item
-      in your pantry. Items are rendered in order of date with older items
-      appearing higher in the list
+      To start, begin adding items with the large, floating action button. Items
+      will appear in your shopping list. From there you can toggle them to your
+      pantry list when you purchase them and toggle them back to your shopping
+      list when you no longer have that item in your pantry. Items are rendered
+      in order of date with older items appearing higher in the list
     </p>
     <p className="about-text">
       This app is still in beta, but fixes, new features and a new layout
@@ -68,10 +68,7 @@ const Help = () => (
         <strike>
           Make design responsive (it's presently hardcoded for mobile){" "}
         </strike>
-        <span className="red">
-          Added 5/15/19 but still in progress; I'm in the process of improving
-          the NavBar
-        </span>
+        <span className="red">added 7/31</span>
       </li>
       <li>
         Additional item attributes, such as whether an item is grocery or a

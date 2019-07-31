@@ -128,6 +128,10 @@ a:active {
   margin-bottom: 10px;
 }
 
+.bottom-spacer {
+  margin-bottom: 40px;
+}
+
 .col-sm-6 {
   max-width: 500px;
 }
@@ -179,9 +183,10 @@ a:active {
 /* not working */
 .center-element {
   display: flex;
-  align-content: center;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center; /* flex end to justify left */
   margin-top: 10px;
+  max-width: 968px;
 }
 
 .bought-used-button {
@@ -190,7 +195,8 @@ a:active {
 }
 
 .button-120 {
-  width: 120px;
+  width: 200px;
+  height: 45px;
 }
 
 .button-90 {

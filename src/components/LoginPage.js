@@ -4,10 +4,6 @@ import { startLogin } from "../actions/auth";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
-// import { MDCRipple } from '@material/ripple';
-
-// const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
-
 export const LoginPage = ({ startLogin }) => (
   <div className="box-layout">
     <div className="box">
