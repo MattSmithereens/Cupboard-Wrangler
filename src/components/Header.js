@@ -6,13 +6,15 @@ import { startLogout } from "../actions/auth";
 
 export const Header = ({ startLogout }) => (
   <header className="mdc-top-app-bar mdc-top-app-bar--short">
-    <div className="mdc-top-app-bar__row">
+    <div className="mdc-top-app-bar__row header-width">
       <section className="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
         <NavLink
           to="/Create"
           className="material-icons mdc-top-app-bar__navigation-icon header-icon"
         >
-          <i className="fas fa-plus" />
+          <button className="mdc-fab floater" aria-label="Favorite">
+            <i className="fas fa-plus" />
+          </button>
         </NavLink>
         <NavLink to="/Dashboard">
           <span className="mdc-top-app-bar__title white-text">
