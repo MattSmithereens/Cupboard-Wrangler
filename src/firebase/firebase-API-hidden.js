@@ -1,5 +1,5 @@
-import * as firebase from 'firebase';
-import API_KEY from '../config';
+import * as firebase from "firebase";
+import API_KEY from "../config";
 
 const config = {
   apiKey: API_KEY,
@@ -16,7 +16,6 @@ const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 export { firebase, googleAuthProvider, database as default };
-
 
 // database.ref()
 //   .once('value')    // use .on() to subscribe

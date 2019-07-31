@@ -1,8 +1,8 @@
-import moment from 'moment';
-import database from '../firebase/firebase';
+import moment from "moment";
+import database from "../firebase/firebase";
 
-export const addItem = (item) => ({
-  type: 'ADD_ITEM',
+export const addItem = item => ({
+  type: "ADD_ITEM",
   item
 });
 
@@ -12,11 +12,11 @@ export const startAddItem = (itemData = {}) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
     const {
-      description = '',
-      note = '',
-      amount = '',
-      shelfLife = new moment().add(amount, 'day').format('l'),
-      parseDate = new moment().add(amount, 'day').format(), // had to add this attribute b/c sorting by formatted moment object didn't take year into account (ie, 01/01/2020 rendered above 01/02/2019)
+      description = "",
+      note = "",
+      amount = "",
+      shelfLife = new moment().add(amount, "day").format("l"),
+      parseDate = new moment().add(amount, "day").format(), // had to add this attribute b/c sorting by formatted moment object didn't take year into account (ie, 01/01/2020 rendered above 01/02/2019)
       inCupboard = false,
       isGrocery = true
     } = itemData;
@@ -30,18 +30,23 @@ export const startAddItem = (itemData = {}) => {
       isGrocery
     };
 
-    database.ref(`users/${uid}/items`).push(item).then((ref) => {
-      dispatch(addItem({
-        id: ref.key,
-        ...item
-      }));
-    });
+    database
+      .ref(`users/${uid}/items`)
+      .push(item)
+      .then(ref => {
+        dispatch(
+          addItem({
+            id: ref.key,
+            ...item
+          })
+        );
+      });
   };
 };
 
 // REMOVE_ITEM (action generators)
 export const removeItem = ({ id } = {}) => ({
-  type: 'REMOVE_ITEM',
+  type: "REMOVE_ITEM",
   id
 });
 
@@ -49,15 +54,18 @@ export const removeItem = ({ id } = {}) => ({
 export const startRemoveItem = ({ id } = {}) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
-    return database.ref(`users/${uid}/items/${id}`).remove().then(() => {
-      dispatch(removeItem({ id }));
-    });
+    return database
+      .ref(`users/${uid}/items/${id}`)
+      .remove()
+      .then(() => {
+        dispatch(removeItem({ id }));
+      });
   };
 };
 
 // EDIT_ITEM
 export const editItem = (id, updates) => ({
-  type: 'EDIT_ITEM',
+  type: "EDIT_ITEM",
   id,
   updates
 });
@@ -66,15 +74,18 @@ export const editItem = (id, updates) => ({
 export const startEditItem = (id, updates) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
-    return database.ref(`users/${uid}/items/${id}`).update(updates).then(() => {
-      dispatch(editItem(id, updates));
-    });
+    return database
+      .ref(`users/${uid}/items/${id}`)
+      .update(updates)
+      .then(() => {
+        dispatch(editItem(id, updates));
+      });
   };
-}
+};
 
 // TOGGLE_LIST_ITEM
 export const toggleListItem = (id, updates) => ({
-  type: 'TOGGLE_LIST_ITEM',
+  type: "TOGGLE_LIST_ITEM",
   id,
   updates
 });
@@ -83,22 +94,26 @@ export const toggleListItem = (id, updates) => ({
 export const startToggleListItem = (id, inCupboard, amount) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
-    return database.ref(`users/${uid}/items/${id}`).update({
-      inCupboard: !inCupboard,
-      shelfLife: new moment().add(amount, 'day').format('l'),
-      parseDate: new moment().add(amount, 'day').format()
-    }).then(() => {
-      dispatch(toggleListItem(id, inCupboard));
-    }).catch((e) => {
-      console.log('error = ' + e);
-      dispatch(toggleListItem(id, inCupboard));
-    });
+    return database
+      .ref(`users/${uid}/items/${id}`)
+      .update({
+        inCupboard: !inCupboard,
+        shelfLife: new moment().add(amount, "day").format("l"),
+        parseDate: new moment().add(amount, "day").format()
+      })
+      .then(() => {
+        dispatch(toggleListItem(id, inCupboard));
+      })
+      .catch(e => {
+        console.log("error = " + e);
+        dispatch(toggleListItem(id, inCupboard));
+      });
   };
-}
+};
 
 // SET_ITEMS
-export const setItems = (items) => ({
-  type: 'SET_ITEMS',
+export const setItems = items => ({
+  type: "SET_ITEMS",
   items
 });
 
@@ -106,16 +121,19 @@ export const setItems = (items) => ({
 export const startSetItems = () => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
-    return database.ref(`users/${uid}/items`).once('value').then((snapshot) => {
-      const items = [];
-      snapshot.forEach((childSnapshot) => {
-        items.push({
-          id: childSnapshot.key,
-          ...childSnapshot.val()
-        })
-      });
+    return database
+      .ref(`users/${uid}/items`)
+      .once("value")
+      .then(snapshot => {
+        const items = [];
+        snapshot.forEach(childSnapshot => {
+          items.push({
+            id: childSnapshot.key,
+            ...childSnapshot.val()
+          });
+        });
 
-      dispatch(setItems(items));
-    });
+        dispatch(setItems(items));
+      });
   };
 };

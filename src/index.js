@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import AppRouter, { history } from './routers/AppRouter.js'
-import configureStore from './store/configureStore';
-import { startSetItems } from './actions/items';
-import { login, logout } from './actions/auth';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import AppRouter, { history } from "./routers/AppRouter.js";
+import configureStore from "./store/configureStore";
+import { startSetItems } from "./actions/items";
+import { login, logout } from "./actions/auth";
 // import getVisibleItems from './selectors/items';
-import './index.css';
-import * as serviceWorker from './serviceWorker';
-import { firebase } from './firebase/firebase';
+import "./index.css";
+import * as serviceWorker from "./serviceWorker";
+import { firebase } from "./firebase/firebase";
 // import Loading from './img/';
 
 const store = configureStore();
@@ -28,7 +28,7 @@ let hasRendered = false;
 
 const renderApp = () => {
   if (!hasRendered) {
-    ReactDOM.render(jsx, document.getElementById('root'));
+    ReactDOM.render(jsx, document.getElementById("root"));
     hasRendered = true;
   }
 };
@@ -42,21 +42,24 @@ const renderApp = () => {
 //   </div>
 // )
 
-ReactDOM.render(<h2 className='box-layout'>Loading...</h2>, document.getElementById('root'));
+ReactDOM.render(
+  <h2 className="box-layout">Loading...</h2>,
+  document.getElementById("root")
+);
 
-firebase.auth().onAuthStateChanged((user) => {
+firebase.auth().onAuthStateChanged(user => {
   if (user) {
     store.dispatch(login(user.uid));
     store.dispatch(startSetItems()).then(() => {
       renderApp();
-      if (history.location.pathname === '/') {
-        history.push('/Dashboard');
+      if (history.location.pathname === "/") {
+        history.push("/Dashboard");
       }
     });
   } else {
     store.dispatch(logout());
     renderApp();
-    history.push('/');
+    history.push("/");
   }
 });
 
@@ -64,4 +67,3 @@ firebase.auth().onAuthStateChanged((user) => {
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
-

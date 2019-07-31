@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers } from "redux";
 
 // ADD_EXPENSE
 // REMOVE_EXPENSE
@@ -11,9 +11,7 @@ import { createStore, combineReducers } from 'redux';
 
 // expenses reducer
 
-const itemsReducerDefaultState = [
-
-];
+const itemsReducerDefaultState = [];
 
 const itemsReducer = (state = itemsReducerDefaultState, action) => {
   switch (action.type) {
@@ -27,20 +25,22 @@ const store = createStore(itemsReducer);
 console.log(store.getState);
 
 const demoState = {
-  items: [{
-    id: 'randomstring',
-    description: 'Frozen peas',
-    note: 'This is for a long ass descriptive string',
-    amount: 45000,
-    createdAt: 0
-  }],
+  items: [
+    {
+      id: "randomstring",
+      description: "Frozen peas",
+      note: "This is for a long ass descriptive string",
+      amount: 45000,
+      createdAt: 0
+    }
+  ],
   filters: {
-    text: 'peas',
-    sortBy: 'date',  // date or amount
+    text: "peas",
+    sortBy: "date", // date or amount
     startDate: undefined,
     endDate: undefined,
     inCupboard: false // my own property
   }
-}
+};
 
 export default state;

@@ -1,11 +1,11 @@
-export const setTextFilter = (text = '') => ({
-  type: 'SET_TEXT_FILTER',
+export const setTextFilter = (text = "") => ({
+  type: "SET_TEXT_FILTER",
   text
 });
 
 // SORT_BY_DATE
-export const sortByDate = (date = '') => ({
-  type: 'SORT_BY_DATE',
+export const sortByDate = (date = "") => ({
+  type: "SORT_BY_DATE",
   date
 });
 
@@ -26,8 +26,6 @@ export const sortByDate = (date = '') => ({
 // });
 
 // SORT_BY_SHELFLIFE?
-
-
 
 // // SET START DATE
 // export const setStartDate = (startDate) => ({

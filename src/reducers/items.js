@@ -1,18 +1,18 @@
-import moment from 'moment';
+import moment from "moment";
 
 const itemsReducerDefaultState = [];
 
 export default (state = itemsReducerDefaultState, action) => {
   switch (action.type) {
-    case 'ADD_ITEM':
+    case "ADD_ITEM":
       return [
-        ...state,  // spread operator.  concats action.item & returns state without changing initial state
+        ...state, // spread operator.  concats action.item & returns state without changing initial state
         action.item
       ];
-    case 'REMOVE_ITEM':
-      return state.filter(({ id }) => id !== action.id);  // filters out the item with the passed in id.  
-    case 'EDIT_ITEM':                                     // destructures object and parses id attribute
-      return state.map((item) => {
+    case "REMOVE_ITEM":
+      return state.filter(({ id }) => id !== action.id); // filters out the item with the passed in id.
+    case "EDIT_ITEM": // destructures object and parses id attribute
+      return state.map(item => {
         if (item.id === action.id) {
           return {
             ...item,
@@ -20,20 +20,20 @@ export default (state = itemsReducerDefaultState, action) => {
           };
         } else {
           return item;
-        };
+        }
       });
-    case 'TOGGLE_LIST_ITEM':
+    case "TOGGLE_LIST_ITEM":
       return state.map(item =>
-        (item.id === action.id)
+        item.id === action.id
           ? {
-            ...item,
-            inCupboard: !item.inCupboard,
-            shelfLife: new moment().add(item.amount, 'day').format('l'),
-            parseDate: new moment().add(item.amount, 'day').format()
-          }
+              ...item,
+              inCupboard: !item.inCupboard,
+              shelfLife: new moment().add(item.amount, "day").format("l"),
+              parseDate: new moment().add(item.amount, "day").format()
+            }
           : item
-      )
-    case 'SET_ITEMS':
+      );
+    case "SET_ITEMS":
       return action.items;
     default:
       return state;
