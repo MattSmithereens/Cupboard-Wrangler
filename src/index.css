@@ -11,13 +11,21 @@ deepOrange 400
 
 */
 
-@import './styles/splash.scss';
-@import './styles/header.scss'
-
 :root {
-  --mdc-theme-primary: #0277bd;
+  --mdc-theme-primary: #0277bd; /* has to be on top otherwise default colors override */
   --mdc-theme-secondary: #f06292; /*changes color of radio buttons*/
 }
+
+
+.mdc-top-app-bar {
+  background-color: #0277bd;
+}
+
+.mdc-button {
+  background-color: #0277bd;  
+}
+
+
 
 body {
   background-color: #e1f5fe;
@@ -79,6 +87,10 @@ a:active {
   background: #ffba5a;
 } */
 
+.about-text {
+  max-width: 500px;
+}
+
 .mdc-text-field {
   width: 99%;
   margin-bottom: 10px;
@@ -88,11 +100,6 @@ a:active {
   width: 99%;
   margin-bottom: 10px;
 }
-
-/* .text-field-filter {
-  width: 99%;
-  margin-bottom: 10px;
-} */
 
 .bad-now {
   margin-right: 3px;
@@ -128,9 +135,9 @@ a:active {
   margin-bottom: 25px;
 }
 
-/* .bottom-buffer {
+.bottom-buffer {
   margin-bottom: 10px;
-} */
+}
 
 .col-sm-6 {
   max-width: 500px;
@@ -197,8 +204,12 @@ a:active {
   width: 120px;
 }
 
+.button-90 {
+  background-color: #0277bd;
+}
+
 .top-buffer {
-  margin-top: 85px;
+  margin-top: 65px;
   display: flexbox;
   max-width: 968px;
 }
@@ -230,29 +241,13 @@ a:active {
 }
 
 .red {
-  /* color: #ff7657; */
+  /* color: #ff7657;  not really red anymore, eh? */
   color: #f06292;
 }
 
 .small-text {
   font-size: .85em;
 }
-
-.test1 {
-  color: aqua;
-}
-
-.test2 {
-  color: chartreuse;
-}
-/* not wokring yet 
-.row.nth-child(even) {
-  background: #CCC
-}
-*/
-
-
-
 
 .list-item {
   width: 100%;
