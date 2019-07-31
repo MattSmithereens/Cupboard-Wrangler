@@ -1,79 +1,77 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { startLogout } from '../actions/auth';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import { firebase, googleAuthProvider } from '../firebase/firebase';
-import ItemListFilters from './ItemListFilters';
-import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import { fade } from '@material-ui/core/styles/colorManipulator';
-import { withStyles } from '@material-ui/core/styles';
-
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { startLogout } from "../actions/auth";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import ItemListFilters from "./ItemListFilters";
+import PropTypes from "prop-types";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import { fade } from "@material-ui/core/styles/colorManipulator";
+import { withStyles } from "@material-ui/core/styles";
+import LogoutIcon from "./Header";
 
 const styles = theme => ({
   menuButton: {
-    marginLeft: -12,
+    marginLeft: -12
   },
   title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
+    display: "none",
+    [theme.breakpoints.up("sm")]: {
+      display: "block"
+    }
   },
   search: {
-    position: 'relative',
+    position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.5),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.8),
+    "&:hover": {
+      backgroundColor: fade(theme.palette.common.white, 0.8)
     },
     marginRight: theme.spacing.unit * 2,
     marginLeft: 0,
-    width: 'auto',
-    [theme.breakpoints.up('sm')]: {
+    width: "auto",
+    [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing.unit * 3,
-      width: 'auto',
-    },
+      width: "auto"
+    }
   },
   inputRoot: {
-    color: 'inherit',
-    width: '100%',
+    color: "inherit",
+    width: "100%"
   },
   inputInput: {
     paddingTop: theme.spacing.unit,
     paddingRight: theme.spacing.unit,
     paddingBottom: theme.spacing.unit,
     paddingLeft: theme.spacing.unit * 10,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: 300,
-    },
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: 300
+    }
   },
   sectionDesktop: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
-      marginLeft: 175,
-    },
+    display: "none",
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+      marginLeft: 175
+    }
   },
   sectionMobile: {
-    display: 'flex',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-      justifyContent: 'flex-end',
-    },
-  },
+    display: "flex",
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+      justifyContent: "flex-end"
+    }
+  }
 });
 
 class Header extends React.Component {
   state = {
-    mobileMoreAnchorEl: null,
+    mobileMoreAnchorEl: null
   };
 
   handleMobileMenuOpen = event => {
@@ -92,34 +90,50 @@ class Header extends React.Component {
     const renderMobileMenu = (
       <Menu
         anchorEl={mobileMoreAnchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        transformOrigin={{ vertical: "top", horizontal: "right" }}
         open={isMobileMenuOpen}
         onClose={this.handleMenuClose}
       >
         <MenuItem onClick={this.handleMobileMenuClose}>
           <IconButton color="inherit">
-            <NavLink to='/Dashboard' className="material-icons mdc-top-app-bar__navigation-icon" alt="Home">
-              <i className="fas fa-clipboard-list"></i>
+            <NavLink
+              to="/Dashboard"
+              className="material-icons mdc-top-app-bar__navigation-icon"
+              alt="Home"
+            >
+              <i className="fas fa-clipboard-list" />
             </NavLink>
           </IconButton>
-          <NavLink to='/Dashboard' className="material-icons mdc-top-app-bar__navigation-icon" alt="Home">
+          <NavLink
+            to="/Dashboard"
+            className="material-icons mdc-top-app-bar__navigation-icon"
+            alt="Home"
+          >
             <p>Home</p>
           </NavLink>
         </MenuItem>
         <MenuItem onClick={this.handleMobileMenuClose}>
           <IconButton color="inherit">
-            <NavLink to='/About' className="material-icons mdc-top-app-bar__navigation-icon" alt="About">
-              <i className="fas fa-question"></i>
+            <NavLink
+              to="/About"
+              className="material-icons mdc-top-app-bar__navigation-icon"
+              alt="About"
+            >
+              <i className="fas fa-question" />
             </NavLink>
           </IconButton>
-          <NavLink to='/About' className="material-icons mdc-top-app-bar__navigation-icon" alt="About">
+          <NavLink
+            to="/About"
+            className="material-icons mdc-top-app-bar__navigation-icon"
+            alt="About"
+          >
             <p>About</p>
           </NavLink>
         </MenuItem>
         <MenuItem onClick={startLogout}>
           <IconButton color="inherit">
-            <NavLink to='/' className="material-icons mdc-top-app-bar__navigation-icon"><i className="fas fa-sign-out-alt"></i></NavLink>
+            <LogoutIcon />
           </IconButton>
           <p>Logout</p>
         </MenuItem>
@@ -130,40 +144,62 @@ class Header extends React.Component {
       <div>
         <AppBar position="fixed">
           <Toolbar>
-            <IconButton className='menuButton' color="inherit" aria-label="Open drawer">
-              <NavLink to='/Create' className="material-icons mdc-top-app-bar__navigation-icon">
-                <i className="fas fa-plus"></i>
+            <IconButton
+              className="menuButton"
+              color="inherit"
+              aria-label="Open drawer"
+            >
+              <NavLink
+                to="/Create"
+                className="material-icons mdc-top-app-bar__navigation-icon"
+              >
+                <i className="fas fa-plus" />
               </NavLink>
             </IconButton>
-            <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-              <NavLink to='/Dashboard'>
-                <span className="mdc-top-app-bar__title white-text">Cupboard Wrangler</span>
+            <Typography
+              className={classes.title}
+              variant="h6"
+              color="inherit"
+              noWrap
+            >
+              <NavLink to="/Dashboard">
+                <span className="mdc-top-app-bar__title white-text">
+                  Cupboard Wrangler
+                </span>
               </NavLink>
             </Typography>
-            <div className={classes.search}>
-              <ItemListFilters />
-            </div>
+
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <IconButton color="inherit">
-                <NavLink to='/Dashboard' className="material-icons mdc-top-app-bar__navigation-icon" alt="Home">
-                  <i className="fas fa-clipboard-list"></i>
+                <NavLink
+                  to="/Dashboard"
+                  className="material-icons mdc-top-app-bar__navigation-icon"
+                  alt="Home"
+                >
+                  <i className="fas fa-clipboard-list" />
                 </NavLink>
               </IconButton>
               <IconButton color="inherit">
-                <NavLink to='/About' className="material-icons mdc-top-app-bar__navigation-icon" alt="About">
-                  <i className="fas fa-question"></i>
+                <NavLink
+                  to="/About"
+                  className="material-icons mdc-top-app-bar__navigation-icon"
+                  alt="About"
+                >
+                  <i className="fas fa-question" />
                 </NavLink>
               </IconButton>
               <IconButton color="inherit">
-                <NavLink to='/' className="material-icons mdc-top-app-bar__navigation-icon" alt='Logout'>
-                  <i className="fas fa-sign-out-alt"></i>
-                </NavLink>
+                <LogoutIcon />
               </IconButton>
             </div>
             <div className={classes.sectionMobile}>
-              <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">
-                <i className="fas fa-bars"></i>
+              <IconButton
+                aria-haspopup="true"
+                onClick={this.handleMobileMenuOpen}
+                color="inherit"
+              >
+                <i className="fas fa-bars" />
               </IconButton>
             </div>
           </Toolbar>
@@ -176,7 +212,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(Header);

@@ -1,27 +1,33 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Route, Redirect } from 'react-router-dom';
-import Header from '../components/Header'; // replace HeaderMDC to put in older, fuctional header
-import HeaderMDC from '../components/HeaderMDC';
+import React from "react";
+import { connect } from "react-redux";
+import { Route, Redirect } from "react-router-dom";
+import Header from "../components/Header"; // replace HeaderMDC to put in older, fuctional header
+import HeaderMDC from "../components/HeaderMDC";
+import HeaderTest from "../components/HeaderTest";
 
 export const PrivateRoute = ({
   isAuthenticated,
   component: Component,
   ...rest
 }) => {
-  return <Route {...rest} component={(props) => (
-    isAuthenticated ? (
-      <div className='main-margins'>
-        <HeaderMDC />
-        <Component {...props} />
-      </div>
-    ) : (
-        <Redirect to='/' />
-      )
-  )} />
+  return (
+    <Route
+      {...rest}
+      component={props =>
+        isAuthenticated ? (
+          <div className="main-margins">
+            <HeaderMDC />
+            <Component {...props} />
+          </div>
+        ) : (
+          <Redirect to="/" />
+        )
+      }
+    />
+  );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   isAuthenticated: !!state.auth.uid
 });
 

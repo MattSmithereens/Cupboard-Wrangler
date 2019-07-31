@@ -1,31 +1,29 @@
-import React from 'react';
-import { history } from '../routers/AppRouter';
-import TextField from '@material-ui/core/TextField';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import IconButton from '@material-ui/core/IconButton';
-import { connect } from 'react-redux';
-import { setTextFilter } from '../actions/filters'
+import React from "react";
+import { history } from "../routers/AppRouter";
+import TextField from "@material-ui/core/TextField";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import IconButton from "@material-ui/core/IconButton";
+import { connect } from "react-redux";
+import { setTextFilter } from "../actions/filters";
 // import { setTextFilter, sortByDate, sortByAmount } from '../actions/filters'
 
 class ItemListFilters extends React.Component {
-
   handleClickClearField = () => {
-    this.setState(state => ({ text: null }));   // clear state
-    this.props.filters.text = '';               // clear textfield
-    history.push('/');                          // refresh lists
-  }
+    this.setState({ text: null }); // clear state
+    this.props.filters.text = ""; // clear textfield
+    history.push("/"); // refresh lists
+  };
 
   render() {
     return (
       <div>
         <TextField
-
           placeholder="Search items"
-          className='text-field-filter'
+          className="text-field-filter"
           variant="outlined"
           value={this.props.filters.text}
-          onChange={(e) => {
-            this.props.dispatch(setTextFilter(e.target.value))
+          onChange={e => {
+            this.props.dispatch(setTextFilter(e.target.value));
           }}
           InputProps={{
             endAdornment: (
@@ -34,25 +32,24 @@ class ItemListFilters extends React.Component {
                   aria-label="Clear search field"
                   onClick={this.handleClickClearField}
                 >
-                  <i className="fas fa-backspace red"></i>
+                  <i className="fas fa-backspace red" />
                 </IconButton>
               </InputAdornment>
-            ),
+            )
           }}
         />
       </div>
-    )
-  };
+    );
+  }
 }
 
-const MapStateToProps = (state) => {
+const MapStateToProps = state => {
   return {
     filters: state.filters
   };
 };
 
 export default connect(MapStateToProps)(ItemListFilters);
-
 
 // <select                                      //filter dropdown
 // value={props.filters.sortBy}               //props.filters.options also works
@@ -67,48 +64,36 @@ export default connect(MapStateToProps)(ItemListFilters);
 // <option value='amount'>Amount</option>
 // </select>
 
+// <p>Filter by text:
 
+// <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+//     <input
+//       type="text"
+//       class="mdc-text-field__input"
+//       aria-label="Label"
+//       type='text'
+//       value={props.filters.text}
+//       onChange={(e) => {
+//         props.dispatch(setTextFilter(e.target.value))
+//       }} />
+//     <div class="mdc-notched-outline">
+//       <div class="mdc-notched-outline__leading"></div>
+//       <div class="mdc-notched-outline__trailing"></div>
+//     </div>
+//   </div>
+// </p>
 
-
-
-
-
-
-
-    // <p>Filter by text:
-
-
-    // <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
-    //     <input
-    //       type="text"
-    //       class="mdc-text-field__input"
-    //       aria-label="Label"
-    //       type='text'
-    //       value={props.filters.text}
-    //       onChange={(e) => {
-    //         props.dispatch(setTextFilter(e.target.value))
-    //       }} />
-    //     <div class="mdc-notched-outline">
-    //       <div class="mdc-notched-outline__leading"></div>
-    //       <div class="mdc-notched-outline__trailing"></div>
-    //     </div>
-    //   </div>
-    // </p>
-
-
-
-
-    // old textfield that works
-  //   <TextField
-  //   id="outlined-textarea"
-  //   label="Item Search"
-  //   placeholder="Start typing to filter items"
-  //   margin="normal"
-  //   variant="outlined"
-  //   className='text-field'
-  //   value={props.filters.text}
-  //   onChange={(e) => {
-  //     props.dispatch(setTextFilter(e.target.value))
-  //   }}
-  // />
-  // <br />
+// old textfield that works
+//   <TextField
+//   id="outlined-textarea"
+//   label="Item Search"
+//   placeholder="Start typing to filter items"
+//   margin="normal"
+//   variant="outlined"
+//   className='text-field'
+//   value={props.filters.text}
+//   onChange={(e) => {
+//     props.dispatch(setTextFilter(e.target.value))
+//   }}
+// />
+// <br />
