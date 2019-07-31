@@ -1,29 +1,58 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { startLogout } from '../actions/auth';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+import { startLogout } from "../actions/auth";
 // import HeaderMDC from './Header-MDC'; hamburger menu
 
 export const Header = ({ startLogout }) => (
   <header className="mdc-top-app-bar mdc-top-app-bar--short">
-    <div className="mdc-top-app-bar__row">
+    <div className="mdc-top-app-bar__row header-width">
       <section className="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-        <NavLink to='/Create' className="material-icons mdc-top-app-bar__navigation-icon"><i className="fas fa-plus"></i></NavLink>
-        <NavLink to='/Dashboard'><span className="mdc-top-app-bar__title white-text">Cupboard Wrangler</span></NavLink>
+        <NavLink
+          to="/Create"
+          className="material-icons mdc-top-app-bar__navigation-icon header-icon"
+        >
+          <button className="mdc-fab floater" aria-label="Favorite">
+            <i className="fas fa-plus" />
+          </button>
+        </NavLink>
+        <NavLink to="/Dashboard">
+          <span className="mdc-top-app-bar__title white-text">
+            Cupboard Wrangler
+          </span>
+        </NavLink>
       </section>
-      <section className="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <NavLink to='/About' className="material-icons mdc-top-app-bar__navigation-icon" alt="About"><i className="fas fa-question"></i></NavLink>
-        <NavLink to='/' onClick={startLogout} className="material-icons mdc-top-app-bar__navigation-icon"><i className="fas fa-sign-out-alt"></i></NavLink>
+      <section
+        className="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"
+        role="toolbar"
+      >
+        <NavLink
+          to="/About"
+          className="material-icons mdc-top-app-bar__navigation-icon header-icon"
+          alt="About"
+        >
+          <i className="fas fa-question" />
+        </NavLink>
+        <NavLink
+          to="/"
+          onClick={startLogout}
+          className="material-icons mdc-top-app-bar__navigation-icon header-icon"
+        >
+          <i className="fas fa-sign-out-alt" />
+        </NavLink>
       </section>
     </div>
   </header>
-)
+);
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   startLogout: () => dispatch(startLogout())
 });
 
-export default connect(undefined, mapDispatchToProps)(Header);
+export default connect(
+  undefined,
+  mapDispatchToProps
+)(Header);
 
 // <NavLink to='/Cupboard' activeClassName='isActive' exact={true}>Cupboard Inventory</NavLink> |
 // <NavLink to='/Help' activeClassName='isActive'>Help</NavLink>

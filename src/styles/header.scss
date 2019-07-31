@@ -1,21 +1,35 @@
-  .grow {
-    flex-grow: .5;
-  }
+.grow {
+  flex-grow: .5;
+}
 
-  .menuButton {
-    margin-left: -12;
-    margin-right: 20;
-  }
+.menuButton {
+  margin-left: -12;
+  margin-right: 20;
+}
 
-  .Header-sectionDesktop-6 {
-    display: flex;
-    margin-left: 170px;
-  }
+.Header-sectionDesktop-6 {
+  display: flex;
+  margin-left: 170px;
+}
 
-  .mdc-top-app-bar {
-    background-color: #0277bd;
-  }
+.mdc-top-app-bar {
+  background-color: #0277bd;
+}
 
+.header-width {
+  max-width: 985px;
+}
+
+.header-icon {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.floater {
+  margin-top: 25px;
+}
+
+/*
   // .title {
   //   display: 'none',
   //   [theme.breakpoints.up('sm')]: {
@@ -61,4 +75,4 @@
   //     display: 'none',
   //   },
   // },
-  
+  */

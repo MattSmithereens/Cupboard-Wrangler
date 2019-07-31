@@ -1,4 +1,4 @@
-import * as firebase from 'firebase';
+import * as firebase from "firebase";
 
 const config = {
   apiKey: API
@@ -15,7 +15,6 @@ const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider(); // useless unless Google is checked off in firebase/auth dashboard
 
 export { firebase, googleAuthProvider, database as default };
-
 
 // database.ref()
 //   .once('value')    // use .on() to subscribe
