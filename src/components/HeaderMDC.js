@@ -170,6 +170,7 @@ class Header extends React.Component {
             </Typography>
 
             <div className={classes.grow} />
+            <ItemListFilters />
             <div className={classes.sectionDesktop}>
               <IconButton color="inherit">
                 <NavLink

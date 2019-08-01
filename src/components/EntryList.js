@@ -5,7 +5,6 @@ import ItemListFilters from "./ItemListFilters";
 
 const EntryList = () => (
   <div className="top-buffer">
-    <ItemListFilters />
     <div className="row">
       <div className="col-sm-6">
         <ShoppingList />
