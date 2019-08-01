@@ -6,7 +6,7 @@ const Help = () => (
     <p className="about-text">
       Thanks for checking out out <b>Cupboard Wrangler</b>!
     </p>
-    <p className="about-text" className="about-text">
+    <p className="about-text">
       I built this to help my wife and I out when it comes to stocking our
       kitchen. Seeing as the two of us are on entirely different schedules,
       oftentimes chores are done by one while the other is either at work or
