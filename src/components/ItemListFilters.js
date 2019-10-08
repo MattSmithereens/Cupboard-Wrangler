@@ -11,7 +11,7 @@ class ItemListFilters extends React.Component {
   handleClickClearField = () => {
     this.setState({ text: null }); // clear state
     this.props.filters.text = ""; // clear textfield
-    history.push("/"); // refresh lists
+    history.push("/"); // go back to root.  does NOT refresh changes made to listItems
   };
 
   render() {
