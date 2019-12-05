@@ -9,6 +9,8 @@ import { login, logout } from "./actions/auth";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import { firebase } from "./firebase/firebase";
+
+// import { firebase } from "./firebase/firebase"; add Firestore?
 // import Loading from './img/';
 
 const store = configureStore();
