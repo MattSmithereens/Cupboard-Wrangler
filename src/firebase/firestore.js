@@ -1,7 +1,7 @@
 import * as firebase from "firebase";
 
 const config = {
-  apiKey: "AIzaSyD_-vV5n7MCbb2av2IpFsE8K8STskcLhCg",
+  apiKey: "NOPE",
   authDomain: "cupboard-wrangler-fs.firebaseapp.com",
   databaseURL: "https://cupboard-wrangler-fs.firebaseio.com",
   projectId: "cupboard-wrangler-fs",
