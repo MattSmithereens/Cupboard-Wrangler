@@ -1,12 +1,14 @@
 import * as firebase from "firebase";
 
 const config = {
-  apiKey: "AIzaSyBKKGzEcY_ZiVih6SjySzw0zSOBUKcHdAw",
-  authDomain: "cupboard-wrangler.firebaseapp.com",
-  databaseURL: "https://cupboard-wrangler.firebaseio.com",
-  projectId: "cupboard-wrangler",
-  storageBucket: "cupboard-wrangler.appspot.com",
-  messagingSenderId: "315154339220"
+  apiKey: "NOPE",
+  authDomain: "cupboard-wrangler-fs.firebaseapp.com",
+  databaseURL: "https://cupboard-wrangler-fs.firebaseio.com",
+  projectId: "cupboard-wrangler-fs",
+  storageBucket: "cupboard-wrangler-fs.appspot.com",
+  messagingSenderId: "210138946854",
+  appId: "1:210138946854:web:8417cfe88ab1dde08175e7",
+  measurementId: "G-C2TVYXBHQK"
 };
 
 firebase.initializeApp(config);
