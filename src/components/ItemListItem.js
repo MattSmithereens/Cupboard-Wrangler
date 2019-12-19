@@ -31,8 +31,7 @@ const ItemListItem = ({
     </div>
     <div className="item-button-col">
       <Button
-        variant="flat"
-        color="#0277bd"
+        variant="text"
         className="
         mdc-button 
         mdc-button--unelevated
