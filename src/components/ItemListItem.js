@@ -31,7 +31,7 @@ const ItemListItem = ({
     </div>
     <div className="item-button-col">
       <Button
-        variant="unelevated"
+        variant="flat"
         color="#0277bd"
         className="
         mdc-button 
@@ -54,7 +54,7 @@ const ItemListItem = ({
           ) : (
             ""
           )}
-          {inCupboard && (parseDate <= soon && parseDate >= now) ? (
+          {inCupboard && parseDate <= soon && parseDate >= now ? (
             <i className="fas fa-exclamation-triangle bad-soon" />
           ) : (
             ""
